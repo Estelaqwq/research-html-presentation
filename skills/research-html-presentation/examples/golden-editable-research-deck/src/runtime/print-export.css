@@ -1,0 +1,99 @@
+@page {
+  size: 1600px 900px;
+  margin: 0;
+}
+
+html.print-mode,
+html.print-mode body {
+  width: 1600px;
+  height: auto;
+  margin: 0;
+  overflow: visible !important;
+  background: #fff;
+}
+
+.print-deck {
+  position: static;
+  width: 1600px;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  background: #fff;
+}
+
+.print-deck .slide.print-slide {
+  position: relative;
+  inset: auto;
+  display: block;
+  width: 1600px;
+  height: 900px;
+  margin: 0;
+  overflow: hidden;
+  opacity: 1;
+  pointer-events: none;
+  transform: none;
+  transition: none;
+  break-after: page;
+  page-break-after: always;
+}
+
+.print-deck .slide.print-slide:last-child {
+  break-after: auto;
+  page-break-after: auto;
+}
+
+.print-deck .fragment {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.print-page-footer {
+  position: absolute;
+  left: 72px;
+  right: 72px;
+  bottom: 8px;
+  z-index: 22;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--ink-600);
+  font-size: 13px;
+}
+
+.print-page-footer strong {
+  color: var(--academic-blue-900);
+  font-size: 14px;
+}
+
+.print-deck .deck-toolbar,
+.print-deck .nav-arrow,
+.print-deck .progress-track,
+.print-deck .chapter-panel,
+.print-deck .lightbox,
+.print-deck .presenter-view,
+.print-deck .presenter-notes,
+.print-deck .control-discovery-hint,
+.print-deck .runtime-notice,
+.print-deck [data-presenter-only],
+.print-deck [data-debug-overlay],
+.print-deck [data-chart-control] {
+  display: none !important;
+}
+
+@media print {
+  html,
+  body {
+    width: 1600px !important;
+    height: auto !important;
+    overflow: visible !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .print-deck,
+  .print-deck .slide.print-slide {
+    box-shadow: none !important;
+  }
+}

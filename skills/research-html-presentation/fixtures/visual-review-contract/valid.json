@@ -1,0 +1,37 @@
+{
+  "renderFingerprint": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "reviewedAt": "2026-09-21T10:00:00+08:00",
+  "reviewEvidence": [".deck-render/contact-sheet.html"],
+  "slides": [
+    {
+      "slideId": "text-board",
+      "compositionReviewed": true,
+      "detailReviewed": true,
+      "densityStatus": "pass",
+      "titleStatus": "pass",
+      "plotOccupancyStatus": "not-applicable",
+      "evidenceWeightStatus": "pass",
+      "overflowStatus": "pass",
+      "reviewerNotes": "浏览器审计指标与结构化人工复核一致",
+      "notApplicableReason": "无图文字结构板以层级图承担视觉中心",
+      "referenceCalibration": {
+        "status": "reviewed",
+        "sourceRefs": ["reference-photo-2"],
+        "notes": "校准标题几何、共享边线、结论条与空白控制",
+        "checked": ["titleGeometry", "bodySilhouette", "bottomConclusionBand"]
+      },
+      "metrics": {
+        "contentOccupancy": 0.78,
+        "internalOccupancy": 0.72,
+        "moduleInternalOccupancy": 0.68,
+        "lowerHalfCoverage": 0.55,
+        "dominantVisualRatio": "not-applicable",
+        "plotOccupancy": "not-applicable",
+        "largestEmptyRegionRatio": 0.12,
+        "evidenceWeightBalance": 1.8,
+        "repeatedEqualRegionCount": 0,
+        "auditSource": "browser"
+      }
+    }
+  ]
+}

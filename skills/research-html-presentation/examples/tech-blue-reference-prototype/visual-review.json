@@ -1,0 +1,190 @@
+{
+  "slides": [
+    {
+      "slideId": "cover",
+      "compositionReviewed": true,
+      "detailReviewed": true,
+      "densityStatus": "pass",
+      "titleStatus": "pass",
+      "plotOccupancyStatus": "not-applicable",
+      "evidenceWeightStatus": "pass",
+      "overflowStatus": "pass",
+      "silhouetteStatus": "not-applicable",
+      "reviewerNotes": "用户指定三款毛笔字体已在同一封面真实渲染，cmap覆盖和实际glyph字体均核验。当前试用演示流云楷150px/76px，长收笔舒展、没有截图中旧180px方块标题的过大比例。完整字库无子集裁剪；字形选择尚待用户反馈。校徽与文字无重叠。",
+      "metrics": {
+        "browserFindingCount": 1,
+        "browserErrorCount": 0,
+        "browserWarningCount": 1,
+        "auditSource": "browser"
+      },
+      "notApplicableReason": "本页视觉中心不是图表/绘图区；按实际结构、文字或科学图像占用率复核。",
+      "chartSemanticFitStatus": "not-applicable",
+      "scaledPreviewStatus": "pass",
+      "brandPlacementStatus": "warning",
+      "referenceCalibration": {
+        "status": "reviewed",
+        "sourceRefs": [
+          "public/reference-new-01.png",
+          "public/reference-new-02.png"
+        ],
+        "checked": [
+          "titleGeometry",
+          "bodySilhouette",
+          "dominantVisual",
+          "imageTextRatio",
+          "sharedEdgeBehavior",
+          "accentPolicy",
+          "prohibitedTraits"
+        ],
+        "evidence": [
+          ".deck-render/brush-review/comparison.html",
+          ".deck-render/brush-review/three-brush-fonts.png"
+        ],
+        "notes": "沿用已核对的异形/透明布局，追加用户三款字体同版面比较；试用字形、正文层级、长笔锋、校徽间距和离线实测均复核。用户样式批准仍pending。"
+      }
+    },
+    {
+      "slideId": "method",
+      "bodySilhouette": "figure-support-matrix",
+      "compositionReviewed": true,
+      "detailReviewed": true,
+      "densityStatus": "warning",
+      "titleStatus": "pass",
+      "plotOccupancyStatus": "not-applicable",
+      "evidenceWeightStatus": "pass",
+      "overflowStatus": "pass",
+      "silhouetteStatus": "pass",
+      "reviewerNotes": "异形关系页沿用已检查的七节点/七连线结构和透明承托；本轮无内容/图形数据改动。当前渲染无错误，保留原型密度非阻断提示，未以背景面板冒充实质内容。",
+      "metrics": {
+        "contentOccupancy": 0.966,
+        "paintDensity": 0.343,
+        "paintToLayoutRatio": 0.355,
+        "bodyBounds": [
+          72,
+          212,
+          1456,
+          564
+        ],
+        "internalOccupancy": "not-applicable",
+        "moduleInternalOccupancy": 0.891,
+        "measurableModuleCount": 1,
+        "lowerHalfCoverage": 0.933,
+        "dominantVisualRatio": "not-applicable",
+        "plotOccupancy": "not-applicable",
+        "largestEmptyRegionRatio": 0.009,
+        "evidenceWeightBalance": 1,
+        "repeatedEqualRegionCount": 0,
+        "layoutSignature": "0,0,1,0.7|0,0.7,1,0.25",
+        "layoutClusterSize": 1,
+        "layoutFamilySignature": "geometry:0,0,1,0.7|0,0.7,1,0.25",
+        "layoutFamilyClusterSize": 1,
+        "browserFindingCount": 3,
+        "browserErrorCount": 0,
+        "browserWarningCount": 3,
+        "auditSource": "browser"
+      },
+      "notApplicableReason": "本页视觉中心不是图表/绘图区；按实际结构、文字或科学图像占用率复核。",
+      "chartSemanticFitStatus": "not-applicable",
+      "scaledPreviewStatus": "pass",
+      "brandPlacementStatus": "warning",
+      "referenceCalibration": {
+        "status": "reviewed",
+        "sourceRefs": [
+          "public/reference-new-01.png",
+          "public/reference-new-02.png"
+        ],
+        "checked": [
+          "titleGeometry",
+          "bodySilhouette",
+          "dominantVisual",
+          "imageTextRatio",
+          "sharedEdgeBehavior",
+          "accentPolicy",
+          "prohibitedTraits"
+        ],
+        "evidence": [
+          ".deck-render/brush-review/comparison.html",
+          ".deck-render/brush-review/three-brush-fonts.png"
+        ],
+        "notes": "沿用已核对的异形/透明布局，追加用户三款字体同版面比较；试用字形、正文层级、长笔锋、校徽间距和离线实测均复核。用户样式批准仍pending。"
+      }
+    },
+    {
+      "slideId": "result",
+      "bodySilhouette": "dominant-figure-aside",
+      "compositionReviewed": true,
+      "detailReviewed": true,
+      "densityStatus": "pass",
+      "titleStatus": "pass",
+      "plotOccupancyStatus": "not-applicable",
+      "evidenceWeightStatus": "pass",
+      "overflowStatus": "pass",
+      "silhouetteStatus": "pass",
+      "reviewerNotes": "实际两轮结构页对照完整，放大/返回可用，旁注已改为当前试用演示流云楷和150px说明。未将候选字体视为用户批准。",
+      "metrics": {
+        "contentOccupancy": 0.975,
+        "paintDensity": 0.716,
+        "paintToLayoutRatio": 0.734,
+        "bodyBounds": [
+          72,
+          212,
+          1456,
+          564
+        ],
+        "internalOccupancy": 0.868,
+        "moduleInternalOccupancy": 0.895,
+        "measurableModuleCount": 2,
+        "lowerHalfCoverage": 0.975,
+        "dominantVisualRatio": 0.556,
+        "plotOccupancy": "not-applicable",
+        "largestEmptyRegionRatio": 0,
+        "evidenceWeightBalance": 1,
+        "repeatedEqualRegionCount": 0,
+        "layoutSignature": "0,0,0.25,1|0.3,0,0.7,1",
+        "layoutClusterSize": 1,
+        "layoutFamilySignature": "left-aside-right-dominant",
+        "layoutFamilyClusterSize": 1,
+        "browserFindingCount": 1,
+        "browserErrorCount": 0,
+        "browserWarningCount": 1,
+        "auditSource": "browser"
+      },
+      "notApplicableReason": "本页视觉中心不是图表/绘图区；按实际结构、文字或科学图像占用率复核。",
+      "chartSemanticFitStatus": "not-applicable",
+      "scaledPreviewStatus": "pass",
+      "brandPlacementStatus": "warning",
+      "referenceCalibration": {
+        "status": "reviewed",
+        "sourceRefs": [
+          "public/reference-new-01.png",
+          "public/reference-new-02.png"
+        ],
+        "checked": [
+          "titleGeometry",
+          "bodySilhouette",
+          "dominantVisual",
+          "imageTextRatio",
+          "sharedEdgeBehavior",
+          "accentPolicy",
+          "prohibitedTraits"
+        ],
+        "evidence": [
+          ".deck-render/brush-review/comparison.html",
+          ".deck-render/brush-review/three-brush-fonts.png"
+        ],
+        "notes": "沿用已核对的异形/透明布局，追加用户三款字体同版面比较；试用字形、正文层级、长笔锋、校徽间距和离线实测均复核。用户样式批准仍pending。"
+      }
+    }
+  ],
+  "currentRenderFingerprint": "sha256:a76afcd65e56cb5c6aa8b6a81bf3a5ab7b30fcc33c2d847ec7b25d27cdb6ab59",
+  "reviewInvalidated": false,
+  "renderFingerprint": "sha256:a76afcd65e56cb5c6aa8b6a81bf3a5ab7b30fcc33c2d847ec7b25d27cdb6ab59",
+  "reviewedAt": "2026-10-18",
+  "reviewEvidence": [
+    ".deck-render/brush-review/comparison.html",
+    ".deck-render/brush-review/three-brush-fonts.png",
+    ".deck-render/brush-review/observations.md",
+    ".deck-render/brush-review/font-render-check.json",
+    ".deck-render/brush-review/offline-interaction-check.json"
+  ]
+}

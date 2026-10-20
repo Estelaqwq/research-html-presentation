@@ -1,0 +1,19 @@
+{
+  "title": "Synthetic fixture: dataset v3 deck",
+  "profile": "dataset-report",
+  "newProject": true,
+  "datasetSemanticVersion": 3,
+  "outputMode": "slide-deck",
+  "stage": "prototype",
+  "prototypeApproval": { "status": "pending", "reviewedPrototypeIds": [], "reviewEvidence": [] },
+  "analysisMode": "dataset-portrait",
+  "primaryQuestion": "Synthetic fixture question: what does the test dataset contain?",
+  "evidenceRegistry": "evidence-visuals.json",
+  "citationRegistry": "citations.json",
+  "sharedPresentationLayer": { "runtime": "DeckRuntime", "presenter": "PresenterView", "slideSource": "slides", "chartAdapter": "chart-adapters/echarts", "branding": "shared", "styles": ["presentation-core.css", "layout-recipes.css", "presenter-view.css", "print-export.css", "evidence-visualization.css"], "features": ["chapters", "presenter", "fullscreen", "keyboard", "progress", "hash", "fragments", "zoom-focus", "deterministic-print", "pdf-export"] },
+  "slides": [
+    { "id": "cover", "section": "cover", "title": "Synthetic dataset fixture", "type": "cover", "layout": "L01", "claimIds": [] },
+    { "id": "analysis", "section": "analysis", "title": "Synthetic dataset structure", "type": "content", "layout": "L08", "claimIds": ["claim-dataset"], "dataFactIds": ["dataset-d1"], "methodIds": ["analysis-a1"], "resultIds": [], "substantiveKinds": ["dataset-task"], "substantiveContribution": "Synthetic fixture establishes task context.", "contentUtilityStatus": "keep", "titleBasisIds": ["claim-dataset"], "audienceTakeaway": "Synthetic fixture only.", "takeawayBasisIds": ["claim-dataset"] },
+    { "id": "result", "section": "result", "title": "Synthetic fixture finding", "type": "content", "layout": "L16", "claimIds": ["claim-dataset"], "visualIds": ["visual-d1"], "findingIds": ["analysis-a1"], "dataFactIds": ["dataset-d1"], "methodIds": [], "resultIds": ["analysis-a1"], "substantiveKinds": ["finding"], "substantiveContribution": "Synthetic fixture gives its decisive test finding.", "contentUtilityStatus": "keep", "titleBasisIds": ["analysis-a1"], "audienceTakeaway": "This is synthetic test data, not a research result.", "takeawayBasisIds": ["analysis-a1"] }
+  ]
+}

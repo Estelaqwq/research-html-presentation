@@ -1,0 +1,160 @@
+{
+  "title": "蓝色科技风 · 异形与透明叠层样稿",
+  "scaffoldPlaceholder": false,
+  "profile": "project-review",
+  "outputMode": "slide-deck",
+  "outputFormVersion": 1,
+  "visualStyle": "tech-engineering-dark",
+  "compositionProfile": "standard",
+  "stage": "prototype",
+  "prototypeApproval": {
+    "status": "pending",
+    "reviewedPrototypeIds": [],
+    "reviewEvidence": []
+  },
+  "qualityContractVersion": 1,
+  "newProject": true,
+  "requestedCapabilities": {
+    "authoring": "required"
+  },
+  "evidenceRegistry": "evidence-visuals.json",
+  "citationRegistry": "citations.json",
+  "slides": [
+    {
+      "id": "cover",
+      "section": "视觉方向",
+      "type": "cover",
+      "layout": "L01",
+      "title": "数智研析 让证据更清晰",
+      "claimIds": [
+        "c-cover"
+      ],
+      "visualIds": [],
+      "narrativeUnitId": "narrative-cover",
+      "notes": "封面试用用户提供的演示流云楷，完整字体嵌入，主标题150px、副标题76px；另有三款字体可切换预览，字形尚待用户反馈。"
+    },
+    {
+      "id": "method",
+      "section": "结构示意",
+      "type": "content",
+      "layout": "L10",
+      "bodySilhouette": "figure-support-matrix",
+      "title": "多源材料如何形成可追溯结论",
+      "claimIds": [
+        "c-method"
+      ],
+      "visualIds": [
+        "research-map"
+      ],
+      "narrativeUnitId": "narrative-method",
+      "visualPlan": {
+        "coreClaim": "多源材料如何形成可追溯结论",
+        "evidenceKinds": [
+          "explanatory-structure"
+        ],
+        "availableVisualIds": [
+          "research-map"
+        ],
+        "visualCenter": "research-material-map",
+        "primaryVisualIds": [
+          "research-map"
+        ],
+        "evidenceWeight": {
+          "research-map": 1
+        },
+        "preserveWholeFigure": true,
+        "extractableSubfigures": [],
+        "needsZoom": false,
+        "mergeOrBackupIds": [],
+        "omissionReasons": []
+      },
+      "notes": "这是研究材料组织关系的解释性示意，不对应某个具体研究的自动处理结果。"
+    },
+    {
+      "id": "result",
+      "section": "改版对照",
+      "type": "content",
+      "layout": "L16",
+      "bodySilhouette": "dominant-figure-aside",
+      "title": "文字与关系先被看见",
+      "claimIds": [
+        "c-comparison"
+      ],
+      "visualIds": [
+        "old-method",
+        "new-method"
+      ],
+      "narrativeUnitId": "narrative-result",
+      "visualPlan": {
+        "coreClaim": "文字与关系先被看见",
+        "evidenceKinds": [
+          "scientific-evidence"
+        ],
+        "availableVisualIds": [
+          "old-method",
+          "new-method"
+        ],
+        "visualCenter": "actual-revision-comparison",
+        "primaryVisualIds": [
+          "new-method"
+        ],
+        "evidenceWeight": {
+          "old-method": 0.25,
+          "new-method": 0.75
+        },
+        "preserveWholeFigure": true,
+        "extractableSubfigures": [],
+        "needsZoom": true,
+        "mergeOrBackupIds": [],
+        "omissionReasons": []
+      },
+      "notes": "对照上轮矩形分栏与本轮异形叠层；两张图都是实际渲染。"
+    }
+  ],
+  "authoring": {
+    "enabled": true,
+    "mode": "browser-with-local-fallback",
+    "registry": "presentation-edit-registry.json"
+  },
+  "referenceVisualContract": {
+    "sourceRefs": [
+      "public/reference-new-01.png",
+      "public/reference-new-02.png"
+    ],
+    "primaryColors": [
+      "#031044",
+      "#083c9a",
+      "#087aec",
+      "#51dfff",
+      "#f5fbff"
+    ],
+    "supportingColors": [
+      "#ffe393",
+      "#91b4e4"
+    ],
+    "saturationProfile": "Saturated sapphire/royal blue; electric-blue depth, cool white and scarce pale-yellow accent.",
+    "titleGeometry": "User-supplied Slidefontliuyun embedded in editable HTML;150px main/76px gold accent. Optically compare against YunFengFeiYunTi and HYShangWeiShouShuW in the same cover; selection pending.",
+    "headerHeight": "Content 108px from y28; thin baseline at y135; brand clear of title and chapter rail.",
+    "leadTreatment": "46px high at y146, 22px copy with selective bold; fine cyan left rule.",
+    "bodySilhouette": "Relationship map plus shared perspective shelf; then dominant image with asymmetric support.",
+    "primaryRegionCount": 2,
+    "secondaryRegionCount": 1,
+    "dominantVisualPosition": "Cover apparatus reduced to lower-right; source/association/validation diagram across body; comparison dominant current image right.",
+    "imageTextRatio": "Cover title width about750px versus projected apparatus about500px; contents use model-driven nodes and a dominant faithful screenshot.",
+    "figureDensity": "Relationship-map paint density around34%, acceptable as prototype warning, not complete-stage release; comparison uses authentic screenshots.",
+    "sharedEdgeRatio": "Open brackets, input capsules, cut-corner association and one shared translucent shelf; no equal outer card grid.",
+    "independentCardCount": 0,
+    "bottomConclusionBand": "present",
+    "accentPolicy": "White/ice-blue title; selected pale-yellow phrases; blue transparent fills with fully opaque copy.",
+    "logoRole": "Unmodified official PNG, white transparent presentation; painted artwork audited, no duplicate institution text.",
+    "largestEmptyRegion": "Measured from current browser audit; explanatory map has intentional connector space and is not a dense empirical result.",
+    "prohibitedTraits": [
+      "oversized cover subject with subordinate title",
+      "all content inside rectangular cards",
+      "uniform corner-cutting applied to every box",
+      "whole-panel opacity reducing text contrast",
+      "evidence crop or invented research outcome"
+    ],
+    "calibrationStatus": "reviewed"
+  }
+}

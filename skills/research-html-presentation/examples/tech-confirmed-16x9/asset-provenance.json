@@ -1,0 +1,81 @@
+{
+  "purpose": "Cover style fixture, never scientific evidence",
+  "asset": "public/tech-concept-hero.png",
+  "generator": "image_gen",
+  "generatedAt": "2026-10-18",
+  "sourceDimensions": [
+    1672,
+    941
+  ],
+  "prompt": "Text-free wide hero. Unbranded white and silver optical scanning instrument on the right, cobalt and royal-blue lab depth, clean copy space left, localized cyan platform and light arcs. No text, logos or invented scientific findings.",
+  "displayTreatment": "Source pixels remain unchanged; uniformly scale whole concept canvas from1600×900 to1120×630 and position at lower right; CSS fade applies to background integration. Not scientific evidence.",
+  "referenceScope": "User screenshots calibrate composition/palette only; device design, labels and institution were not copied.",
+  "coverCalibration": {
+    "previousTitleFontPx": 180,
+    "currentTitleFontPx": 150,
+    "previousHeroCanvas": [
+      1600,
+      900
+    ],
+    "currentHeroCanvas": [
+      1120,
+      630
+    ],
+    "currentHeroOffset": [
+      430,
+      246
+    ],
+    "scope": "Measured fixture settings, not universal skill sizing rules."
+  },
+  "documentaryExcerpts": [
+    {
+      "source": "public/reference-new-01.png",
+      "bounds": [
+        52,
+        305,
+        1391,
+        1057
+      ],
+      "output": ".deck-render/shape-review/reference-cover-excerpt.png"
+    },
+    {
+      "source": "public/reference-new-02.png",
+      "bounds": [
+        42,
+        253,
+        1238,
+        934
+      ],
+      "output": ".deck-render/shape-review/reference-structure-excerpt.png"
+    }
+  ],
+  "coverTypography": {
+    "family": "汉仪尚巍手书W",
+    "cssFamily": "BrushShangwei",
+    "renderedFamily": "HYShangWeiShouShuW",
+    "source": "Font file explicitly supplied by the user",
+    "sourceSha256": "030919e704482efa9dfec735a4c67fef5c843fecc9e7df2ee5efe05ccb3b8a73",
+    "file": "public/fonts/shangwei-full.woff",
+    "sha256": "e5aab8c6c9d7d0b8dd7a627821cbb6ce031f1aa9a45c5bf83f547272d56460db",
+    "format": "WOFF",
+    "glyphPolicy": "Full original cmap retained, no subsetting; respects original no-subsetting flag.",
+    "glyphMappings": 10073,
+    "fsType": 8,
+    "mainSizePx": [
+      272,
+      245,
+      204,
+      284
+    ],
+    "accentSizePx": 76,
+    "scope": "用户已确认的16:9科技风标题方向；正文不使用手书字体。",
+    "note": "Font embedding metadata is recorded for technical audit; not a claim of general redistribution rights.",
+    "rotations": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "secondarySizePx": 48
+  }
+}

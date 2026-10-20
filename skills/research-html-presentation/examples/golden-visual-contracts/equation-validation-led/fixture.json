@@ -1,0 +1,24 @@
+{
+  "id": "equation-validation-led",
+  "synthetic": true,
+  "materialType": "equation-validation-led",
+  "visualPlan": {
+    "coreClaim": "模型公式、变量含义和验证证据必须在同一阅读路径中闭合",
+    "evidenceKinds": ["scientific-evidence", "data-evidence"],
+    "availableVisualIds": ["equation-main", "validation-plot", "variables"],
+    "visualCenter": "equation-validation",
+    "primaryVisualIds": ["equation-main", "validation-plot"],
+    "evidenceWeight": {"equation-main": 0.34, "validation-plot": 0.46, "variables": 0.2},
+    "preserveWholeFigure": false,
+    "extractableSubfigures": [],
+    "needsZoom": true,
+    "figureTreatment": "equation-with-validation",
+    "textOnlyRelation": "supporting-variable-table",
+    "mergeOrBackupIds": [],
+    "omissionReasons": [{"id": "unexplained-symbols", "reason": "未定义变量不能进入主叙事"}, {"id": "decorative-equation", "reason": "公式必须连接验证结果"}],
+    "omissions": ["unexplained-symbols", "decorative-equation"]
+  },
+  "layout": "L20",
+  "requiredChecks": ["formula-legibility", "variable-definition", "validation-link", "dominantVisualRatio"],
+  "expectedFailures": ["formula-as-image-only", "missing-variable-key", "validation-shrunk"]
+}

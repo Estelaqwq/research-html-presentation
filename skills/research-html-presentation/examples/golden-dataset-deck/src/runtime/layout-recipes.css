@@ -1,0 +1,62 @@
+/* Choose these silhouettes from the research relationship, not by habit. */
+.slide-body { position: absolute; left: 88px; right: 88px; top: 226px; bottom: 94px; }
+.slide-body.no-lead { top: 148px; }
+.layout-split-5-7, .layout-split-7-5, .layout-main-aside, .layout-evidence-mechanism { display: grid; gap: 26px; }
+.layout-split-5-7 { grid-template-columns: 5fr 7fr; }
+.layout-split-7-5, .layout-main-aside, .layout-evidence-mechanism { grid-template-columns: 7fr 5fr; }
+.layout-triptych { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.layout-quad { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.layout-problem-chain { display: grid; grid-template-columns: 5fr 1.5fr 5fr; gap: 22px; }
+.layout-image-matrix { display: grid; grid-template-columns: 1.8fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 16px; }
+.layout-image-matrix > :first-child { grid-row: 1 / 3; }
+.layout-route { display: grid; grid-template-columns: repeat(var(--route-steps, 5), 1fr); gap: 20px; align-items: center; }
+.layout-table { display: grid; grid-template-rows: auto 1fr auto; gap: 18px; }
+.flat-module { min-width: 0; padding: 18px 20px; border: 1px solid var(--line-200); background: var(--white); }
+.flat-module > h3 { margin: -18px -20px 14px; padding: 11px 18px; border: 0; background: var(--academic-blue-900); color: var(--white); font-size: 23px; line-height: 1.25; }
+.flat-module > p, .flat-module li { color: var(--ink-800); font-size: 20px; line-height: 1.48; }
+
+/* Preferred dense academic silhouettes. Assign explicit child slots. */
+.layout-object-model { display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); grid-template-rows: 470px 94px; gap: 16px 24px; }
+.layout-object-model > .main-evidence { grid-column: 1; grid-row: 1; min-width: 0; }
+.layout-object-model > .model-map { grid-column: 2; grid-row: 1; min-width: 0; }
+.layout-object-model > .evidence-strip { grid-column: 1 / -1; grid-row: 2; }
+
+.layout-method-board { display: grid; grid-template-rows: 484px 80px; gap: 16px; }
+.layout-method-board > .workpackage-grid { min-width: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 234px 234px; gap: 16px 18px; }
+.layout-method-board > .evidence-strip { min-height: 80px; }
+
+.layout-equation-evidence { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 24px; }
+.layout-equation-evidence > .derivation-board, .layout-equation-evidence > .validation-evidence { min-width: 0; height: 580px; overflow: hidden; }
+
+.layout-dominant-result { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); grid-template-rows: 470px 94px; gap: 16px 24px; }
+.layout-dominant-result > .main-result { grid-column: 1; grid-row: 1; min-width: 0; height: 470px; }
+.layout-dominant-result > .result-interpretation { grid-column: 2; grid-row: 1; min-width: 0; height: 470px; overflow: hidden; }
+.layout-dominant-result > .evidence-strip { grid-column: 1 / -1; grid-row: 2; }
+
+.layout-evidence-sequence { display: grid; grid-template-columns: minmax(0, 1.48fr) minmax(0, 1fr); grid-template-rows: 460px 104px; gap: 16px 24px; }
+.layout-evidence-sequence > .sequence-figure { grid-column: 1; grid-row: 1 / 3; min-width: 0; height: 580px; }
+.layout-evidence-sequence > .sequence-analysis { grid-column: 2; grid-row: 1; min-width: 0; height: 460px; }
+.layout-evidence-sequence > .evidence-strip { grid-column: 2; grid-row: 2; min-height: 104px; }
+
+.layout-synthesis-matrix { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); grid-template-rows: 470px 94px; gap: 16px 24px; }
+.layout-synthesis-matrix > .synthesis-findings, .layout-synthesis-matrix > .question-answers { min-width: 0; height: 470px; overflow: hidden; }
+.layout-synthesis-matrix > .evidence-strip { grid-column: 1 / -1; grid-row: 2; }
+
+.cover-composition, .closing-composition { position: absolute; inset: 0; background: #f8fafc; }
+.cover-composition .brand-row, .closing-composition .brand-row { position: absolute; left: 108px; right: 108px; top: 20px; height: 106px; display: flex; align-items: center; justify-content: space-between; }
+.cover-composition .brand-row img { width: 500px; height: 140px; object-fit: contain; object-position: right center; }
+.cover-logo { width: 500px; height: 140px; object-fit: contain; object-position: right center; }
+.cover-composition .title-band, .closing-composition .closing-band { position: absolute; left: 0; right: 0; top: 132px; height: 472px; padding: 62px 128px; background: var(--academic-blue-900); color: var(--white); }
+.cover-composition .title-band { border-bottom: 7px solid var(--academic-red-700); }
+.cover-composition .title-band h1 { margin: 0; max-width: 1180px; font-size: 68px; line-height: 1.13; font-weight: 680; }
+.cover-composition .title-band p { margin-top: 28px; max-width: 1080px; color: var(--academic-blue-100); font-size: 26px; line-height: 1.5; }
+.cover-composition .metadata { position: absolute; left: 128px; right: 128px; top: 656px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+
+.agenda-composition { position: absolute; left: 88px; right: 88px; top: 48px; bottom: 60px; display: grid; grid-template-columns: 310px 1fr; gap: 48px; }
+.agenda-composition .agenda-rail { padding: 45px 38px; background: var(--academic-blue-900); color: var(--white); }
+.agenda-composition .agenda-list { display: grid; grid-template-rows: repeat(var(--agenda-count, 4), 1fr); }
+.agenda-composition .agenda-row { display: grid; grid-template-columns: 96px 250px 1fr 116px; align-items: center; border-bottom: 1px solid var(--line-200); }
+.agenda-composition .agenda-row:first-child { border-top: 3px solid var(--academic-blue-800); }
+
+.closing-composition .closing-band { top: 184px; height: 440px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-bottom: 7px solid var(--academic-red-700); text-align: center; }
+.closing-composition .closing-band h2 { margin: 0; font-size: 76px; line-height: 1.1; }

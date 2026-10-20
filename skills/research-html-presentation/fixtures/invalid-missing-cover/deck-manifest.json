@@ -1,0 +1,10 @@
+{
+  "title": "Invalid fixture: missing cover",
+  "profile": "thesis-defense",
+  "stage": "prototype",
+  "slides": [
+    { "id": "first", "section": "method", "title": "Not cover", "type": "content", "layout": "L08" },
+    { "id": "second", "section": "method", "title": "Second", "type": "content", "layout": "L09" },
+    { "id": "third", "section": "result", "title": "Third", "type": "content", "layout": "L16" }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Synthetic fixture: research deck",
+  "profile": "thesis-defense",
+  "outputMode": "slide-deck",
+  "stage": "prototype",
+  "evidenceRegistry": "evidence-visuals.json",
+  "citationRegistry": "citations.json",
+  "slides": [
+    { "id": "cover", "section": "cover", "title": "Synthetic research fixture", "type": "cover", "layout": "L01", "claimIds": [] },
+    { "id": "method", "section": "method", "title": "Synthetic method", "type": "content", "layout": "L08", "claimIds": ["claim-source"] },
+    { "id": "result", "section": "result", "title": "Synthetic decisive evidence", "type": "content", "layout": "L16", "claimIds": ["claim-source"] }
+  ]
+}

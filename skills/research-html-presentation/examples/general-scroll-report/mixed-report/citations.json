@@ -1,0 +1,14 @@
+{
+  "citations": [
+    {
+      "citationId": "source-example",
+      "sourceType": "report",
+      "title": "本地模板功能验证材料",
+      "locator": "source/example-notes.md；source/tasks.csv",
+      "claimIds": [
+        "claim-work",
+        "claim-method"
+      ]
+    }
+  ]
+}

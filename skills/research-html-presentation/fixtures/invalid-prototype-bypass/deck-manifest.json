@@ -1,0 +1,12 @@
+{
+  "title": "Invalid fixture: complete without prototype approval",
+  "profile": "conference-talk",
+  "newProject": true,
+  "outputMode": "slide-deck",
+  "stage": "complete",
+  "slides": [
+    { "id": "cover", "section": "cover", "title": "Synthetic cover", "type": "cover", "layout": "L01" },
+    { "id": "result", "section": "result", "title": "Synthetic result", "type": "content", "layout": "L15" },
+    { "id": "closing", "section": "closing", "title": "Synthetic closing", "type": "closing", "layout": "L24" }
+  ]
+}

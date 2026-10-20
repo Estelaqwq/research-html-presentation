@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "research-html-presentation/edit-patch.schema.json",
+  "title": "Presentation Edit Patch",
+  "oneOf": [
+    { "$ref": "#/$defs/patchV1" },
+    { "$ref": "#/$defs/patchV2" }
+  ],
+  "$defs": {
+    "outputMode": { "enum": ["slide-deck", "scroll-report"] },
+    "scope": { "enum": ["shared", "slide-deck", "scroll-report"] },
+    "hash": { "type": "string", "pattern": "^sha256:[A-Fa-f0-9]{64}$" },
+    "stringArray": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+    "validation": {
+      "type": "object",
+      "required": ["strategy"],
+      "properties": {
+        "strategy": { "enum": ["plain-copy", "evidence-copy", "plain-image", "evidence-image", "locked"] },
+        "plainText": { "type": "boolean" },
+        "basisIds": { "$ref": "#/$defs/stringArray" },
+        "lockedTokens": { "$ref": "#/$defs/stringArray" },
+        "comparisonTokens": { "$ref": "#/$defs/stringArray" },
+        "modelSearchAdequacy": { "enum": ["sufficient", "limited", "preliminary", "not-applicable"] },
+        "plainLanguage": { "type": "boolean" },
+        "reviewOnChange": { "type": "boolean" },
+        "sizeBounds": {
+          "type": "object",
+          "required": ["minWidth", "maxWidth", "minHeight", "maxMinHeight", "snap"],
+          "properties": {
+            "minWidth": { "type": "number" },
+            "maxWidth": { "type": "number" },
+            "minHeight": { "type": "number" },
+            "maxMinHeight": { "type": "number" },
+            "snap": { "type": "number", "exclusiveMinimum": 0 }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "review": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": { "enum": ["pending", "verified"] },
+        "verifiedAt": { "type": "string", "minLength": 1 },
+        "verificationId": { "type": "string", "minLength": 1 },
+        "verifiedValueHash": { "$ref": "#/$defs/hash" }
+      },
+      "additionalProperties": false
+    },
+    "operationBase": {
+      "type": "object",
+      "required": ["operationId", "scope", "targetId", "field", "operation", "value", "expectedValueHash", "validation"],
+      "properties": {
+        "operationId": { "type": "string", "minLength": 1 },
+        "scope": { "$ref": "#/$defs/scope" },
+        "targetId": { "type": "string", "minLength": 1 },
+        "field": { "type": "string", "minLength": 1 },
+        "operation": { "type": "string" },
+        "value": {},
+        "expectedValueHash": { "$ref": "#/$defs/hash" },
+        "validation": { "$ref": "#/$defs/validation" },
+        "review": { "$ref": "#/$defs/review" }
+      },
+      "additionalProperties": false
+    },
+    "replaceText": {
+      "allOf": [{ "$ref": "#/$defs/operationBase" }, { "properties": { "operation": { "const": "replace-text" }, "value": { "type": "string" } } }]
+    },
+    "setTextBoxSize": {
+      "allOf": [{ "$ref": "#/$defs/operationBase" }, { "properties": { "operation": { "const": "set-text-box-size" }, "value": { "$ref": "#/$defs/elementSize" } } }]
+    },
+    "setElementSize": {
+      "allOf": [{ "$ref": "#/$defs/operationBase" }, { "properties": { "operation": { "const": "set-element-size" }, "value": { "$ref": "#/$defs/elementSize" } } }]
+    },
+    "elementSize": {
+      "type": "object",
+      "minProperties": 1,
+      "properties": { "width": { "type": "number" }, "minHeight": { "type": "number" } },
+      "additionalProperties": false
+    },
+    "resetField": {
+      "allOf": [{ "$ref": "#/$defs/operationBase" }, { "properties": { "operation": { "const": "reset-field" }, "value": { "enum": ["text", "size", "all"] } } }]
+    },
+    "imageAsset": {
+      "type": "object",
+      "required": ["assetId", "src", "sha256", "mimeType", "byteSize", "width", "height"],
+      "properties": {
+        "assetId": { "type": "string", "minLength": 1 },
+        "src": { "type": "string", "minLength": 1 },
+        "sha256": { "$ref": "#/$defs/hash" },
+        "mimeType": { "enum": ["image/png", "image/jpeg", "image/webp", "image/avif"] },
+        "byteSize": { "type": "integer", "minimum": 0 },
+        "width": { "type": "number", "exclusiveMinimum": 0 },
+        "height": { "type": "number", "exclusiveMinimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "replaceImage": {
+      "allOf": [{ "$ref": "#/$defs/operationBase" }, { "properties": { "operation": { "const": "replace-image" }, "value": { "$ref": "#/$defs/imageAsset" } } }]
+    },
+    "setImageFit": {
+      "allOf": [{ "$ref": "#/$defs/operationBase" }, { "properties": { "operation": { "const": "set-image-fit" }, "value": { "enum": ["contain", "cover"] } } }]
+    },
+    "setImagePosition": {
+      "allOf": [
+        { "$ref": "#/$defs/operationBase" },
+        {
+          "properties": {
+            "operation": { "const": "set-image-position" },
+            "value": {
+              "type": "object",
+              "required": ["x", "y"],
+              "properties": { "x": { "type": "number", "minimum": 0, "maximum": 100 }, "y": { "type": "number", "minimum": 0, "maximum": 100 } },
+              "additionalProperties": false
+            }
+          }
+        }
+      ]
+    },
+    "resetImage": {
+      "allOf": [{ "$ref": "#/$defs/operationBase" }, { "properties": { "operation": { "const": "reset-image" }, "value": { "enum": ["source", "fit", "position", "size", "all"] } } }]
+    },
+    "patchBase": {
+      "type": "object",
+      "required": ["schemaVersion", "status", "revision", "projectId", "outputMode", "baseFingerprint", "savedAt", "operations"],
+      "properties": {
+        "schemaVersion": { "enum": ["1.0", "2.0"] },
+        "status": { "enum": ["clean", "rebased", "conflict", "orphaned"] },
+        "reviewStatus": { "enum": ["not-required", "needs-evidence-review", "verified"] },
+        "revision": { "type": "integer", "minimum": 0 },
+        "projectId": { "type": "string", "minLength": 1 },
+        "outputMode": { "$ref": "#/$defs/outputMode" },
+        "baseFingerprint": { "$ref": "#/$defs/hash" },
+        "savedAt": { "type": "string", "minLength": 1 },
+        "operations": { "type": "array" }
+      },
+      "additionalProperties": false
+    },
+    "patchV1": {
+      "allOf": [
+        { "$ref": "#/$defs/patchBase" },
+        {
+          "not": { "required": ["reviewStatus"] },
+          "properties": {
+            "schemaVersion": { "const": "1.0" },
+            "status": { "enum": ["clean", "rebased", "conflict", "orphaned"] },
+            "operations": { "type": "array", "items": { "oneOf": [{ "$ref": "#/$defs/replaceText" }, { "$ref": "#/$defs/setTextBoxSize" }, { "$ref": "#/$defs/resetField" }] } }
+          }
+        }
+      ]
+    },
+    "patchV2": {
+      "allOf": [
+        { "$ref": "#/$defs/patchBase" },
+        {
+          "required": ["reviewStatus"],
+          "properties": {
+            "schemaVersion": { "const": "2.0" },
+            "operations": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  { "$ref": "#/$defs/replaceText" },
+                  { "$ref": "#/$defs/replaceImage" },
+                  { "$ref": "#/$defs/setImageFit" },
+                  { "$ref": "#/$defs/setImagePosition" },
+                  { "$ref": "#/$defs/setElementSize" },
+                  { "$ref": "#/$defs/resetField" },
+                  { "$ref": "#/$defs/resetImage" }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

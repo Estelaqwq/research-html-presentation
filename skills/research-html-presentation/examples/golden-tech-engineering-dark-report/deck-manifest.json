@@ -1,0 +1,44 @@
+{
+  "title": "TODO: ZUEL 科研汇报（结构占位，不含研究事实）",
+  "scaffoldPlaceholder": true,
+  "profile": "dataset-report",
+  "outputMode": "scroll-report",
+  "visualStyle": "tech-engineering-dark",
+  "stage": "prototype",
+  "prototypeApproval": { "status": "pending", "reviewedPrototypeIds": [], "reviewEvidence": [] },
+  "newProject": true,
+  "datasetSemanticVersion": 3,
+  "analysisMode": "dataset-portrait",
+  "primaryQuestion": "TODO: 由真实数据和任务合同确定",
+  "evidenceRegistry": "evidence-visuals.json",
+  "citationRegistry": "citations.json",
+  "sections": [
+    {
+      "id": "hero",
+      "chapter": "概览",
+      "role": "hero",
+      "title": "TODO: 数据集分析报告",
+      "claimIds": [],
+      "visualIds": []
+    },
+    {
+      "id": "analysis-design",
+      "chapter": "分析设计",
+      "role": "analysis-design",
+      "title": "TODO: 分析设计",
+      "claimIds": [],
+      "visualIds": []
+    },
+    {
+      "id": "decisive-result",
+      "chapter": "核心发现",
+      "role": "decisive-result",
+      "title": "TODO: 决定性结果（待真实证据）",
+      "claimIds": [],
+      "visualIds": []
+    }
+  ],
+  "authoring": {
+    "enabled": false
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research HTML Presentation"
+  short_description: "Build research HTML decks or vertical reports"
+  default_prompt: "Use $research-html-presentation to create an evidence-driven HTML deck or vertical report, with no institutional logo unless I explicitly request one; preserve the branding of an existing project."

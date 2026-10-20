@@ -1,0 +1,33 @@
+{
+  "failures": [
+    {
+      "id": "not-but-six-provinces",
+      "copy": "选取六个省级地区做对照，不是建立统计分类，而是展示“总量—人均—服务业—城镇化—收入”几条轴线如何错位。",
+      "expect": "defensive-shell"
+    },
+    {
+      "id": "not-but-champion",
+      "copy": "这组数据最稳定的结论，不是寻找单一“冠军”，而是把规模、时间和发展质量放在同一条证据链上。",
+      "expect": "defensive-shell"
+    },
+    {
+      "id": "not-isolated-files",
+      "copy": "文件不是三个孤立附件，而是一套“口径—横截面—时间序列”证据链。",
+      "expect": "defensive-shell"
+    },
+    {
+      "id": "meta-this-page",
+      "copy": "本页展示位次变化的读法。",
+      "expect": "defensive-shell"
+    }
+  ],
+  "passes": [
+    { "id": "six-province-summary", "copy": "六省五指标对照显示：北京、上海人均与收入领先；广东、江苏总量领先。" },
+    { "id": "three-findings", "copy": "规模集中、长期位次重排和发展指标差异构成三项主要结论。" },
+    { "id": "source-coverage", "copy": "三份数据共同覆盖2025年省级结构与2011—2024年长期变化。" }
+  ],
+  "repetition": {
+    "parts": ["东部地区总量占比达到62%", "东部地区总量占比达到62%，形成主要规模中心", "东部地区总量占比达到62%"],
+    "expect": true
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "title": "FlowSpec fixture",
+  "evidenceRegistry": "evidence-visuals.json",
+  "slides": [{ "id": "cover", "section": "封面", "type": "cover", "layout": "L01", "title": "FlowSpec fixture" }]
+}

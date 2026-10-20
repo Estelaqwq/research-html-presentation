@@ -1,0 +1,82 @@
+{
+  "claims": [
+    {
+      "id": "claim-work",
+      "statement": "说明验证材料的工作范围、具体内容和当前状态",
+      "external": true
+    },
+    {
+      "id": "claim-method",
+      "statement": "明确操作方法、可选方案和后续工作",
+      "external": true
+    }
+  ],
+  "datasets": [],
+  "transforms": [],
+  "analyses": [],
+  "narrativeUnits": [
+    {
+      "id": "narrative-work",
+      "chapterId": "主要内容",
+      "role": "materials",
+      "title": "不同材料需要核对什么",
+      "findingIds": [],
+      "claimIds": [
+        "claim-work"
+      ],
+      "chartSpecIds": [],
+      "citationIds": [
+        "source-example"
+      ],
+      "priority": "MUST_SHOW",
+      "substantiveContribution": "说明验证材料的工作范围、具体内容和当前状态",
+      "visualPlan": {
+        "coreClaim": "说明验证材料的工作范围、具体内容和当前状态",
+        "evidenceKinds": [
+          "explanatory-structure"
+        ],
+        "availableVisualIds": [],
+        "visualCenter": "text-structure",
+        "primaryVisualIds": [],
+        "evidenceWeight": {},
+        "preserveWholeFigure": false,
+        "extractableSubfigures": [],
+        "needsZoom": false,
+        "mergeOrBackupIds": [],
+        "omissionReasons": []
+      }
+    },
+    {
+      "id": "narrative-method",
+      "chapterId": "方法与实例",
+      "role": "method",
+      "title": "方法与后续安排",
+      "findingIds": [],
+      "claimIds": [
+        "claim-method"
+      ],
+      "chartSpecIds": [],
+      "citationIds": [
+        "source-example"
+      ],
+      "priority": "MUST_SHOW",
+      "substantiveContribution": "明确操作方法、可选方案和后续工作",
+      "visualPlan": {
+        "coreClaim": "明确操作方法、可选方案和后续工作",
+        "evidenceKinds": [
+          "explanatory-structure"
+        ],
+        "availableVisualIds": [],
+        "visualCenter": "method-process",
+        "primaryVisualIds": [],
+        "evidenceWeight": {},
+        "preserveWholeFigure": false,
+        "extractableSubfigures": [],
+        "needsZoom": false,
+        "mergeOrBackupIds": [],
+        "omissionReasons": []
+      }
+    }
+  ],
+  "visuals": []
+}

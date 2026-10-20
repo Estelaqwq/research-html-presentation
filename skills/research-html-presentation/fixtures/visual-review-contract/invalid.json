@@ -1,0 +1,23 @@
+{
+  "slides": [
+    {
+      "slideId": "broken",
+      "compositionReviewed": true,
+      "detailReviewed": true,
+      "densityStatus": "pass",
+      "titleStatus": "pass",
+      "plotOccupancyStatus": "not-applicable",
+      "evidenceWeightStatus": "pass",
+      "overflowStatus": "pass",
+      "reviewerNotes": "故意缺少有限浏览器指标",
+      "metrics": {
+        "contentOccupancy": null,
+        "lowerHalfCoverage": 0.4,
+        "dominantVisualRatio": null,
+        "largestEmptyRegionRatio": 0.2,
+        "evidenceWeightBalance": 1,
+        "auditSource": "manual"
+      }
+    }
+  ]
+}

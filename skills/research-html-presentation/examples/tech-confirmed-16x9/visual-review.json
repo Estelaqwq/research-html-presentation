@@ -1,0 +1,643 @@
+{
+  "slides": [
+    {
+      "slideId": "cover",
+      "compositionReviewed": true,
+      "detailReviewed": true,
+      "densityStatus": "pass",
+      "titleStatus": "pass",
+      "plotOccupancyStatus": "not-applicable",
+      "evidenceWeightStatus": "pass",
+      "overflowStatus": "pass",
+      "silhouetteStatus": "not-applicable",
+      "reviewerNotes": "保留已确认的汉仪尚巍手书封面：主字全部直立，大小与基线错落；短句水平且与描述共用左对齐线；透明横条无缺口。装置在右下且有概念标签。",
+      "metrics": {
+        "browserFindingCount": 1,
+        "browserErrorCount": 0,
+        "browserWarningCount": 1,
+        "auditSource": "browser"
+      },
+      "notApplicableReason": "封面和结束页免于正文占用率门槛。",
+      "chartSemanticFitStatus": "not-applicable",
+      "scaledPreviewStatus": "pass",
+      "brandPlacementStatus": "warning",
+      "referenceCalibration": {
+        "status": "reviewed",
+        "sourceRefs": [
+          "public/reference-new-01.png",
+          "public/reference-new-02.png"
+        ],
+        "checked": [
+          "titleGeometry",
+          "bodySilhouette",
+          "dominantVisual",
+          "imageTextRatio",
+          "sharedEdgeBehavior",
+          "accentPolicy",
+          "prohibitedTraits"
+        ],
+        "evidence": [
+          ".deck-render/reference-calibration.html",
+          ".deck-render/contact-sheet.png"
+        ],
+        "notes": "逐页实际渲染与用户视觉参考校准；用户已确认封面方向，新增内页等待本次整体审阅。"
+      }
+    },
+    {
+      "slideId": "overview",
+      "bodySilhouette": "text-structure-board",
+      "compositionReviewed": true,
+      "detailReviewed": true,
+      "densityStatus": "pass",
+      "titleStatus": "pass",
+      "plotOccupancyStatus": "not-applicable",
+      "evidenceWeightStatus": "pass",
+      "overflowStatus": "pass",
+      "silhouetteStatus": "pass",
+      "reviewerNotes": "四段讲述路线配左侧手书引语与真实封面缩图；右侧使用连续分隔与页码链接，无独立等大卡片。段落之间留出导航间隔。",
+      "metrics": {
+        "contentOccupancy": 0.966,
+        "paintDensity": 0.357,
+        "paintToLayoutRatio": 0.37,
+        "bodyBounds": [
+          72,
+          212,
+          1456,
+          564
+        ],
+        "internalOccupancy": "not-applicable",
+        "moduleInternalOccupancy": 0.846,
+        "measurableModuleCount": 2,
+        "lowerHalfCoverage": 0.966,
+        "dominantVisualRatio": 0.088,
+        "plotOccupancy": "not-applicable",
+        "largestEmptyRegionRatio": 0,
+        "evidenceWeightBalance": 1,
+        "repeatedEqualRegionCount": 0,
+        "layoutSignature": "0,0,0.25,1|0.3,0,0.7,1",
+        "layoutClusterSize": 1,
+        "layoutFamilySignature": "left-aside-right-dominant",
+        "layoutFamilyClusterSize": 1,
+        "browserFindingCount": 1,
+        "browserErrorCount": 0,
+        "browserWarningCount": 1,
+        "auditSource": "browser"
+      },
+      "notApplicableReason": "视觉中心为实际设计截图或解释性文字/结构，非定量统计图；图表占用率不适用。",
+      "chartSemanticFitStatus": "not-applicable",
+      "scaledPreviewStatus": "pass",
+      "brandPlacementStatus": "warning",
+      "referenceCalibration": {
+        "status": "reviewed",
+        "sourceRefs": [
+          "public/reference-new-01.png",
+          "public/reference-new-02.png"
+        ],
+        "checked": [
+          "titleGeometry",
+          "bodySilhouette",
+          "dominantVisual",
+          "imageTextRatio",
+          "sharedEdgeBehavior",
+          "accentPolicy",
+          "prohibitedTraits"
+        ],
+        "evidence": [
+          ".deck-render/reference-calibration.html",
+          ".deck-render/contact-sheet.png"
+        ],
+        "notes": "逐页实际渲染与用户视觉参考校准；用户已确认封面方向，新增内页等待本次整体审阅。"
+      }
+    },
+    {
+      "slideId": "background",
+      "bodySilhouette": "comparison-bridge",
+      "compositionReviewed": true,
+      "detailReviewed": true,
+      "densityStatus": "pass",
+      "titleStatus": "pass",
+      "plotOccupancyStatus": "not-applicable",
+      "evidenceWeightStatus": "pass",
+      "overflowStatus": "pass",
+      "silhouetteStatus": "pass",
+      "reviewerNotes": "两张真实完整截图采用不同权重，中央细长比较桥；右图说明与底部校准条已收紧，和结论栏分开。图像无拉伸，可放大。",
+      "metrics": {
+        "contentOccupancy": 0.936,
+        "paintDensity": 0.661,
+        "paintToLayoutRatio": 0.707,
+        "bodyBounds": [
+          72,
+          212,
+          1456,
+          564
+        ],
+        "internalOccupancy": "not-applicable",
+        "moduleInternalOccupancy": 0.337,
+        "measurableModuleCount": 3,
+        "lowerHalfCoverage": 0.896,
+        "dominantVisualRatio": 0.278,
+        "plotOccupancy": "not-applicable",
+        "largestEmptyRegionRatio": 0.014,
+        "evidenceWeightBalance": 1,
+        "repeatedEqualRegionCount": 0,
+        "layoutSignature": "0,0,0.35,0.85|0.4,0,0.05,0.85|0.45,0,0.55,0.85|0,0.85,1,0.1",
+        "layoutClusterSize": 1,
+        "layoutFamilySignature": "three-column-body",
+        "layoutFamilyClusterSize": 1,
+        "browserFindingCount": 1,
+        "browserErrorCount": 0,
+        "browserWarningCount": 1,
+        "auditSource": "browser"
+      },
+      "notApplicableReason": "视觉中心为实际设计截图或解释性文字/结构，非定量统计图；图表占用率不适用。",
+      "chartSemanticFitStatus": "not-applicable",
+      "scaledPreviewStatus": "pass",
+      "brandPlacementStatus": "warning",
+      "referenceCalibration": {
+        "status": "reviewed",
+        "sourceRefs": [
+          "public/reference-new-01.png",
+          "public/reference-new-02.png"
+        ],
+        "checked": [
+          "titleGeometry",
+          "bodySilhouette",
+          "dominantVisual",
+          "imageTextRatio",
+          "sharedEdgeBehavior",
+          "accentPolicy",
+          "prohibitedTraits"
+        ],
+        "evidence": [
+          ".deck-render/reference-calibration.html",
+          ".deck-render/contact-sheet.png"
+        ],
+        "notes": "逐页实际渲染与用户视觉参考校准；用户已确认封面方向，新增内页等待本次整体审阅。"
+      }
+    },
+    {
+      "slideId": "method",
+      "bodySilhouette": "figure-support-matrix",
+      "compositionReviewed": true,
+      "detailReviewed": true,
+      "densityStatus": "pass",
+      "titleStatus": "pass",
+      "plotOccupancyStatus": "not-applicable",
+      "evidenceWeightStatus": "pass",
+      "overflowStatus": "pass",
+      "silhouetteStatus": "pass",
+      "reviewerNotes": "七节点与七条有向连接来自FlowSpec。输入胶囊、主节点切角、复核开放括角、输出箭头及共享透明承托形成不同轮廓；连接留白有必要的关系含义。",
+      "metrics": {
+        "contentOccupancy": 0.975,
+        "paintDensity": 0.352,
+        "paintToLayoutRatio": 0.361,
+        "bodyBounds": [
+          72,
+          212,
+          1456,
+          564
+        ],
+        "internalOccupancy": "not-applicable",
+        "moduleInternalOccupancy": 0.931,
+        "measurableModuleCount": 1,
+        "lowerHalfCoverage": 0.95,
+        "dominantVisualRatio": "not-applicable",
+        "plotOccupancy": "not-applicable",
+        "largestEmptyRegionRatio": 0,
+        "evidenceWeightBalance": 1,
+        "repeatedEqualRegionCount": 0,
+        "layoutSignature": "0,0,1,0.7|0,0.7,1,0.3",
+        "layoutClusterSize": 1,
+        "layoutFamilySignature": "geometry:0,0,1,0.7|0,0.7,1,0.3",
+        "layoutFamilyClusterSize": 1,
+        "browserFindingCount": 1,
+        "browserErrorCount": 0,
+        "browserWarningCount": 1,
+        "auditSource": "browser"
+      },
+      "notApplicableReason": "视觉中心为实际设计截图或解释性文字/结构，非定量统计图；图表占用率不适用。",
+      "chartSemanticFitStatus": "not-applicable",
+      "scaledPreviewStatus": "pass",
+      "brandPlacementStatus": "warning",
+      "referenceCalibration": {
+        "status": "reviewed",
+        "sourceRefs": [
+          "public/reference-new-01.png",
+          "public/reference-new-02.png"
+        ],
+        "checked": [
+          "titleGeometry",
+          "bodySilhouette",
+          "dominantVisual",
+          "imageTextRatio",
+          "sharedEdgeBehavior",
+          "accentPolicy",
+          "prohibitedTraits"
+        ],
+        "evidence": [
+          ".deck-render/reference-calibration.html",
+          ".deck-render/contact-sheet.png"
+        ],
+        "notes": "逐页实际渲染与用户视觉参考校准；用户已确认封面方向，新增内页等待本次整体审阅。"
+      }
+    },
+    {
+      "slideId": "architecture",
+      "bodySilhouette": "hierarchy-map",
+      "compositionReviewed": true,
+      "detailReviewed": true,
+      "densityStatus": "pass",
+      "titleStatus": "pass",
+      "plotOccupancyStatus": "not-applicable",
+      "evidenceWeightStatus": "pass",
+      "overflowStatus": "pass",
+      "silhouetteStatus": "pass",
+      "reviewerNotes": "材料、分析、表达三层面积逐层变化，右侧短索引和双向核对缩短垂直高度。分层间距保留，底栏不接触结论。",
+      "metrics": {
+        "contentOccupancy": 0.931,
+        "paintDensity": 0.288,
+        "paintToLayoutRatio": 0.31,
+        "bodyBounds": [
+          72,
+          212,
+          1456,
+          564
+        ],
+        "internalOccupancy": "not-applicable",
+        "moduleInternalOccupancy": 0.688,
+        "measurableModuleCount": 4,
+        "lowerHalfCoverage": 0.883,
+        "dominantVisualRatio": "not-applicable",
+        "plotOccupancy": "not-applicable",
+        "largestEmptyRegionRatio": 0.02,
+        "evidenceWeightBalance": 1,
+        "repeatedEqualRegionCount": 0,
+        "layoutSignature": "0,0,0.75,0.85|0.8,0,0.2,0.85|0,0.85,1,0.1",
+        "layoutClusterSize": 1,
+        "layoutFamilySignature": "left-dominant-right-aside",
+        "layoutFamilyClusterSize": 1,
+        "browserFindingCount": 1,
+        "browserErrorCount": 0,
+        "browserWarningCount": 1,
+        "auditSource": "browser"
+      },
+      "notApplicableReason": "视觉中心为实际设计截图或解释性文字/结构，非定量统计图；图表占用率不适用。",
+      "chartSemanticFitStatus": "not-applicable",
+      "scaledPreviewStatus": "pass",
+      "brandPlacementStatus": "warning",
+      "referenceCalibration": {
+        "status": "reviewed",
+        "sourceRefs": [
+          "public/reference-new-01.png",
+          "public/reference-new-02.png"
+        ],
+        "checked": [
+          "titleGeometry",
+          "bodySilhouette",
+          "dominantVisual",
+          "imageTextRatio",
+          "sharedEdgeBehavior",
+          "accentPolicy",
+          "prohibitedTraits"
+        ],
+        "evidence": [
+          ".deck-render/reference-calibration.html",
+          ".deck-render/contact-sheet.png"
+        ],
+        "notes": "逐页实际渲染与用户视觉参考校准；用户已确认封面方向，新增内页等待本次整体审阅。"
+      }
+    },
+    {
+      "slideId": "chart",
+      "bodySilhouette": "chart-interpretation-strip",
+      "compositionReviewed": true,
+      "detailReviewed": true,
+      "densityStatus": "pass",
+      "titleStatus": "pass",
+      "plotOccupancyStatus": "pass",
+      "evidenceWeightStatus": "pass",
+      "overflowStatus": "pass",
+      "silhouetteStatus": "pass",
+      "reviewerNotes": "实际字体体积以共同0–18MB刻度和零基线成对呈现；来源、换算与35.6%计算明确，完整主图足够大，未按文件体积推断字体优劣。",
+      "metrics": {
+        "contentOccupancy": 0.979,
+        "paintDensity": 0.67,
+        "paintToLayoutRatio": 0.684,
+        "bodyBounds": [
+          72,
+          202,
+          1456,
+          574
+        ],
+        "internalOccupancy": "not-applicable",
+        "moduleInternalOccupancy": 0.924,
+        "measurableModuleCount": 1,
+        "lowerHalfCoverage": 0.958,
+        "dominantVisualRatio": 0.489,
+        "plotOccupancy": 0.8311698716594006,
+        "largestEmptyRegionRatio": 0,
+        "evidenceWeightBalance": 1,
+        "repeatedEqualRegionCount": 0,
+        "layoutSignature": "0,0,1,0.75|0,0.75,1,0.25",
+        "layoutClusterSize": 1,
+        "layoutFamilySignature": "geometry:0,0,1,0.75|0,0.75,1,0.25",
+        "layoutFamilyClusterSize": 1,
+        "browserFindingCount": 1,
+        "browserErrorCount": 0,
+        "browserWarningCount": 1,
+        "auditSource": "browser"
+      },
+      "chartSemanticFitStatus": "pass",
+      "scaledPreviewStatus": "pass",
+      "brandPlacementStatus": "warning",
+      "referenceCalibration": {
+        "status": "reviewed",
+        "sourceRefs": [
+          "public/reference-new-01.png",
+          "public/reference-new-02.png"
+        ],
+        "checked": [
+          "titleGeometry",
+          "bodySilhouette",
+          "dominantVisual",
+          "imageTextRatio",
+          "sharedEdgeBehavior",
+          "accentPolicy",
+          "prohibitedTraits"
+        ],
+        "evidence": [
+          ".deck-render/reference-calibration.html",
+          ".deck-render/contact-sheet.png"
+        ],
+        "notes": "逐页实际渲染与用户视觉参考校准；用户已确认封面方向，新增内页等待本次整体审阅。"
+      }
+    },
+    {
+      "slideId": "evidence",
+      "bodySilhouette": "evidence-table-board",
+      "compositionReviewed": true,
+      "detailReviewed": true,
+      "densityStatus": "pass",
+      "titleStatus": "pass",
+      "plotOccupancyStatus": "not-applicable",
+      "evidenceWeightStatus": "pass",
+      "overflowStatus": "pass",
+      "silhouetteStatus": "pass",
+      "reviewerNotes": "六行核对矩阵使用共享行底与清晰列宽，字号和留白可读；此处矩形源于表格关系，未扩散为全篇容器。下方两条解释与结论分离。",
+      "metrics": {
+        "contentOccupancy": 0.951,
+        "paintDensity": 0.839,
+        "paintToLayoutRatio": 0.882,
+        "bodyBounds": [
+          72,
+          212,
+          1456,
+          564
+        ],
+        "internalOccupancy": "not-applicable",
+        "moduleInternalOccupancy": 0.665,
+        "measurableModuleCount": 2,
+        "lowerHalfCoverage": 0.916,
+        "dominantVisualRatio": "not-applicable",
+        "plotOccupancy": "not-applicable",
+        "largestEmptyRegionRatio": 0.004,
+        "evidenceWeightBalance": 1,
+        "repeatedEqualRegionCount": 0,
+        "layoutSignature": "0,0,1,0.8|0,0.85,1,0.15",
+        "layoutClusterSize": 1,
+        "layoutFamilySignature": "geometry:0,0,1,0.8|0,0.85,1,0.15",
+        "layoutFamilyClusterSize": 1,
+        "browserFindingCount": 1,
+        "browserErrorCount": 0,
+        "browserWarningCount": 1,
+        "auditSource": "browser"
+      },
+      "notApplicableReason": "视觉中心为实际设计截图或解释性文字/结构，非定量统计图；图表占用率不适用。",
+      "chartSemanticFitStatus": "not-applicable",
+      "scaledPreviewStatus": "pass",
+      "brandPlacementStatus": "warning",
+      "referenceCalibration": {
+        "status": "reviewed",
+        "sourceRefs": [
+          "public/reference-new-01.png",
+          "public/reference-new-02.png"
+        ],
+        "checked": [
+          "titleGeometry",
+          "bodySilhouette",
+          "dominantVisual",
+          "imageTextRatio",
+          "sharedEdgeBehavior",
+          "accentPolicy",
+          "prohibitedTraits"
+        ],
+        "evidence": [
+          ".deck-render/reference-calibration.html",
+          ".deck-render/contact-sheet.png"
+        ],
+        "notes": "逐页实际渲染与用户视觉参考校准；用户已确认封面方向，新增内页等待本次整体审阅。"
+      }
+    },
+    {
+      "slideId": "progress",
+      "bodySilhouette": "process-board",
+      "compositionReviewed": true,
+      "detailReviewed": true,
+      "densityStatus": "pass",
+      "titleStatus": "pass",
+      "plotOccupancyStatus": "not-applicable",
+      "evidenceWeightStatus": "pass",
+      "overflowStatus": "pass",
+      "silhouetteStatus": "pass",
+      "reviewerNotes": "四步流程与三条材料产出相连；步骤间连接由已登记节点关系生成。下半页材料清单和开放括角下一步说明不等分，形成上下展开。",
+      "metrics": {
+        "contentOccupancy": 0.943,
+        "paintDensity": 0.346,
+        "paintToLayoutRatio": 0.367,
+        "bodyBounds": [
+          72,
+          212,
+          1456,
+          564
+        ],
+        "internalOccupancy": "not-applicable",
+        "moduleInternalOccupancy": 0.567,
+        "measurableModuleCount": 2,
+        "lowerHalfCoverage": 0.97,
+        "dominantVisualRatio": "not-applicable",
+        "plotOccupancy": "not-applicable",
+        "largestEmptyRegionRatio": 0.002,
+        "evidenceWeightBalance": 1,
+        "repeatedEqualRegionCount": 0,
+        "layoutSignature": "0,0,1,0.45|0,0.5,0.6,0.5|0.6,0.5,0.4,0.5",
+        "layoutClusterSize": 1,
+        "layoutFamilySignature": "geometry:0,0,1,0.45|0,0.5,0.6,0.5|0.6,0.5,0.4,0.5",
+        "layoutFamilyClusterSize": 1,
+        "browserFindingCount": 1,
+        "browserErrorCount": 0,
+        "browserWarningCount": 1,
+        "auditSource": "browser"
+      },
+      "notApplicableReason": "视觉中心为实际设计截图或解释性文字/结构，非定量统计图；图表占用率不适用。",
+      "chartSemanticFitStatus": "not-applicable",
+      "flowGeometryStatus": "pass",
+      "scaledPreviewStatus": "pass",
+      "brandPlacementStatus": "warning",
+      "referenceCalibration": {
+        "status": "reviewed",
+        "sourceRefs": [
+          "public/reference-new-01.png",
+          "public/reference-new-02.png"
+        ],
+        "checked": [
+          "titleGeometry",
+          "bodySilhouette",
+          "dominantVisual",
+          "imageTextRatio",
+          "sharedEdgeBehavior",
+          "accentPolicy",
+          "prohibitedTraits"
+        ],
+        "evidence": [
+          ".deck-render/reference-calibration.html",
+          ".deck-render/contact-sheet.png"
+        ],
+        "notes": "逐页实际渲染与用户视觉参考校准；用户已确认封面方向，新增内页等待本次整体审阅。"
+      }
+    },
+    {
+      "slideId": "synthesis",
+      "bodySilhouette": "synthesis-matrix",
+      "compositionReviewed": true,
+      "detailReviewed": true,
+      "densityStatus": "pass",
+      "titleStatus": "pass",
+      "plotOccupancyStatus": "not-applicable",
+      "evidenceWeightStatus": "pass",
+      "overflowStatus": "pass",
+      "silhouetteStatus": "pass",
+      "reviewerNotes": "总结从重复的四行表格改为三个不同宽度与形态的区域：切角识别块、开放关系框、证据细节列；下方手书与三条归纳保持清楚间距。",
+      "metrics": {
+        "contentOccupancy": 0.98,
+        "paintDensity": 0.415,
+        "paintToLayoutRatio": 0.424,
+        "bodyBounds": [
+          72,
+          212,
+          1456,
+          564
+        ],
+        "internalOccupancy": "not-applicable",
+        "moduleInternalOccupancy": 0.461,
+        "measurableModuleCount": 4,
+        "lowerHalfCoverage": 0.978,
+        "dominantVisualRatio": "not-applicable",
+        "plotOccupancy": "not-applicable",
+        "largestEmptyRegionRatio": 0,
+        "evidenceWeightBalance": 1,
+        "repeatedEqualRegionCount": 0,
+        "layoutSignature": "0,0,1,0.55|0,0.6,1,0.4",
+        "layoutClusterSize": 1,
+        "layoutFamilySignature": "geometry:0,0,1,0.55|0,0.6,1,0.4",
+        "layoutFamilyClusterSize": 1,
+        "browserFindingCount": 1,
+        "browserErrorCount": 0,
+        "browserWarningCount": 1,
+        "auditSource": "browser"
+      },
+      "notApplicableReason": "视觉中心为实际设计截图或解释性文字/结构，非定量统计图；图表占用率不适用。",
+      "chartSemanticFitStatus": "not-applicable",
+      "scaledPreviewStatus": "pass",
+      "brandPlacementStatus": "warning",
+      "referenceCalibration": {
+        "status": "reviewed",
+        "sourceRefs": [
+          "public/reference-new-01.png",
+          "public/reference-new-02.png"
+        ],
+        "checked": [
+          "titleGeometry",
+          "bodySilhouette",
+          "dominantVisual",
+          "imageTextRatio",
+          "sharedEdgeBehavior",
+          "accentPolicy",
+          "prohibitedTraits"
+        ],
+        "evidence": [
+          ".deck-render/reference-calibration.html",
+          ".deck-render/contact-sheet.png"
+        ],
+        "notes": "逐页实际渲染与用户视觉参考校准；用户已确认封面方向，新增内页等待本次整体审阅。"
+      }
+    },
+    {
+      "slideId": "closing",
+      "compositionReviewed": true,
+      "detailReviewed": true,
+      "densityStatus": "pass",
+      "titleStatus": "pass",
+      "plotOccupancyStatus": "not-applicable",
+      "evidenceWeightStatus": "pass",
+      "overflowStatus": "pass",
+      "silhouetteStatus": "not-applicable",
+      "reviewerNotes": "横排手书结束语配三个简短要点，概念装置降低对比度并退居右下；学校标识、正文、按钮与页脚无重叠。",
+      "metrics": {
+        "browserFindingCount": 1,
+        "browserErrorCount": 0,
+        "browserWarningCount": 1,
+        "auditSource": "browser"
+      },
+      "notApplicableReason": "封面和结束页免于正文占用率门槛。",
+      "chartSemanticFitStatus": "not-applicable",
+      "scaledPreviewStatus": "pass",
+      "brandPlacementStatus": "warning",
+      "referenceCalibration": {
+        "status": "reviewed",
+        "sourceRefs": [
+          "public/reference-new-01.png",
+          "public/reference-new-02.png"
+        ],
+        "checked": [
+          "titleGeometry",
+          "bodySilhouette",
+          "dominantVisual",
+          "imageTextRatio",
+          "sharedEdgeBehavior",
+          "accentPolicy",
+          "prohibitedTraits"
+        ],
+        "evidence": [
+          ".deck-render/reference-calibration.html",
+          ".deck-render/contact-sheet.png"
+        ],
+        "notes": "逐页实际渲染与用户视觉参考校准；用户已确认封面方向，新增内页等待本次整体审阅。"
+      }
+    }
+  ],
+  "currentRenderFingerprint": "sha256:f7a8a4a149a7cd733764d87fda2216669781a14a7bcdde2c20dc5a825b460c0a",
+  "reviewInvalidated": false,
+  "renderFingerprint": "sha256:f7a8a4a149a7cd733764d87fda2216669781a14a7bcdde2c20dc5a825b460c0a",
+  "reviewedAt": "2026-10-19T06:27:37.431Z",
+  "reviewEvidence": [
+    ".deck-render/contact-sheet.png",
+    ".deck-render/reference-calibration.html"
+  ],
+  "referenceCalibration": {
+    "status": "reviewed",
+    "checked": [
+      "titleGeometry",
+      "bodySilhouette",
+      "dominantVisual",
+      "imageTextRatio",
+      "sharedEdgeBehavior",
+      "accentPolicy",
+      "prohibitedTraits"
+    ],
+    "evidence": [
+      ".deck-render/contact-sheet.png",
+      ".deck-render/reference-calibration.html"
+    ],
+    "notes": "已观察完整十页缩略图及全部正文细节；色彩、图文比例、异形和共享透明面按角色使用。"
+  }
+}

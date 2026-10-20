@@ -1,0 +1,35 @@
+{
+  "failures": [
+    { "id": "content-low", "metrics": { "contentOccupancy": 0.69, "internalOccupancy": 0.8, "moduleInternalOccupancy": 0.8, "lowerHalfCoverage": 0.6, "plotOccupancy": 0.7, "repeatedEqualRegionCount": 0 }, "options": { "hasTypeA": true }, "expect": "content-occupancy" },
+    { "id": "hollow-card-paint-density", "metrics": { "contentOccupancy": 0.88, "paintDensity": 0.32, "paintToLayoutRatio": 0.36, "internalOccupancy": "not-applicable", "moduleInternalOccupancy": 0.48, "lowerHalfCoverage": 0.88, "plotOccupancy": "not-applicable", "repeatedEqualRegionCount": 0 }, "options": {}, "expect": "paint-density" },
+    { "id": "hollow-card-paint-layout-ratio", "metrics": { "contentOccupancy": 0.90, "paintDensity": 0.40, "paintToLayoutRatio": 0.44, "internalOccupancy": "not-applicable", "moduleInternalOccupancy": 0.51, "lowerHalfCoverage": 0.82, "plotOccupancy": "not-applicable", "repeatedEqualRegionCount": 0 }, "options": {}, "expect": "paint-to-layout-ratio" },
+    { "id": "module-low-manual-pass", "metrics": { "contentOccupancy": 0.8, "internalOccupancy": 0.8, "moduleInternalOccupancy": 0.22, "lowerHalfCoverage": 0.6, "plotOccupancy": 0.7, "repeatedEqualRegionCount": 0 }, "options": { "hasTypeA": true }, "expect": "module-internal-occupancy" },
+    { "id": "measured-module-hidden-as-na", "metrics": { "contentOccupancy": 0.8, "internalOccupancy": "not-applicable", "moduleInternalOccupancy": "not-applicable", "measurableModuleCount": 2, "lowerHalfCoverage": 0.6, "plotOccupancy": "not-applicable", "repeatedEqualRegionCount": 0 }, "options": {}, "expect": "module-measurement-missing" },
+    { "id": "type-a-na", "metrics": { "contentOccupancy": 0.8, "internalOccupancy": 0.8, "moduleInternalOccupancy": 0.8, "lowerHalfCoverage": 0.6, "plotOccupancy": "not-applicable", "repeatedEqualRegionCount": 0 }, "options": { "hasTypeA": true }, "expect": "type-a-plot-occupancy" },
+    { "id": "equal-regions", "metrics": { "contentOccupancy": 0.8, "internalOccupancy": 0.8, "moduleInternalOccupancy": 0.8, "lowerHalfCoverage": 0.6, "plotOccupancy": "not-applicable", "repeatedEqualRegionCount": 3 }, "options": {}, "expect": "repeated-equal-regions" },
+    { "id": "justified-but-underfilled-card-wall", "metrics": { "contentOccupancy": 0.97, "paintDensity": 0.79, "paintToLayoutRatio": 0.81, "internalOccupancy": "not-applicable", "moduleInternalOccupancy": 0.43, "lowerHalfCoverage": 0.95, "plotOccupancy": "not-applicable", "repeatedEqualRegionCount": 4 }, "options": { "repeatedRegionsJustified": true }, "expect": "justified-equal-regions-underfilled" },
+    { "id": "type-a-dominant-visual-too-small", "metrics": { "contentOccupancy": 0.96, "paintDensity": 0.56, "paintToLayoutRatio": 0.58, "internalOccupancy": "not-applicable", "moduleInternalOccupancy": 0.55, "lowerHalfCoverage": 0.92, "dominantVisualRatio": 0.33, "plotOccupancy": 0.76, "repeatedEqualRegionCount": 0 }, "options": { "hasTypeA": true }, "expect": "decisive-visual-too-small" },
+    { "id": "cross-page-template-family", "metrics": { "contentOccupancy": 0.90, "paintDensity": 0.61, "paintToLayoutRatio": 0.68, "internalOccupancy": 0.75, "moduleInternalOccupancy": 0.62, "lowerHalfCoverage": 0.78, "dominantVisualRatio": 0.50, "plotOccupancy": 0.70, "repeatedEqualRegionCount": 0, "layoutClusterSize": 4 }, "options": { "hasTypeA": true }, "expect": "cross-page-layout-repetition" },
+    { "id": "cross-page-right-aside-family", "metrics": { "contentOccupancy": 0.90, "paintDensity": 0.61, "paintToLayoutRatio": 0.68, "internalOccupancy": 0.75, "moduleInternalOccupancy": 0.62, "lowerHalfCoverage": 0.78, "dominantVisualRatio": 0.50, "plotOccupancy": 0.70, "repeatedEqualRegionCount": 0, "layoutClusterSize": 2, "layoutFamilyClusterSize": 4 }, "options": { "hasTypeA": true }, "expect": "cross-page-layout-family-repetition" },
+    { "id": "browser-error-overrides-pass", "metrics": { "contentOccupancy": 0.8, "internalOccupancy": 0.8, "moduleInternalOccupancy": 0.8, "lowerHalfCoverage": 0.6, "plotOccupancy": 0.7, "repeatedEqualRegionCount": 0, "browserErrorCount": 1 }, "options": { "hasTypeA": true }, "expect": "browser-measurement-error" }
+  ],
+  "passes": [
+    { "id": "readable-text-module", "metrics": { "contentOccupancy": 0.78, "internalOccupancy": "not-applicable", "moduleInternalOccupancy": 0.59, "lowerHalfCoverage": 0.55, "plotOccupancy": "not-applicable", "repeatedEqualRegionCount": 0, "browserErrorCount": 0 }, "options": {} },
+    { "id": "dense-type-a", "metrics": { "contentOccupancy": 0.78, "paintDensity": 0.58, "paintToLayoutRatio": 0.74, "internalOccupancy": 0.68, "moduleInternalOccupancy": 0.66, "lowerHalfCoverage": 0.55, "dominantVisualRatio": 0.52, "plotOccupancy": 0.72, "repeatedEqualRegionCount": 0, "layoutClusterSize": 1, "browserErrorCount": 0 }, "options": { "hasTypeA": true } },
+    { "id": "justified-equal-regions", "metrics": { "contentOccupancy": 0.78, "internalOccupancy": 0.68, "moduleInternalOccupancy": 0.66, "lowerHalfCoverage": 0.55, "plotOccupancy": "not-applicable", "repeatedEqualRegionCount": 3, "browserErrorCount": 0 }, "options": { "repeatedRegionsJustified": true } }
+  ],
+  "silhouetteFailures": [
+    { "id": "label-only-comparison", "declared": "comparison-bridge", "roles": { "comparison-left": 1, "comparison-right": 1 }, "expect": "silhouette-role-missing:bridge" },
+    { "id": "fake-hierarchy", "declared": "hierarchy-map", "roles": { "hierarchy-root": 1, "hierarchy-node": 2, "hierarchy-edge": 1 }, "expect": "silhouette-role-count:hierarchy-node" }
+  ],
+  "silhouettePasses": [
+    { "id": "real-figure-support", "declared": "figure-support-matrix", "roles": { "dominant": 1, "support": 2 } }
+  ],
+  "calibrationFailures": [
+    { "id": "auto-reviewed-without-evidence", "contract": { "sourceRefs": ["reference.png"], "calibrationStatus": "reviewed" }, "calibration": { "status": "reviewed", "checked": ["titleGeometry", "bodySilhouette", "dominantVisual", "imageTextRatio", "sharedEdgeBehavior", "accentPolicy", "prohibitedTraits"], "evidence": [] }, "expect": "reference-calibration-evidence-missing" },
+    { "id": "pending-reference", "contract": { "sourceRefs": ["reference.png"], "calibrationStatus": "pending" }, "calibration": { "status": "pending", "checked": [], "evidence": [] }, "expect": "reference-contract-not-reviewed" }
+  ],
+  "calibrationPasses": [
+    { "id": "evidenced-review", "contract": { "sourceRefs": ["reference.png"], "calibrationStatus": "reviewed" }, "calibration": { "status": "reviewed", "checked": ["titleGeometry", "bodySilhouette", "dominantVisual", "imageTextRatio", "sharedEdgeBehavior", "accentPolicy", "prohibitedTraits"], "evidence": [".deck-render/reference-contact-sheet.png"] } }
+  ]
+}

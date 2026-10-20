@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "research-html-presentation/flow-spec.schema.json",
+  "title": "Research HTML presentation FlowSpec",
+  "type": "object",
+  "required": ["id", "nodes", "edges"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "nodes": { "type": "array", "minItems": 2, "items": { "$ref": "#/$defs/node" } },
+    "edges": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/edge" } },
+    "readingOrder": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+    "presentation": { "enum": ["standard", "hero"] },
+    "layout": { "enum": ["horizontal", "vertical", "branch-merge", "swimlane", "feedback-loop", "input-process-output-validation", "main-with-evidence", "radial-mechanism"] },
+    "lanes": { "type": "array", "items": { "type": "object", "required": ["id", "label"], "properties": { "id": { "type": "string", "minLength": 1 }, "label": { "type": "string", "minLength": 1 } }, "additionalProperties": false } },
+    "printState": { "enum": ["complete", "numbered"] }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "node": {
+      "type": "object",
+      "required": ["id", "role", "label"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "role": { "enum": ["input", "process", "output", "validation", "decision", "evidence", "feedback"] },
+        "label": { "type": "string", "minLength": 1 },
+        "eyebrow": { "type": "string", "minLength": 1 },
+        "detail": { "type": "string", "minLength": 1 },
+        "value": { "type": "string", "minLength": 1 },
+        "group": { "type": "string" },
+        "evidenceRef": { "type": "string" },
+        "emphasis": { "enum": ["normal", "critical", "expected"] },
+        "size": { "enum": ["small", "medium", "large"] }
+      },
+      "additionalProperties": false
+    },
+    "edge": {
+      "type": "object",
+      "required": ["from", "to", "kind", "directed"],
+      "properties": {
+        "from": { "type": "string", "minLength": 1 },
+        "to": { "type": "string", "minLength": 1 },
+        "label": { "type": "string" },
+        "kind": { "enum": ["primary", "secondary", "feedback"] },
+        "directed": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

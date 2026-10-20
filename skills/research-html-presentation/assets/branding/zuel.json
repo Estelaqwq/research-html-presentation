@@ -1,0 +1,9 @@
+{
+  "profile": "zuel",
+  "logo": {
+    "src": "./zuel-logo.png",
+    "alt": "中南财经政法大学",
+    "institution": "中南财经政法大学",
+    "containsInstitutionName": true
+  }
+}

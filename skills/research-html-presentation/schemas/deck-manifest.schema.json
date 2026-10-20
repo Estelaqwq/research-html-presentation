@@ -1,0 +1,1105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "research-html-presentation/deck-manifest.schema.json",
+  "title": "Research HTML Presentation manifest",
+  "description": "Structural manifest contract. Versions 0–2 remain readable legacy dataset contracts; current creation paths must declare version 3.",
+  "type": "object",
+  "required": [
+    "title"
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "profile": {
+      "enum": [
+        "thesis-defense",
+        "literature-review",
+        "project-review",
+        "grant-review",
+        "conference-talk",
+        "course-report",
+        "reading-deck",
+        "dataset-report",
+        "work-report"
+      ]
+    },
+    "stage": {
+      "enum": [
+        "prototype",
+        "complete"
+      ]
+    },
+    "outputMode": {
+      "$ref": "#/$defs/outputMode"
+    },
+    "visualStyle": {
+      "$ref": "#/$defs/visualStyle"
+    },
+    "compositionProfile": {
+      "$ref": "#/$defs/compositionProfile"
+    },
+    "designSystemVersion": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2,
+      "description": "New academic-light projects use 2; omission remains legacy-readable."
+    },
+    "referenceVisualContract": {
+      "$ref": "#/$defs/referenceVisualContract"
+    },
+    "prototypeApproval": {
+      "$ref": "#/$defs/prototypeApproval"
+    },
+    "datasetSemanticVersion": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3
+    },
+    "qualityContractVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "newProject": {
+      "type": "boolean"
+    },
+    "scaffoldPlaceholder": {
+      "type": "boolean"
+    },
+    "requestedCapabilities": {
+      "type": "object",
+      "properties": {
+        "authoring": {
+          "enum": [
+            "required",
+            "disabled",
+            "optional"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "analysisMode": {
+      "$ref": "evidence-registry.schema.json#/$defs/analysisMode"
+    },
+    "primaryQuestion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "closingPolicy": {
+      "enum": [
+        "separate",
+        "combined"
+      ]
+    },
+    "evidenceRegistry": {
+      "$ref": "#/$defs/projectRelativePath"
+    },
+    "citationRegistry": {
+      "$ref": "#/$defs/projectRelativePath"
+    },
+    "pageTotal": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "progress": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "slides": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/slide"
+      }
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/reportSection"
+      }
+    },
+    "chapters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/chapter"
+      }
+    },
+    "navigation": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/navigationItem"
+      }
+    },
+    "runtimeHooks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/runtimeHook"
+      }
+    },
+    "sharedPresentationLayer": {
+      "$ref": "#/$defs/sharedPresentationLayer"
+    },
+    "analysisFlow": {
+      "type": "object",
+      "required": [
+        "enabled"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "projectId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "initialGraph": {
+          "$ref": "#/$defs/projectRelativePath"
+        }
+      },
+      "additionalProperties": false
+    },
+    "analysisCompanion": {
+      "type": "object",
+      "required": [
+        "enabled"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "mode": {
+          "const": "deterministic"
+        },
+        "projectId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "llm": {
+          "type": "object",
+          "required": [
+            "enabled"
+          ],
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "apiPath": {
+              "type": "string",
+              "pattern": "^/[A-Za-z0-9/_-]+$"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "authoring": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "environment": {
+          "enum": [
+            "development",
+            "production"
+          ]
+        },
+        "registry": {
+          "$ref": "#/$defs/projectRelativePath"
+        },
+        "patch": {
+          "$ref": "#/$defs/projectRelativePath"
+        }
+      },
+      "additionalProperties": true
+    },
+    "dataHealth": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "enabled"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "report": {
+          "$ref": "#/$defs/projectRelativePath"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "enabled": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "report"
+            ]
+          }
+        }
+      ]
+    },
+    "reportContent": {
+      "$ref": "#/$defs/projectRelativePath"
+    },
+    "reportPresentation": {
+      "type": "object",
+      "properties": {
+        "toolbar": {
+          "type": "boolean"
+        },
+        "copyDepth": {
+          "enum": [
+            "compact",
+            "detailed"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "outputFormVersion": {
+      "const": 1,
+      "description": "New user-selected-form generation contract; omission preserves existing manifest behavior."
+    },
+    "branding": {
+      "$ref": "#/$defs/branding"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "outputMode"
+        ],
+        "properties": {
+          "outputMode": {
+            "const": "scroll-report"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "profile",
+          "sections"
+        ],
+        "properties": {},
+        "not": {
+          "required": [
+            "slides"
+          ]
+        }
+      },
+      "else": {
+        "required": [
+          "slides"
+        ],
+        "not": {
+          "required": [
+            "sections"
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "outputFormVersion"
+        ],
+        "properties": {
+          "outputFormVersion": {
+            "const": 1
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "outputMode"
+        ]
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "newProject",
+          "profile"
+        ],
+        "properties": {
+          "newProject": {
+            "const": true
+          },
+          "profile": {
+            "const": "dataset-report"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "outputMode",
+          "datasetSemanticVersion"
+        ],
+        "properties": {
+          "datasetSemanticVersion": {
+            "const": 3
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "analysisCompanion"
+        ],
+        "properties": {
+          "analysisCompanion": {
+            "required": [
+              "enabled"
+            ],
+            "properties": {
+              "enabled": {
+                "const": true
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "profile",
+          "outputMode",
+          "evidenceRegistry"
+        ],
+        "properties": {
+          "profile": {
+            "const": "dataset-report"
+          },
+          "outputMode": {
+            "const": "scroll-report"
+          },
+          "analysisCompanion": {
+            "required": [
+              "enabled",
+              "mode",
+              "projectId"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "analysisFlow"
+        ],
+        "properties": {
+          "analysisFlow": {
+            "required": [
+              "enabled"
+            ],
+            "properties": {
+              "enabled": {
+                "const": true
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "profile",
+          "outputMode",
+          "evidenceRegistry"
+        ],
+        "properties": {
+          "profile": {
+            "const": "dataset-report"
+          },
+          "outputMode": {
+            "const": "scroll-report"
+          },
+          "analysisFlow": {
+            "required": [
+              "enabled",
+              "projectId",
+              "initialGraph"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "dataHealth"
+        ],
+        "properties": {
+          "dataHealth": {
+            "required": [
+              "enabled"
+            ],
+            "properties": {
+              "enabled": {
+                "const": true
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "profile",
+          "outputMode"
+        ],
+        "properties": {
+          "profile": {
+            "const": "dataset-report"
+          },
+          "outputMode": {
+            "const": "scroll-report"
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": true,
+  "$defs": {
+    "outputMode": {
+      "enum": [
+        "slide-deck",
+        "scroll-report"
+      ]
+    },
+    "visualStyle": {
+      "enum": [
+        "academic-light",
+        "tech-engineering-dark"
+      ]
+    },
+    "compositionProfile": {
+      "enum": [
+        "standard",
+        "compact-academic-board"
+      ]
+    },
+    "prototypeApproval": {
+      "type": "object",
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "pending",
+            "approved",
+            "waived"
+          ]
+        },
+        "reviewedPrototypeIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "reviewEvidence": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "decisionNote": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "referenceVisualContract": {
+      "type": "object",
+      "required": [
+        "sourceRefs",
+        "titleGeometry",
+        "headerHeight",
+        "leadTreatment",
+        "bodySilhouette",
+        "primaryRegionCount",
+        "dominantVisualPosition",
+        "imageTextRatio",
+        "figureDensity",
+        "sharedEdgeRatio",
+        "independentCardCount",
+        "bottomConclusionBand",
+        "accentPolicy",
+        "logoRole",
+        "largestEmptyRegion",
+        "prohibitedTraits"
+      ],
+      "properties": {
+        "sourceRefs": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "primaryColors": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "supportingColors": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "saturationProfile": {
+          "type": "string",
+          "minLength": 1
+        },
+        "titleGeometry": {
+          "type": "string",
+          "minLength": 1
+        },
+        "headerHeight": {
+          "type": "string",
+          "minLength": 1
+        },
+        "leadTreatment": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bodySilhouette": {
+          "type": "string",
+          "minLength": 1
+        },
+        "primaryRegionCount": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "secondaryRegionCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "dominantVisualPosition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "imageTextRatio": {
+          "type": "string",
+          "minLength": 1
+        },
+        "figureDensity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "containerForms": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "sharedEdgeRatio": {
+          "type": "string",
+          "minLength": 1
+        },
+        "independentCardCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "lineHierarchy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "shadowIntensity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "gradientPolicy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bottomConclusionBand": {
+          "enum": [
+            "present",
+            "optional",
+            "absent"
+          ]
+        },
+        "accentPolicy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "logoRole": {
+          "type": "string",
+          "minLength": 1
+        },
+        "largestEmptyRegion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "prohibitedTraits": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "calibrationStatus": {
+          "enum": [
+            "pending",
+            "reviewed",
+            "failed"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "projectRelativePath": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Validators resolve this path and enforce project-root confinement."
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "semanticUnitFields": {
+      "type": "object",
+      "properties": {
+        "claimIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "visualIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "citationIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "findingIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "dataFactIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "methodIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "resultIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "titleBasisIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "takeawayBasisIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "substantiveKinds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "substantiveContribution": {
+          "type": "string"
+        },
+        "audienceTakeaway": {
+          "type": "string"
+        },
+        "interpretationChangingBoundary": {
+          "type": "boolean"
+        },
+        "contentUtilityStatus": {
+          "enum": [
+            "keep",
+            "merge",
+            "remove"
+          ]
+        },
+        "evidenceLinkRationale": {
+          "type": "string"
+        },
+        "layoutRationale": {
+          "description": "Auditable reason for an intentionally low-density scientific or narrative layout. Prefer the object form with a reason and basis IDs.",
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "object",
+              "required": [
+                "reason"
+              ],
+              "properties": {
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "basisIds": {
+                  "$ref": "#/$defs/stringArray"
+                },
+                "reviewedBy": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "additionalProperties": true
+            }
+          ]
+        },
+        "densityException": {
+          "description": "Alias for layoutRationale; complete-stage density exemptions must remain auditable.",
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "object",
+              "required": [
+                "reason"
+              ],
+              "properties": {
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "basisIds": {
+                  "$ref": "#/$defs/stringArray"
+                },
+                "reviewedBy": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "additionalProperties": true
+            }
+          ]
+        },
+        "bodySilhouette": {
+          "$ref": "#/$defs/bodySilhouette"
+        },
+        "dominantVisualPosition": {
+          "type": "string"
+        },
+        "dominantVisualArea": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "primaryRegionCount": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "secondaryRegionCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "fullRectangleCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "openRegionCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "containerForms": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "bottomConclusionBand": {
+          "type": "boolean"
+        },
+        "imageTextRatio": {
+          "type": "string"
+        },
+        "usesFixedRightAside": {
+          "type": "boolean"
+        },
+        "isomorphicWithPriorTwo": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "bodySilhouette": {
+      "enum": [
+        "dominant-figure-aside",
+        "figure-support-matrix",
+        "comparison-bridge",
+        "process-board",
+        "evidence-table-board",
+        "chart-interpretation-strip",
+        "hierarchy-map",
+        "synthesis-matrix",
+        "multi-panel-evidence",
+        "text-structure-board"
+      ]
+    },
+    "slide": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/semanticUnitFields"
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "section",
+            "title",
+            "layout"
+          ],
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/id"
+            },
+            "narrativeUnitId": {
+              "$ref": "#/$defs/id"
+            },
+            "section": {
+              "type": "string",
+              "minLength": 1
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1
+            },
+            "titleMode": {
+              "enum": [
+                "single-line",
+                "two-line"
+              ]
+            },
+            "type": {
+              "enum": [
+                "cover",
+                "content",
+                "synthesis",
+                "closing"
+              ]
+            },
+            "layout": {
+              "type": "string",
+              "pattern": "^L(?:0[1-9]|1[0-9]|2[0-4])$"
+            },
+            "fragments": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "series": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": true
+        }
+      ]
+    },
+    "reportSection": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/semanticUnitFields"
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "chapter",
+            "title",
+            "role"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*$"
+            },
+            "narrativeUnitId": {
+              "$ref": "#/$defs/id"
+            },
+            "chapter": {
+              "type": "string",
+              "minLength": 1
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1
+            },
+            "titleMode": {
+              "enum": [
+                "single-line",
+                "two-line"
+              ]
+            },
+            "role": {
+              "enum": [
+                "hero",
+                "introduction",
+                "analysis-design",
+                "decisive-result",
+                "finding",
+                "deep-insight",
+                "application",
+                "boundary",
+                "synthesis",
+                "closing",
+                "work",
+                "materials",
+                "method",
+                "comparison",
+                "progress",
+                "plan"
+              ]
+            }
+          },
+          "additionalProperties": true
+        }
+      ]
+    },
+    "chapter": {
+      "type": "object",
+      "required": [
+        "label"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "slide": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "slideId": {
+          "$ref": "#/$defs/id"
+        },
+        "copyExceptionRationale": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "navigationItem": {
+      "type": "object",
+      "required": [
+        "sectionId",
+        "label"
+      ],
+      "properties": {
+        "sectionId": {
+          "$ref": "#/$defs/id"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "copyExceptionRationale": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "runtimeHook": {
+      "type": "object",
+      "required": [
+        "id",
+        "visualId",
+        "action"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "visualId": {
+          "$ref": "#/$defs/id"
+        },
+        "action": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "sharedPresentationLayer": {
+      "type": "object",
+      "properties": {
+        "runtime": {
+          "enum": [
+            "DeckRuntime",
+            "ReportRuntime"
+          ]
+        },
+        "presenter": {
+          "const": "PresenterView"
+        },
+        "slideSource": {
+          "const": "slides"
+        },
+        "sectionSource": {
+          "const": "sections"
+        },
+        "chartAdapter": {
+          "type": "string"
+        },
+        "branding": {
+          "type": "string"
+        },
+        "styles": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "features": {
+          "$ref": "#/$defs/stringArray"
+        }
+      },
+      "additionalProperties": true
+    },
+    "branding": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "profile"
+          ],
+          "properties": {
+            "profile": {
+              "const": "none"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "profile",
+            "logo"
+          ],
+          "properties": {
+            "profile": {
+              "const": "zuel"
+            },
+            "logo": {
+              "type": "object",
+              "required": [
+                "src",
+                "alt"
+              ],
+              "properties": {
+                "src": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "alt": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "institution": {
+                  "type": "string"
+                },
+                "containsInstitutionName": {
+                  "type": "boolean"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

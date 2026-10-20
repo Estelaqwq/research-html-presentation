@@ -1,0 +1,319 @@
+{
+  "claims": [
+    {
+      "id": "c-cover",
+      "text": "封面使用嵌入的粗书体并收紧字号，以字形和比例建立文字层级。",
+      "sourceRef": "src/App.tsx",
+      "evidenceStatus": "DIRECT"
+    },
+    {
+      "id": "c-method",
+      "text": "解释性关系图展示四类材料进入证据关联、复核与结论回溯。",
+      "sourceRef": "flow-specs.json",
+      "evidenceStatus": "CONTEXTUAL"
+    },
+    {
+      "id": "c-comparison",
+      "text": "上轮矩形分栏与本轮异形、透明叠层的结构页存在可见差异。",
+      "sourceRef": "src/App.tsx",
+      "evidenceStatus": "DIRECT"
+    }
+  ],
+  "datasets": [],
+  "transforms": [],
+  "analyses": [],
+  "narrativeUnits": [
+    {
+      "id": "narrative-cover",
+      "chapterId": "cover",
+      "title": "数智研析 让证据更清晰",
+      "role": "introduction",
+      "priority": "MUST_SHOW",
+      "claimIds": [
+        "c-cover"
+      ],
+      "chartSpecIds": []
+    },
+    {
+      "id": "narrative-method",
+      "chapterId": "method",
+      "title": "多源材料如何形成可追溯结论",
+      "role": "analysis-design",
+      "priority": "MUST_SHOW",
+      "claimIds": [
+        "c-method"
+      ],
+      "chartSpecIds": [
+        "research-map"
+      ]
+    },
+    {
+      "id": "narrative-result",
+      "chapterId": "result",
+      "title": "文字与关系先被看见",
+      "role": "finding",
+      "priority": "MUST_SHOW",
+      "claimIds": [
+        "c-comparison"
+      ],
+      "chartSpecIds": [
+        "old-method",
+        "new-method"
+      ]
+    }
+  ],
+  "visuals": [
+    {
+      "visualId": "research-map",
+      "sourceRef": "flow-specs.json",
+      "sourceHash": "sha256:ac611a8cab7623eb65d1652415f827df36bc08bb89a3537f5e70db75783ffac3",
+      "evidenceType": "B",
+      "treatmentLevel": "L2",
+      "evidenceStatus": "CONTEXTUAL",
+      "representationStatus": "REFORMATTED",
+      "subtype": "explanatory-research-relationship",
+      "evidenceContribution": "用真实可核对的节点与有向连接演示结构表达；不是研究实证结论。",
+      "treatmentRationale": "按输入、关联、复核、输出角色选择胶囊、切角、开放括角与箭头形，不改变节点和关系。",
+      "classificationConfidence": 1,
+      "claimLinks": [
+        {
+          "claimId": "c-method",
+          "relation": "contextualizes"
+        }
+      ],
+      "structure": {
+        "nodes": [
+          {
+            "id": "papers",
+            "label": "文献与报告",
+            "x": 0.12568681318681318,
+            "y": 0.2282051282051282
+          },
+          {
+            "id": "data",
+            "label": "结构化数据",
+            "x": 0.12568681318681318,
+            "y": 0.4282051282051282
+          },
+          {
+            "id": "figures",
+            "label": "原始图像",
+            "x": 0.12568681318681318,
+            "y": 0.6282051282051282
+          },
+          {
+            "id": "notes",
+            "label": "项目记录",
+            "x": 0.12568681318681318,
+            "y": 0.8282051282051283
+          },
+          {
+            "id": "connect",
+            "label": "证据关联",
+            "x": 0.4608516483516483,
+            "y": 0.5256410256410257
+          },
+          {
+            "id": "verify",
+            "label": "交叉复核",
+            "x": 0.8289835164835165,
+            "y": 0.2282051282051282
+          },
+          {
+            "id": "conclusion",
+            "label": "可追溯结论",
+            "x": 0.8289835164835165,
+            "y": 0.7128205128205128
+          }
+        ],
+        "edges": [
+          {
+            "from": "papers",
+            "to": "connect",
+            "kind": "secondary",
+            "directed": true
+          },
+          {
+            "from": "data",
+            "to": "connect",
+            "kind": "secondary",
+            "directed": true
+          },
+          {
+            "from": "figures",
+            "to": "connect",
+            "kind": "secondary",
+            "directed": true
+          },
+          {
+            "from": "notes",
+            "to": "connect",
+            "kind": "secondary",
+            "directed": true
+          },
+          {
+            "from": "connect",
+            "to": "verify",
+            "kind": "primary",
+            "directed": true
+          },
+          {
+            "from": "verify",
+            "to": "conclusion",
+            "kind": "primary",
+            "directed": true
+          },
+          {
+            "from": "conclusion",
+            "to": "connect",
+            "kind": "feedback",
+            "directed": true,
+            "label": "回溯来源"
+          }
+        ]
+      }
+    },
+    {
+      "visualId": "old-method",
+      "sourceRef": "public/previous-method.png",
+      "sourceHash": "sha256:8e9c5387c6c0ae8addd6dea23c3fd54c5b046c382c025424caa4de14815e9c17",
+      "evidenceType": "C",
+      "treatmentLevel": "L0",
+      "evidenceStatus": "DIRECT",
+      "representationStatus": "ORIGINAL",
+      "subtype": "actual-design-render",
+      "evidenceContribution": "保留真实渲染用于视觉对照。",
+      "treatmentRationale": "保持原图比例，可点击放大。",
+      "classificationConfidence": 1,
+      "pixelImmutable": true,
+      "pixelTransforms": [],
+      "claimLinks": [
+        {
+          "claimId": "c-comparison",
+          "relation": "supports"
+        }
+      ],
+      "comparisonRationale": "设计改版任务需要对照两轮实际渲染。"
+    },
+    {
+      "visualId": "new-method",
+      "sourceRef": "public/after-method.png",
+      "sourceHash": "sha256:07f992091e543ae359e9db1f9bc35e4803bc93006aeb56a39a3a6d52e1ca8e14",
+      "evidenceType": "C",
+      "treatmentLevel": "L0",
+      "evidenceStatus": "DIRECT",
+      "representationStatus": "ORIGINAL",
+      "subtype": "actual-design-render",
+      "evidenceContribution": "保留真实渲染用于视觉对照。",
+      "treatmentRationale": "保持原图比例，可点击放大。",
+      "classificationConfidence": 1,
+      "pixelImmutable": true,
+      "pixelTransforms": [],
+      "claimLinks": [
+        {
+          "claimId": "c-comparison",
+          "relation": "supports"
+        }
+      ],
+      "comparisonRationale": "设计改版任务需要对照两轮实际渲染。"
+    }
+  ],
+  "flowSpecs": [
+    {
+      "id": "traceable-research-map",
+      "layout": "feedback-loop",
+      "printState": "complete",
+      "readingOrder": [
+        "papers",
+        "data",
+        "figures",
+        "notes",
+        "connect",
+        "verify",
+        "conclusion"
+      ],
+      "nodes": [
+        {
+          "id": "papers",
+          "role": "input",
+          "label": "文献与报告"
+        },
+        {
+          "id": "data",
+          "role": "input",
+          "label": "结构化数据"
+        },
+        {
+          "id": "figures",
+          "role": "input",
+          "label": "原始图像"
+        },
+        {
+          "id": "notes",
+          "role": "input",
+          "label": "项目记录"
+        },
+        {
+          "id": "connect",
+          "role": "process",
+          "label": "证据关联"
+        },
+        {
+          "id": "verify",
+          "role": "validation",
+          "label": "交叉复核"
+        },
+        {
+          "id": "conclusion",
+          "role": "output",
+          "label": "可追溯结论"
+        }
+      ],
+      "edges": [
+        {
+          "from": "papers",
+          "to": "connect",
+          "kind": "secondary",
+          "directed": true
+        },
+        {
+          "from": "data",
+          "to": "connect",
+          "kind": "secondary",
+          "directed": true
+        },
+        {
+          "from": "figures",
+          "to": "connect",
+          "kind": "secondary",
+          "directed": true
+        },
+        {
+          "from": "notes",
+          "to": "connect",
+          "kind": "secondary",
+          "directed": true
+        },
+        {
+          "from": "connect",
+          "to": "verify",
+          "kind": "primary",
+          "directed": true
+        },
+        {
+          "from": "verify",
+          "to": "conclusion",
+          "kind": "primary",
+          "directed": true
+        },
+        {
+          "from": "conclusion",
+          "to": "connect",
+          "kind": "feedback",
+          "directed": true,
+          "label": "回溯来源"
+        }
+      ]
+    }
+  ]
+}

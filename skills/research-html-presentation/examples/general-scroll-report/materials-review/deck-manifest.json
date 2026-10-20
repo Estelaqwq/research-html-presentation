@@ -1,0 +1,59 @@
+{
+  "title": "材料阅读与方法比较",
+  "scaffoldPlaceholder": false,
+  "profile": "literature-review",
+  "outputMode": "scroll-report",
+  "visualStyle": "academic-light",
+  "designSystemVersion": 2,
+  "compositionProfile": "compact-academic-board",
+  "stage": "prototype",
+  "newProject": false,
+  "evidenceRegistry": "evidence-visuals.json",
+  "citationRegistry": "citations.json",
+  "sections": [
+    {
+      "id": "hero",
+      "chapter": "概览",
+      "role": "hero",
+      "title": "材料阅读与方法比较",
+      "titleMode": "two-line",
+      "claimIds": [],
+      "visualIds": [],
+      "narrativeUnitId": "narrative-hero"
+    },
+    {
+      "id": "work",
+      "chapter": "主要内容",
+      "role": "materials",
+      "title": "不同材料需要核对什么",
+      "titleMode": "two-line",
+      "claimIds": [
+        "claim-work"
+      ],
+      "visualIds": [],
+      "narrativeUnitId": "narrative-work",
+      "visualCenter": "text-structure",
+      "substantiveContribution": "说明验证材料的工作范围、具体内容和当前状态"
+    },
+    {
+      "id": "method",
+      "chapter": "方法与实例",
+      "role": "method",
+      "title": "方法与后续安排",
+      "titleMode": "two-line",
+      "claimIds": [
+        "claim-method"
+      ],
+      "visualIds": [],
+      "narrativeUnitId": "narrative-method",
+      "visualCenter": "method-process",
+      "substantiveContribution": "明确操作方法、可选方案和后续工作"
+    }
+  ],
+  "reportContent": "report-content.json",
+  "reportPresentation": {
+    "toolbar": true,
+    "copyDepth": "compact"
+  },
+  "outputFormVersion": 1
+}

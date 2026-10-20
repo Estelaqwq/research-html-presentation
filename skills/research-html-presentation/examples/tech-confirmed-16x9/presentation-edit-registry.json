@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "2.0",
+  "projectId": "tech-confirmed-full-20261018",
+  "outputMode": "slide-deck",
+  "baseFingerprint": "sha256:b9e5db4e6e2e56dfb4b36ab4759f164d0163e0d5482148491c4772c0804bc97d",
+  "fields": [
+    {
+      "editId": "cover.title",
+      "targetId": "cover",
+      "field": "title",
+      "scope": "slide-deck",
+      "strategy": "plain-copy",
+      "baseValue": "数智研析",
+      "expectedValueHash": "sha256:e2ed279d891fdfae9fb142899ba93511b0a6e9a9171a456f24287e30299a9e2a",
+      "resize": {
+        "mode": "slide",
+        "minWidth": 480,
+        "maxWidth": 1320,
+        "minHeight": 64,
+        "maxMinHeight": 450,
+        "snap": 8
+      }
+    }
+  ]
+}

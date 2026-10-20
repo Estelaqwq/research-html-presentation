@@ -1,0 +1,24 @@
+{
+  "id": "method-process-led",
+  "synthetic": true,
+  "materialType": "method-process-led",
+  "visualPlan": {
+    "coreClaim": "技术路线需要以可验证的节点—连线拓扑表达主路径和反馈",
+    "evidenceKinds": ["explanatory-structure", "authentic-project-proof"],
+    "availableVisualIds": ["flow-main", "evidence-thumb", "boundary"],
+    "visualCenter": "technical-route",
+    "primaryVisualIds": ["flow-main"],
+    "evidenceWeight": {"flow-main": 0.7, "evidence-thumb": 0.16, "boundary": 0.14},
+    "preserveWholeFigure": false,
+    "extractableSubfigures": [],
+    "needsZoom": false,
+    "figureTreatment": "deterministic-svg-flow",
+    "textOnlyRelation": "node-edge-structure",
+    "mergeOrBackupIds": [],
+    "omissionReasons": [{"id": "arrow-character-chain", "reason": "箭头字符无法表达可验证拓扑"}, {"id": "isolated-step", "reason": "孤立节点不在主路径上"}],
+    "omissions": ["arrow-character-chain", "isolated-step"]
+  },
+  "layout": "L12",
+  "requiredChecks": ["flowspec", "primary-path", "edge-port-attachment", "feedback-distinction", "print-topology"],
+  "expectedFailures": ["orphan-node", "missing-edge", "overlapping-label", "smartart-card-chain"]
+}

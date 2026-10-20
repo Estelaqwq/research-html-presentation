@@ -1,0 +1,42 @@
+{
+  "citations": [
+    {
+      "citationId": "design-source",
+      "sourceType": "report",
+      "title": "来源：本次版式设计说明与用户确认要求",
+      "year": 2026,
+      "locator": "设计要求、材料组织与工作步骤的解释性示意",
+      "claimIds": [
+        "c-cover",
+        "c-overview",
+        "c-background",
+        "c-method",
+        "c-architecture",
+        "c-evidence",
+        "c-progress",
+        "c-synthesis",
+        "c-closing"
+      ],
+      "visualIds": [
+        "research-map",
+        "old-cover",
+        "confirmed-cover"
+      ],
+      "sourceRef": "design-brief.json"
+    },
+    {
+      "citationId": "font-files-source",
+      "sourceType": "dataset",
+      "title": "用户提供字体及完整WOFF文件的本地字节数测量",
+      "year": 2026,
+      "locator": "三款字体，原始与完整WOFF；2026-10-18",
+      "claimIds": [
+        "c-chart"
+      ],
+      "visualIds": [
+        "font-size-chart"
+      ],
+      "sourceRef": "font-measurements.json"
+    }
+  ]
+}

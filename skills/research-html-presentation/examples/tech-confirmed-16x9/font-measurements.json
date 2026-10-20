@@ -1,0 +1,89 @@
+[
+  {
+    "id": "yunfeng",
+    "label": "云峰飞云体",
+    "fontFile": "yunfeng-full.woff",
+    "cssFamily": "BrushYunfeng",
+    "names": {
+      "1": [
+        "YunFengFeiYunTi",
+        "云峰飞云体"
+      ],
+      "2": [
+        "Regular"
+      ],
+      "4": [
+        "YunFengFeiYunTi"
+      ],
+      "13": [],
+      "14": []
+    },
+    "fsType": 0,
+    "glyphMappings": 6889,
+    "missing": "",
+    "sourceSha256": "bf8cd8b82dfb9f2ff9d728627ec2dfc6a08a478b4d0ff49b7f35009c40212e5d",
+    "fontSha256": "c47ec76623dfc0a007ca9e2a9a7882036d4fd3615e38768f5667c67dc199d461",
+    "sourceBytes": 7928052,
+    "woffBytes": 4967728,
+    "subset": false
+  },
+  {
+    "id": "shangwei",
+    "label": "汉仪尚巍手书",
+    "fontFile": "shangwei-full.woff",
+    "cssFamily": "BrushShangwei",
+    "names": {
+      "1": [
+        "HYShangWeiShouShuW",
+        "汉仪尚巍手书W"
+      ],
+      "2": [
+        "Regular"
+      ],
+      "4": [
+        "HYShangWeiShouShuW Regular"
+      ],
+      "13": [],
+      "14": []
+    },
+    "fsType": 8,
+    "glyphMappings": 10073,
+    "missing": "",
+    "sourceSha256": "030919e704482efa9dfec735a4c67fef5c843fecc9e7df2ee5efe05ccb3b8a73",
+    "fontSha256": "e5aab8c6c9d7d0b8dd7a627821cbb6ce031f1aa9a45c5bf83f547272d56460db",
+    "sourceBytes": 16954196,
+    "woffBytes": 10926308,
+    "subset": false
+  },
+  {
+    "id": "liuyun",
+    "label": "演示流云楷",
+    "fontFile": "liuyun-full.woff",
+    "cssFamily": "BrushLiuyun",
+    "names": {
+      "1": [
+        "Slidefontliuyun",
+        "演示流云楷"
+      ],
+      "2": [
+        "Regular"
+      ],
+      "4": [
+        "Slidefontliuyun Regular",
+        "演示流云楷 飞流"
+      ],
+      "13": [
+        "商业授权联系VX：Keynote研究所 ,侵权必究"
+      ],
+      "14": []
+    },
+    "fsType": 256,
+    "glyphMappings": 6890,
+    "missing": "",
+    "sourceSha256": "30dd3b161e86065eb8870c27b059a9236cb6cb27518fd8b9d031e13f24a4ef23",
+    "fontSha256": "e9d779c1e2fae24845e98def8359fc630a73f8006821f170db9b9d2927dd6741",
+    "sourceBytes": 14274540,
+    "woffBytes": 7706664,
+    "subset": false
+  }
+]

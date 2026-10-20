@@ -1,0 +1,6 @@
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+button, input, select, textarea { font: inherit; }
+[data-scaffold-placeholder="true"] { color: inherit; }
+.scaffold-note { color: #496274; font-size: 18px; line-height: 1.55; }
+.scaffold-warning { color: #8e2d2d; font-weight: 700; }

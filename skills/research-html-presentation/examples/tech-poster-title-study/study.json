@@ -1,0 +1,63 @@
+{
+  "kind": "cover-title-composition-study",
+  "visualStyle": "tech-engineering-dark",
+  "canvas": [
+    1600,
+    900
+  ],
+  "reportingSubject": "ZUEL",
+  "reviewState": "confirmed-font-upright-title-and-grouped-supporting-copy",
+  "fontDirection": "User settled on HYShangWeiShouShuW and accepted the upright grouped title style. Current refinement aligns the supporting phrase with the descriptor and removes the callout ticket notch.",
+  "fonts": [
+    "User-supplied 云峰飞云体",
+    "User-supplied HYShangWeiShouShuW"
+  ],
+  "editableCopy": "Whole-title and secondary-phrase inputs regenerate native HTML glyph spans. No bitmap title and no arbitrary-HTML edit payload.",
+  "scope": "Standalone design review; existing DeckRuntime authoring/patch integration must be checked before rollout.",
+  "assetProvenance": "Same labelled image_gen concept instrument and official ZUEL logo as tech-blue-reference-prototype; user reference layouts only, no borrowed project identities/results.",
+  "checked": [
+    "Real custom-font glyphs while offline",
+    "Actual two-font cover render inspection",
+    "Native title editing and font switching",
+    "Comparison toggle and reset",
+    "820px tablet fit",
+    "Nonuniform sizes/baselines with no text rotation",
+    "Larger upward title footprint, complete strokes and no brand collision",
+    "Secondary phrase horizontal",
+    "Supporting lines share one left anchor",
+    "Complete callout surface, text contained within its boundary"
+  ],
+  "geometryRefinement": {
+    "mainFontSizes": [
+      272,
+      245,
+      204,
+      284
+    ],
+    "glyphRotationDeg": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "copyTopPx": 135,
+    "titleBlockHeightPx": 410,
+    "secondaryRotationDeg": 0,
+    "scope": "Measured current cover choices; no universal font size or whole-deck approval."
+  },
+  "selectedFont": {
+    "family": "汉仪尚巍手书W",
+    "fileName": "HYShangWeiShouShuW.ttf",
+    "cssFamily": "BrushShangwei",
+    "status": "confirmed-by-user",
+    "scope": "Preferred display face for this user’s technology 16:9 direction; ordinary body and other styles unchanged."
+  },
+  "supportingCopyRefinement": {
+    "alignment": "shared left edge",
+    "secondarySizePx": 48,
+    "descriptorSizePx": 26,
+    "callout": "continuous translucent blue bar, no ticket clipping",
+    "scope": "This cover study; other irregular contours unchanged."
+  },
+  "approvalScope": "用户认可当前封面方向，2026-10-18明确要求统一进skill并展开剩余页面；不代表尚未展示的内页已获认可。"
+}

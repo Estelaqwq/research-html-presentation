@@ -1,0 +1,902 @@
+{
+  "claims": [
+    {
+      "id": "c-cover",
+      "text": "数智研析 让证据更清晰",
+      "sourceRef": "design-brief.json",
+      "evidenceStatus": "DIRECT"
+    },
+    {
+      "id": "c-overview",
+      "text": "从问题、关系与证据展开讲述",
+      "sourceRef": "design-brief.json",
+      "evidenceStatus": "CONTEXTUAL"
+    },
+    {
+      "id": "c-background",
+      "text": "标题与内容重心决定第一眼",
+      "sourceRef": "design-brief.json",
+      "evidenceStatus": "DIRECT"
+    },
+    {
+      "id": "c-method",
+      "text": "多源材料形成可追溯结论",
+      "sourceRef": "flow-specs.json",
+      "evidenceStatus": "CONTEXTUAL"
+    },
+    {
+      "id": "c-architecture",
+      "text": "材料、分析与表达各负其责",
+      "sourceRef": "design-brief.json",
+      "evidenceStatus": "CONTEXTUAL"
+    },
+    {
+      "id": "c-chart",
+      "text": "完整字库转换后体积均有降低",
+      "sourceRef": "font-measurements.json",
+      "evidenceStatus": "DIRECT"
+    },
+    {
+      "id": "c-evidence",
+      "text": "已确认的设计细节逐项落实",
+      "sourceRef": "design-brief.json",
+      "evidenceStatus": "DIRECT"
+    },
+    {
+      "id": "c-progress",
+      "text": "每一步都有具体材料产出",
+      "sourceRef": "design-brief.json",
+      "evidenceStatus": "CONTEXTUAL"
+    },
+    {
+      "id": "c-synthesis",
+      "text": "统一视觉语言，让构图随内容变化",
+      "sourceRef": "design-brief.json",
+      "evidenceStatus": "CONTEXTUAL"
+    },
+    {
+      "id": "c-closing",
+      "text": "让证据更清晰",
+      "sourceRef": "design-brief.json",
+      "evidenceStatus": "CONTEXTUAL"
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "font-files",
+      "name": "三款用户字体实际文件测量",
+      "sourceRef": "font-measurements.json",
+      "sourceHash": "sha256:c2215949677a1731694ba7fc910dec02947e4c1ccc98cc6214e101e1084934cd",
+      "format": "json",
+      "description": "原始与完整WOFF文件字节数及字符映射记录；仅供版式图表测试。",
+      "observationGrain": "每款字体文件的一对原始TTF与完整WOFF测量",
+      "fields": [
+        {
+          "name": "label",
+          "type": "string",
+          "unit": "font-family"
+        },
+        {
+          "name": "sourceBytes",
+          "type": "number",
+          "unit": "bytes"
+        },
+        {
+          "name": "woffBytes",
+          "type": "number",
+          "unit": "bytes"
+        },
+        {
+          "name": "glyphMappings",
+          "type": "number",
+          "unit": "mappings"
+        }
+      ]
+    }
+  ],
+  "transforms": [],
+  "analyses": [],
+  "narrativeUnits": [
+    {
+      "id": "narrative-cover",
+      "chapterId": "cover",
+      "title": "数智研析",
+      "role": "introduction",
+      "priority": "MUST_SHOW",
+      "claimIds": [
+        "c-cover"
+      ],
+      "chartSpecIds": [],
+      "substantiveContribution": "概述已确认的标题与科技风方向",
+      "citationIds": [
+        "design-source"
+      ]
+    },
+    {
+      "id": "narrative-overview",
+      "chapterId": "overview",
+      "title": "从问题、关系与证据展开讲述",
+      "role": "introduction",
+      "priority": "MUST_SHOW",
+      "claimIds": [
+        "c-overview"
+      ],
+      "chartSpecIds": [],
+      "substantiveContribution": "用四段可跳转目录建立讲述路线",
+      "visualPlan": {
+        "coreClaim": "从问题、关系与证据展开讲述",
+        "evidenceKinds": [
+          "explanatory-structure"
+        ],
+        "availableVisualIds": [],
+        "visualCenter": "text-structure",
+        "primaryVisualIds": [],
+        "evidenceWeight": {},
+        "preserveWholeFigure": true,
+        "extractableSubfigures": [],
+        "needsZoom": false,
+        "textOnlyRelationship": "sequential",
+        "mergeOrBackupIds": [],
+        "omissionReasons": []
+      },
+      "citationIds": [
+        "design-source"
+      ]
+    },
+    {
+      "id": "narrative-background",
+      "chapterId": "background",
+      "title": "标题与内容重心决定第一眼",
+      "role": "deep-insight",
+      "priority": "MUST_SHOW",
+      "claimIds": [
+        "c-background"
+      ],
+      "chartSpecIds": [
+        "old-cover",
+        "confirmed-cover"
+      ],
+      "substantiveContribution": "对照真实历史与确认截图，说明色彩、字形和主次变化",
+      "visualPlan": {
+        "coreClaim": "标题与内容重心决定第一眼",
+        "evidenceKinds": [
+          "authentic-project-evidence"
+        ],
+        "availableVisualIds": [
+          "old-cover",
+          "confirmed-cover"
+        ],
+        "visualCenter": "actual-revision-comparison",
+        "primaryVisualIds": [
+          "confirmed-cover"
+        ],
+        "evidenceWeight": {
+          "old-cover": 0.5,
+          "confirmed-cover": 0.5
+        },
+        "preserveWholeFigure": true,
+        "extractableSubfigures": [],
+        "needsZoom": true,
+        "textOnlyRelationship": "sequential",
+        "mergeOrBackupIds": [],
+        "omissionReasons": []
+      },
+      "citationIds": [
+        "design-source"
+      ]
+    },
+    {
+      "id": "narrative-method",
+      "chapterId": "method",
+      "title": "多源材料形成可追溯结论",
+      "role": "analysis-design",
+      "priority": "MUST_SHOW",
+      "claimIds": [
+        "c-method"
+      ],
+      "chartSpecIds": [
+        "research-map"
+      ],
+      "substantiveContribution": "解释多源材料进入证据关联、复核和结论回溯的节点与连接",
+      "visualPlan": {
+        "coreClaim": "多源材料形成可追溯结论",
+        "evidenceKinds": [
+          "explanatory-structure"
+        ],
+        "availableVisualIds": [
+          "research-map"
+        ],
+        "visualCenter": "research-material-map",
+        "primaryVisualIds": [
+          "research-map"
+        ],
+        "evidenceWeight": {
+          "research-map": 1.0
+        },
+        "preserveWholeFigure": true,
+        "extractableSubfigures": [],
+        "needsZoom": false,
+        "textOnlyRelationship": "sequential",
+        "mergeOrBackupIds": [],
+        "omissionReasons": []
+      },
+      "citationIds": [
+        "design-source"
+      ]
+    },
+    {
+      "id": "narrative-architecture",
+      "chapterId": "architecture",
+      "title": "材料、分析与表达各负其责",
+      "role": "analysis-design",
+      "priority": "MUST_SHOW",
+      "claimIds": [
+        "c-architecture"
+      ],
+      "chartSpecIds": [],
+      "substantiveContribution": "按材料、分析、表达三个层级说明组织职责",
+      "visualPlan": {
+        "coreClaim": "材料、分析与表达各负其责",
+        "evidenceKinds": [
+          "explanatory-structure"
+        ],
+        "availableVisualIds": [],
+        "visualCenter": "text-structure",
+        "primaryVisualIds": [],
+        "evidenceWeight": {},
+        "preserveWholeFigure": true,
+        "extractableSubfigures": [],
+        "needsZoom": false,
+        "textOnlyRelationship": "hierarchical",
+        "mergeOrBackupIds": [],
+        "omissionReasons": []
+      },
+      "citationIds": [
+        "design-source"
+      ]
+    },
+    {
+      "id": "narrative-chart",
+      "chapterId": "chart",
+      "title": "完整字库转换后体积均有降低",
+      "role": "finding",
+      "priority": "MUST_SHOW",
+      "claimIds": [
+        "c-chart"
+      ],
+      "chartSpecIds": [
+        "font-size-chart"
+      ],
+      "substantiveContribution": "用实际测量文件展示三组TTF与WOFF体积并列对照",
+      "visualPlan": {
+        "coreClaim": "完整字库转换后体积均有降低",
+        "evidenceKinds": [
+          "data-evidence"
+        ],
+        "availableVisualIds": [
+          "font-size-chart"
+        ],
+        "visualCenter": "grouped-comparison",
+        "primaryVisualIds": [
+          "font-size-chart"
+        ],
+        "evidenceWeight": {
+          "font-size-chart": 1.0
+        },
+        "preserveWholeFigure": true,
+        "extractableSubfigures": [],
+        "needsZoom": false,
+        "textOnlyRelationship": "sequential",
+        "mergeOrBackupIds": [],
+        "omissionReasons": []
+      },
+      "citationIds": [
+        "font-files-source"
+      ]
+    },
+    {
+      "id": "narrative-evidence",
+      "chapterId": "evidence",
+      "title": "已确认的设计细节逐项落实",
+      "role": "application",
+      "priority": "MUST_SHOW",
+      "claimIds": [
+        "c-evidence"
+      ],
+      "chartSpecIds": [],
+      "substantiveContribution": "逐项核对用户确认的字体、短句、横条、容器与正文要求",
+      "visualPlan": {
+        "coreClaim": "已确认的设计细节逐项落实",
+        "evidenceKinds": [
+          "explanatory-structure"
+        ],
+        "availableVisualIds": [],
+        "visualCenter": "text-structure",
+        "primaryVisualIds": [],
+        "evidenceWeight": {},
+        "preserveWholeFigure": true,
+        "extractableSubfigures": [],
+        "needsZoom": false,
+        "textOnlyRelationship": "tabular",
+        "mergeOrBackupIds": [],
+        "omissionReasons": []
+      },
+      "citationIds": [
+        "design-source"
+      ]
+    },
+    {
+      "id": "narrative-progress",
+      "chapterId": "progress",
+      "title": "每一步都有具体材料产出",
+      "role": "application",
+      "priority": "MUST_SHOW",
+      "claimIds": [
+        "c-progress"
+      ],
+      "chartSpecIds": [],
+      "substantiveContribution": "将制作步骤与材料产出及后续工作连接",
+      "visualPlan": {
+        "coreClaim": "每一步都有具体材料产出",
+        "evidenceKinds": [
+          "explanatory-structure"
+        ],
+        "availableVisualIds": [],
+        "visualCenter": "text-structure",
+        "primaryVisualIds": [],
+        "evidenceWeight": {},
+        "preserveWholeFigure": true,
+        "extractableSubfigures": [],
+        "needsZoom": false,
+        "textOnlyRelationship": "sequential",
+        "mergeOrBackupIds": [],
+        "omissionReasons": []
+      },
+      "citationIds": [
+        "design-source"
+      ]
+    },
+    {
+      "id": "narrative-synthesis",
+      "chapterId": "synthesis",
+      "title": "统一视觉语言，让构图随内容变化",
+      "role": "synthesis",
+      "priority": "MUST_SHOW",
+      "claimIds": [
+        "c-synthesis"
+      ],
+      "chartSpecIds": [],
+      "substantiveContribution": "以视觉识别、内容关系、证据细节三个不同承托区域归纳设计",
+      "visualPlan": {
+        "coreClaim": "统一视觉语言，让构图随内容变化",
+        "evidenceKinds": [
+          "explanatory-structure"
+        ],
+        "availableVisualIds": [],
+        "visualCenter": "text-structure",
+        "primaryVisualIds": [],
+        "evidenceWeight": {},
+        "preserveWholeFigure": true,
+        "extractableSubfigures": [],
+        "needsZoom": false,
+        "textOnlyRelationship": "tabular",
+        "mergeOrBackupIds": [],
+        "omissionReasons": []
+      },
+      "citationIds": [
+        "design-source"
+      ]
+    },
+    {
+      "id": "narrative-closing",
+      "chapterId": "closing",
+      "title": "让证据更清晰",
+      "role": "closing",
+      "priority": "MUST_SHOW",
+      "claimIds": [
+        "c-closing"
+      ],
+      "chartSpecIds": [],
+      "substantiveContribution": "结束与交流",
+      "citationIds": [
+        "design-source"
+      ]
+    }
+  ],
+  "visuals": [
+    {
+      "visualId": "old-cover",
+      "sourceRef": "public/previous-cover.png",
+      "sourceHash": "sha256:24aa87873513ef66512f98465d037200c1a1f645ce658e803ca8756d6ba5f4bf",
+      "evidenceType": "C",
+      "treatmentLevel": "L0",
+      "evidenceStatus": "DIRECT",
+      "representationStatus": "ORIGINAL",
+      "subtype": "actual-design-render",
+      "evidenceContribution": "真实历史/确认截图，用于版式对照。",
+      "treatmentRationale": "保留原比例、完整像素与点击放大。",
+      "classificationConfidence": 1,
+      "pixelImmutable": true,
+      "pixelTransforms": [],
+      "claimLinks": [
+        {
+          "claimId": "c-background",
+          "relation": "supports"
+        }
+      ],
+      "comparisonRationale": "同一设计任务的历史与确认截图需同时比较，保持完整画面。"
+    },
+    {
+      "visualId": "confirmed-cover",
+      "sourceRef": "public/confirmed-cover.png",
+      "sourceHash": "sha256:743d7cc15d156adfca3ce1068b817c8779771d242ffe86bf1f9a3489006aebca",
+      "evidenceType": "C",
+      "treatmentLevel": "L0",
+      "evidenceStatus": "DIRECT",
+      "representationStatus": "ORIGINAL",
+      "subtype": "actual-design-render",
+      "evidenceContribution": "真实历史/确认截图，用于版式对照。",
+      "treatmentRationale": "保留原比例、完整像素与点击放大。",
+      "classificationConfidence": 1,
+      "pixelImmutable": true,
+      "pixelTransforms": [],
+      "claimLinks": [
+        {
+          "claimId": "c-background",
+          "relation": "supports"
+        }
+      ],
+      "comparisonRationale": "同一设计任务的历史与确认截图需同时比较，保持完整画面。"
+    },
+    {
+      "visualId": "research-map",
+      "sourceRef": "flow-specs.json",
+      "sourceHash": "sha256:ac611a8cab7623eb65d1652415f827df36bc08bb89a3537f5e70db75783ffac3",
+      "evidenceType": "B",
+      "treatmentLevel": "L2",
+      "evidenceStatus": "CONTEXTUAL",
+      "representationStatus": "REFORMATTED",
+      "subtype": "explanatory-research-relationship",
+      "evidenceContribution": "用真实可核对的节点与有向连接演示结构表达；不是研究实证结论。",
+      "treatmentRationale": "按输入、关联、复核、输出角色选择胶囊、切角、开放括角与箭头形，不改变节点和关系。",
+      "classificationConfidence": 1,
+      "claimLinks": [
+        {
+          "claimId": "c-method",
+          "relation": "contextualizes"
+        }
+      ],
+      "structure": {
+        "nodes": [
+          {
+            "id": "papers",
+            "label": "文献与报告",
+            "x": 0.12568681318681318,
+            "y": 0.2282051282051282
+          },
+          {
+            "id": "data",
+            "label": "结构化数据",
+            "x": 0.12568681318681318,
+            "y": 0.4282051282051282
+          },
+          {
+            "id": "figures",
+            "label": "原始图像",
+            "x": 0.12568681318681318,
+            "y": 0.6282051282051282
+          },
+          {
+            "id": "notes",
+            "label": "项目记录",
+            "x": 0.12568681318681318,
+            "y": 0.8282051282051283
+          },
+          {
+            "id": "connect",
+            "label": "证据关联",
+            "x": 0.4608516483516483,
+            "y": 0.5256410256410257
+          },
+          {
+            "id": "verify",
+            "label": "交叉复核",
+            "x": 0.8289835164835165,
+            "y": 0.2282051282051282
+          },
+          {
+            "id": "conclusion",
+            "label": "可追溯结论",
+            "x": 0.8289835164835165,
+            "y": 0.7128205128205128
+          }
+        ],
+        "edges": [
+          {
+            "from": "papers",
+            "to": "connect",
+            "kind": "secondary",
+            "directed": true
+          },
+          {
+            "from": "data",
+            "to": "connect",
+            "kind": "secondary",
+            "directed": true
+          },
+          {
+            "from": "figures",
+            "to": "connect",
+            "kind": "secondary",
+            "directed": true
+          },
+          {
+            "from": "notes",
+            "to": "connect",
+            "kind": "secondary",
+            "directed": true
+          },
+          {
+            "from": "connect",
+            "to": "verify",
+            "kind": "primary",
+            "directed": true
+          },
+          {
+            "from": "verify",
+            "to": "conclusion",
+            "kind": "primary",
+            "directed": true
+          },
+          {
+            "from": "conclusion",
+            "to": "connect",
+            "kind": "feedback",
+            "directed": true,
+            "label": "回溯来源"
+          }
+        ]
+      }
+    },
+    {
+      "visualId": "font-size-chart",
+      "sourceRef": "font-measurements.json",
+      "sourceHash": "sha256:c2215949677a1731694ba7fc910dec02947e4c1ccc98cc6214e101e1084934cd",
+      "evidenceType": "A",
+      "treatmentLevel": "L3",
+      "evidenceStatus": "DERIVED",
+      "representationStatus": "RECONSTRUCTED",
+      "subtype": "measured-font-file-comparison",
+      "evidenceContribution": "实际文件体积的前后对照，单位MB；计算保留字库的压缩比例。",
+      "treatmentRationale": "以0为基线、同一0–18MB刻度，并列比较TTF和完整WOFF。",
+      "classificationConfidence": 1,
+      "claimLinks": [
+        {
+          "claimId": "c-chart",
+          "relation": "supports"
+        }
+      ],
+      "data": {
+        "series": [
+          {
+            "name": "云峰飞云体",
+            "sourceMB": 7.928052,
+            "woffMB": 4.967728,
+            "reductionPercent": 37.33986608564122
+          },
+          {
+            "name": "汉仪尚巍手书",
+            "sourceMB": 16.954196,
+            "woffMB": 10.926308,
+            "reductionPercent": 35.55395962155917
+          },
+          {
+            "name": "演示流云楷",
+            "sourceMB": 14.27454,
+            "woffMB": 7.706664,
+            "reductionPercent": 46.01112189954982
+          }
+        ]
+      },
+      "chartForm": "small-multiples",
+      "analyticalQuestion": "三款字体完整转换成WOFF后体积有何变化？",
+      "visualThesis": "三款WOFF均小于各自的TTF，保留完整字符映射。",
+      "encodedFields": [
+        "font",
+        "sourceMB",
+        "woffMB"
+      ],
+      "comparisonBaseline": "各字体原始TTF文件；共同0–18MB坐标",
+      "claimVisualFit": "同刻度成对柱比较实际文件大小，并非审美评价。",
+      "alternativeFormsConsidered": [
+        "slopegraph",
+        "evidence-table"
+      ],
+      "selectionRationale": "成对柱形便于同时比较前后文件绝对大小与相对变化。",
+      "units": "MB",
+      "interactionSpec": {
+        "defaultState": "all",
+        "resetState": "all",
+        "printState": "all",
+        "reducedMotionState": "all"
+      },
+      "defaultState": {
+        "visibleSeries": [
+          "sourceMB",
+          "woffMB"
+        ],
+        "domain": [
+          0,
+          18
+        ]
+      },
+      "printState": {
+        "visibleSeries": [
+          "sourceMB",
+          "woffMB"
+        ],
+        "domain": [
+          0,
+          18
+        ]
+      },
+      "resetState": {
+        "visibleSeries": [
+          "sourceMB",
+          "woffMB"
+        ],
+        "domain": [
+          0,
+          18
+        ]
+      },
+      "reducedMotionState": {
+        "visibleSeries": [
+          "sourceMB",
+          "woffMB"
+        ],
+        "domain": [
+          0,
+          18
+        ]
+      },
+      "datasetId": "font-files",
+      "chartSpec": {
+        "chartForm": "small-multiples",
+        "analyticalQuestion": "三款字体完整转换成WOFF后体积有何变化？",
+        "visualThesis": "三款WOFF均小于各自的TTF，保留完整字符映射。",
+        "encodedFields": [
+          "font",
+          "sourceMB",
+          "woffMB"
+        ],
+        "comparisonBaseline": "各字体原始TTF文件；共同0–18MB坐标",
+        "claimVisualFit": "同刻度成对柱比较实际文件大小，并非审美评价。",
+        "alternativeFormsConsidered": [
+          "slopegraph",
+          "evidence-table"
+        ],
+        "selectionRationale": "成对柱形便于同时比较前后文件绝对大小与相对变化。",
+        "units": "MB",
+        "defaultState": {
+          "visibleSeries": [
+            "sourceMB",
+            "woffMB"
+          ],
+          "domain": [
+            0,
+            18
+          ]
+        },
+        "printState": {
+          "visibleSeries": [
+            "sourceMB",
+            "woffMB"
+          ],
+          "domain": [
+            0,
+            18
+          ]
+        },
+        "resetState": {
+          "visibleSeries": [
+            "sourceMB",
+            "woffMB"
+          ],
+          "domain": [
+            0,
+            18
+          ]
+        },
+        "reducedMotionState": {
+          "visibleSeries": [
+            "sourceMB",
+            "woffMB"
+          ],
+          "domain": [
+            0,
+            18
+          ]
+        },
+        "dataRef": {
+          "datasetId": "font-files",
+          "transformIds": []
+        },
+        "accessibleSummary": "原始/WOFF大小，单位MB：云峰飞云体7.93/4.97，汉仪尚巍手书16.95/10.93，演示流云楷14.27/7.71。",
+        "highlightPolicy": "WOFF使用青蓝，所选汉仪字体仅用金色短注释，其他数值保留。",
+        "annotationTargets": [
+          "shangwei"
+        ],
+        "readingOrder": [
+          "units",
+          "paired-bars",
+          "values",
+          "reduction-labels",
+          "boundary"
+        ],
+        "interactionSpec": {
+          "enabled": false
+        },
+        "staticRationale": "仅三组文件体积，全部并列显示即可完成前后比较。",
+        "motionSpec": {
+          "durationMs": 0
+        }
+      }
+    }
+  ],
+  "flowSpecs": [
+    {
+      "id": "traceable-research-map",
+      "layout": "feedback-loop",
+      "printState": "complete",
+      "readingOrder": [
+        "papers",
+        "data",
+        "figures",
+        "notes",
+        "connect",
+        "verify",
+        "conclusion"
+      ],
+      "nodes": [
+        {
+          "id": "papers",
+          "role": "input",
+          "label": "文献与报告"
+        },
+        {
+          "id": "data",
+          "role": "input",
+          "label": "结构化数据"
+        },
+        {
+          "id": "figures",
+          "role": "input",
+          "label": "原始图像"
+        },
+        {
+          "id": "notes",
+          "role": "input",
+          "label": "项目记录"
+        },
+        {
+          "id": "connect",
+          "role": "process",
+          "label": "证据关联"
+        },
+        {
+          "id": "verify",
+          "role": "validation",
+          "label": "交叉复核"
+        },
+        {
+          "id": "conclusion",
+          "role": "output",
+          "label": "可追溯结论"
+        }
+      ],
+      "edges": [
+        {
+          "from": "papers",
+          "to": "connect",
+          "kind": "secondary",
+          "directed": true
+        },
+        {
+          "from": "data",
+          "to": "connect",
+          "kind": "secondary",
+          "directed": true
+        },
+        {
+          "from": "figures",
+          "to": "connect",
+          "kind": "secondary",
+          "directed": true
+        },
+        {
+          "from": "notes",
+          "to": "connect",
+          "kind": "secondary",
+          "directed": true
+        },
+        {
+          "from": "connect",
+          "to": "verify",
+          "kind": "primary",
+          "directed": true
+        },
+        {
+          "from": "verify",
+          "to": "conclusion",
+          "kind": "primary",
+          "directed": true
+        },
+        {
+          "from": "conclusion",
+          "to": "connect",
+          "kind": "feedback",
+          "directed": true,
+          "label": "回溯来源"
+        }
+      ]
+    },
+    {
+      "id": "design-workflow",
+      "layout": "horizontal",
+      "printState": "complete",
+      "readingOrder": [
+        "work-01",
+        "work-02",
+        "work-03",
+        "work-04"
+      ],
+      "nodes": [
+        {
+          "id": "work-01",
+          "role": "process",
+          "label": "方向确认",
+          "detail": "字体、颜色与封面；确定核心视觉层级"
+        },
+        {
+          "id": "work-02",
+          "role": "process",
+          "label": "页面展开",
+          "detail": "按信息关系选择构图；覆盖流程与图表等内容"
+        },
+        {
+          "id": "work-03",
+          "role": "process",
+          "label": "整体复核",
+          "detail": "查看全套缩略图；核对字体、比例与节奏"
+        },
+        {
+          "id": "work-04",
+          "role": "process",
+          "label": "后续迭代",
+          "detail": "根据实际内容调整；保留可编辑的原生文字"
+        }
+      ],
+      "edges": [
+        {
+          "from": "work-01",
+          "to": "work-02",
+          "kind": "primary",
+          "directed": true
+        },
+        {
+          "from": "work-02",
+          "to": "work-03",
+          "kind": "primary",
+          "directed": true
+        },
+        {
+          "from": "work-03",
+          "to": "work-04",
+          "kind": "primary",
+          "directed": true
+        }
+      ]
+    }
+  ]
+}

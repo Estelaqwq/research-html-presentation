@@ -1,0 +1,2 @@
+.slide[data-slide-id="cover"]::after { display: none; }
+.slide[data-slide-id="cover"] .deck-footer { color: #7f9bb3; }

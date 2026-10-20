@@ -1,0 +1,7 @@
+.scaffold-cover { position: absolute; inset: 0; padding: 84px 112px; background: linear-gradient(135deg, #f8fbfd 0%, #eef5f9 100%); color: #123c5a; }
+.scaffold-cover img { display: block; width: 500px; height: 138px; margin-left: auto; object-fit: contain; object-position: right center; }
+.scaffold-cover > p:first-of-type { margin: 110px 0 18px; color: #376d8d; font-size: 18px; font-weight: 800; letter-spacing: .12em; }
+.scaffold-cover h1 { width: 1180px; margin: 0; color: #123c5a; font-size: 58px; line-height: 1.22; }
+.scaffold-cover-rule { width: 210px; height: 8px; margin: 32px 0; background: #9e2f2f; }
+.scaffold-deck-body { position: absolute; left: 72px; right: 72px; top: 174px; bottom: 142px; padding: 42px 48px; border: 1px solid #c7d7e2; background: #fff; }
+.scaffold-deck-body h3 { margin: 0 0 24px; color: #123c5a; font-size: 30px; }

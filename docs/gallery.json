@@ -1,0 +1,264 @@
+[
+  {
+    "id": "technology",
+    "title": "科技风 · 十页版式样稿",
+    "en": "Technology deck · ten layouts",
+    "description": "宝蓝底色、手书标题与清晰的信息层级。保留此前确认的封面、方法、结构、图表、对照与总结。",
+    "kind": "slide",
+    "count": 10,
+    "provenance": "既有版式展示样稿；装置为 AI 生成概念图，页面说明与示意不代表实证研究。",
+    "items": [
+      {
+        "file": "images/technology-01.png",
+        "title": "数智研析",
+        "page": 1,
+        "sha256": "24afde65d6da121a06dd93c8de0de1d29babd4554191ec8767f7a9dbbe341f22"
+      },
+      {
+        "file": "images/technology-02.png",
+        "title": "从问题、关系与证据展开讲述",
+        "page": 2,
+        "sha256": "e9dbf528945dc2f0bce81484d8d3650ec39ff17f3c703779a673d36ecc0207c4"
+      },
+      {
+        "file": "images/technology-03.png",
+        "title": "标题与内容重心决定第一眼",
+        "page": 3,
+        "sha256": "045b0caef16fdb880d87c6a0c29f2421807cdc4cb470e293845399d25c97e8d4"
+      },
+      {
+        "file": "images/technology-04.png",
+        "title": "多源材料形成可追溯结论",
+        "page": 4,
+        "sha256": "0c32a121aa0738adcc689ebde9b671748e75f783bd98e21191a7905ee343cadd"
+      },
+      {
+        "file": "images/technology-05.png",
+        "title": "材料、分析与表达各负其责",
+        "page": 5,
+        "sha256": "74c218404ef6b1369db2839656726a0e88f173266fb7a4966b125bc30bc91a4d"
+      },
+      {
+        "file": "images/technology-06.png",
+        "title": "完整字库转换后体积均有降低",
+        "page": 6,
+        "sha256": "af719be092e8077b9290038868fd8713550d1c00c3a9722583737f53e4b95dde"
+      },
+      {
+        "file": "images/technology-07.png",
+        "title": "已确认的设计细节逐项落实",
+        "page": 7,
+        "sha256": "ed5161280bc497cc6125b5102bece6c245c914ca5e6dc123d4168c15787fdf7c"
+      },
+      {
+        "file": "images/technology-08.png",
+        "title": "每一步都有具体材料产出",
+        "page": 8,
+        "sha256": "72c3bd33e2a2e0b9a2050a64919a65ebda331d943ca41387c65fa179b732cfbc"
+      },
+      {
+        "file": "images/technology-09.png",
+        "title": "统一视觉语言，让构图随内容变化",
+        "page": 9,
+        "sha256": "4df5bd75dd6fdf6290c929fb25f9ab4887ba9c7274a7d26d2f8b9f53d1aaeec9"
+      },
+      {
+        "file": "images/technology-10.png",
+        "title": "让证据更清晰",
+        "page": 10,
+        "sha256": "fa8c8067c5e7d15e705dc8dc2d76954520a0fc8a315a6d270fc0212aec2d4876"
+      }
+    ]
+  },
+  {
+    "id": "academic",
+    "title": "学术浅色 · 中国省级经济格局",
+    "en": "Academic deck · provincial economy",
+    "description": "白底钴蓝的高信息量页面。展示正式封面、数据设计、排名、长期变化、发展差异与结论。",
+    "kind": "slide",
+    "count": 12,
+    "provenance": "既有数据分析成品截图；保留原页面标注的统计口径、来源和解释边界。",
+    "items": [
+      {
+        "file": "images/academic-01.png",
+        "title": "中国省级经济格局规模集中 · 长期重排 · 发展差异",
+        "page": 1,
+        "sha256": "c593957ea50654e6e7da7ebddd0d18997ca99a49dc7f931bc070913d73b794cd"
+      },
+      {
+        "file": "images/academic-02.png",
+        "title": "三份数据形成“口径—横截面—长期变化”分析路径",
+        "page": 2,
+        "sha256": "e9de19281230f2883b292e40a5aa5b02e6448c36b8a0183a198d9069f152ad59"
+      },
+      {
+        "file": "images/academic-03.png",
+        "title": "东部贡献 52.4% GDP，前五省合计占 39.7%",
+        "page": 3,
+        "sha256": "ddc43c3dbe6ee2e16d019f6b974969dbbc852257ae685d44f0e485af0a2c3a49"
+      },
+      {
+        "file": "images/academic-04.png",
+        "title": "东部占 52.4%，中部与西部各约 21.5%",
+        "page": 4,
+        "sha256": "a83081a9e238469505491a36686c688b75d15fb2523a1a380a31dcd3ba4dc762"
+      },
+      {
+        "file": "images/academic-05.png",
+        "title": "总量前二广东江苏、人均前二北京上海：排名错位",
+        "page": 5,
+        "sha256": "364e46ad05427a58f5f6ba9b4e5357874ce6d92963de7c2af76376a39b8c4d5f"
+      },
+      {
+        "file": "images/academic-06.png",
+        "title": "2011—2024 省级 GDP 合计扩大至 2.68 倍",
+        "page": 6,
+        "sha256": "3c322148e71b257b1119568ee7729668c54ba93c4655967430462ba53a252cdc"
+      },
+      {
+        "file": "images/academic-07.png",
+        "title": "贵州上升 4 位、河北下降 7 位：省级 GDP 格局重排",
+        "page": 7,
+        "sha256": "8700874532ee0c711bf4dad80798183949fae94a1f2ee73a0428068d77bc78af"
+      },
+      {
+        "file": "images/academic-08.png",
+        "title": "服务业占比越高，人均 GDP 整体越高：r=0.747",
+        "page": 8,
+        "sha256": "b42916ffebb7abf45844021bf0dc57a3341c116a0a82b4e4f30ba0ab36ca2f92"
+      },
+      {
+        "file": "images/academic-09.png",
+        "title": "四组关系中，收入与人均 GDP 相关最高：r=0.959",
+        "page": 9,
+        "sha256": "007e716ab646c6d995d5d410beb1aac6503d5b6be6c2871fac4da372905741ae"
+      },
+      {
+        "file": "images/academic-10.png",
+        "title": "六省五指标对照：北京上海人均领先、广东江苏总量领先",
+        "page": 10,
+        "sha256": "026bf43108ac8bf20173830f2a4a356716fd83f4c23c7e180e4fe4c0317c0efc"
+      },
+      {
+        "file": "images/academic-11.png",
+        "title": "综合结论：52.4% 集中、2.68× 扩张、r=0.959",
+        "page": 11,
+        "sha256": "50296c22e7e66ee20333f581e2c1c479a0048a4991bf175afb2be4447f734efb"
+      },
+      {
+        "file": "images/academic-12.png",
+        "title": "谢谢，欢迎讨论",
+        "page": 12,
+        "sha256": "bdb9aafa9007df3e6153913193b65657dae44ca135398ff42e0be572f0a8f7d5"
+      }
+    ]
+  },
+  {
+    "id": "literature",
+    "title": "文献汇报 · 回归结果的报告与解释",
+    "en": "Literature review · regression reporting",
+    "description": "从研究问题和方法到决定性证据、方法比较与启示，展示一篇论文如何成为完整汇报。",
+    "kind": "slide",
+    "count": 11,
+    "provenance": "既有文献汇报截图；论文数值、引文和来源图表按原页面标注，不随项目 MIT 许可重新授权。",
+    "items": [
+      {
+        "file": "images/literature-01.png",
+        "title": "线性回归报告实践：健康研究中的统计透明度缺口",
+        "page": 1,
+        "sha256": "f297a263efd89609ef6604250a73a9a6dabedeeb972ad0ccc537277a5623d93f"
+      },
+      {
+        "file": "images/literature-02.png",
+        "title": "从模拟血压示例提出问题：回归结果为什么需要解释",
+        "page": 2,
+        "sha256": "efa3a871fd12b9916c1da6c6352b5b4561913ea3bf6c00b856e7656f2feaef7f"
+      },
+      {
+        "file": "images/literature-03.png",
+        "title": "三重评审95篇论文，以比例与Wilson区间刻画报告行为",
+        "page": 3,
+        "sha256": "181fe34c631ed66654d16507b29155f710fae1a5fbab2d37c7cff541f06c8769"
+      },
+      {
+        "file": "images/literature-04.png",
+        "title": "p值报告率92%，但效应大小解释仅23%",
+        "page": 4,
+        "sha256": "366fb09b18d4727c826f07d03108c9d58621b87006a23668e38f3a79c9840984"
+      },
+      {
+        "file": "images/literature-05.png",
+        "title": "仅46%报告置信区间，模型样本量清楚者为47%",
+        "page": 5,
+        "sha256": "acea530b02997604b80a2a2998c750253f0deb6065d386ac435382a9f7b36f0b"
+      },
+      {
+        "file": "images/literature-06.png",
+        "title": "变量选择过程不清楚：仅14%报告公认建模策略",
+        "page": 6,
+        "sha256": "56f8f7246e6465e020ad78d55d4aecd9ffa0cef69f9f7b7ebdea31157a16ab70"
+      },
+      {
+        "file": "images/literature-07.png",
+        "title": "可见统计量较易一致评分，解释性判断分歧更大",
+        "page": 7,
+        "sha256": "c7a8c155437c8cf7f621d39e9c2b91d387e90609d049efe5c8cda54302a4cd43"
+      },
+      {
+        "file": "images/literature-08.png",
+        "title": "95篇单期刊样本能定位缺口，不能无限外推",
+        "page": 8,
+        "sha256": "3cea36e11ae6ca88f004f46d17e10612b862867af85a8e0df0d4366e1abb51e9"
+      },
+      {
+        "file": "images/literature-09.png",
+        "title": "改进需要个人到政策的多层支持，效果仍待检验",
+        "page": 9,
+        "sha256": "9c35de6c66474f850e9bae1fee16e27a7f2ea66119b359c3161ea735bacba555"
+      },
+      {
+        "file": "images/literature-10.png",
+        "title": "汇报评价：量化报告缺口，谨慎外推并检验改进",
+        "page": 10,
+        "sha256": "ca6035b993e5e67e083c1db077c2d36d5fdf6aaee7d86d1e4676af7e4e639b15"
+      },
+      {
+        "file": "images/literature-11.png",
+        "title": "恳请各位老师同学批评指正",
+        "page": 11,
+        "sha256": "0ca95bb3b1d1e95d0a9e1a9f3b038df3455cb3c6057741cf31a55fab8f693ddf"
+      }
+    ]
+  },
+  {
+    "id": "report",
+    "title": "竖版报告 · Titanic 生存差异",
+    "en": "Vertical report · Titanic",
+    "description": "连续阅读的报告开篇、分析设计、分组图表与章节导航。以下为既有成品的静态截图。",
+    "provenance": "Kaggle Titanic 历史训练集分析截图；仅展示报告形态，不提供乘客原始记录下载。",
+    "kind": "report",
+    "count": 4,
+    "items": [
+      {
+        "file": "images/report-hero.png",
+        "title": "Titanic 生存差异分析 · 报告开篇",
+        "sha256": "10f52897cc434fbb2eb5b76a792e371a94864c8c0c6f89716c16d0d07b081334"
+      },
+      {
+        "file": "images/report-result.png",
+        "title": "Titanic 生存差异分析 · 分组图表与解释",
+        "sha256": "461de3f816405514e9b05567d68cc568b799f44689151fbaa8895b8408d159f2"
+      },
+      {
+        "file": "images/report-design.png",
+        "title": "Titanic 生存差异分析 · 分析设计",
+        "sha256": "c54d571c6657121a7be343b7c3b5d36e3f9204a4095e25c3d5f4e0b7d984190f"
+      },
+      {
+        "file": "images/report-navigation.png",
+        "title": "Titanic 生存差异分析 · 章节导航",
+        "sha256": "e821c16b66dd12e991b944c384c1f4211b9b34cb97f18b76f220398a36da2b5b"
+      }
+    ]
+  }
+]

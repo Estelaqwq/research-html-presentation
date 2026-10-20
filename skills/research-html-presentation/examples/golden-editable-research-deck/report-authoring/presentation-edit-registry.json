@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0",
+  "projectId": "zuel-dataset-scroll-report-scaffold",
+  "outputMode": "scroll-report",
+  "baseFingerprint": "sha256:158e9212fee139a8084b34af9b3d2ee1f5ef24f3539dfb4c829ada2cf0d950ae",
+  "fields": [
+    {
+      "editId": "hero.title",
+      "targetId": "hero",
+      "field": "title",
+      "scope": "scroll-report",
+      "strategy": "plain-copy",
+      "baseValue": "TODO: 数据集分析报告",
+      "expectedValueHash": "sha256:fbdc743311ef2f820c5a90815a26c1e496212ffeab5e9a6ad589b5e91bfa16bb",
+      "resize": {
+        "mode": "report",
+        "minWidth": 320,
+        "maxWidth": 1120,
+        "minHeight": 48,
+        "maxMinHeight": 360,
+        "snap": 8
+      }
+    }
+  ]
+}

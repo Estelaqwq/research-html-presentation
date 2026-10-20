@@ -1,0 +1,21 @@
+{
+  "claims": [],
+  "visuals": [],
+  "flowSpecs": [{
+    "id": "flow-valid",
+    "nodes": [
+      { "id": "input", "role": "input", "label": "材料" },
+      { "id": "process", "role": "process", "label": "分析" },
+      { "id": "validation", "role": "validation", "label": "验证" },
+      { "id": "output", "role": "output", "label": "结论" }
+    ],
+    "edges": [
+      { "from": "input", "to": "process", "kind": "primary", "directed": true },
+      { "from": "process", "to": "validation", "kind": "primary", "directed": true },
+      { "from": "validation", "to": "output", "kind": "primary", "directed": true },
+      { "from": "validation", "to": "process", "kind": "feedback", "directed": true, "label": "修正" }
+    ],
+    "readingOrder": ["input", "process", "validation", "output"],
+    "printState": "complete"
+  }]
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "research-html-presentation/citation-registry.schema.json",
+  "title": "Audience Citation Registry",
+  "type": "object",
+  "required": ["citations"],
+  "properties": {
+    "citations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/citationRecord" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "citationSourceType": { "enum": ["paper", "dataset", "report", "website", "figure", "table", "software"] },
+    "citationRecord": {
+      "type": "object",
+      "required": ["citationId", "sourceType", "title", "claimIds"],
+      "properties": {
+        "citationId": { "type": "string", "minLength": 1 },
+        "sourceType": { "$ref": "#/$defs/citationSourceType" },
+        "title": { "type": "string", "minLength": 1 },
+        "authors": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "year": { "type": "integer", "minimum": 0 },
+        "doi": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "pattern": "^https://[^\\s]+$" },
+        "locator": { "type": "string" },
+        "accessedAt": { "type": "string", "minLength": 1 },
+        "claimIds": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+        "visualIds": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } }
+      },
+      "additionalProperties": false
+    }
+  }
+}

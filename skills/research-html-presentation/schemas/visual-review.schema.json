@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zuel.example/schemas/visual-review.schema.json",
+  "title": "Research HTML presentation visual review",
+  "description": "Machine-readable per-slide or per-section composition and detail review record.",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": ["slides"],
+      "properties": {
+        "slides": { "type": "array", "items": { "$ref": "#/$defs/reviewEntry" } },
+        "sections": { "type": "array", "items": { "$ref": "#/$defs/reviewEntry" } },
+        "deckReview": { "$ref": "#/$defs/deckReview" },
+        "renderFingerprint": { "$ref": "#/$defs/fingerprint" },
+        "currentRenderFingerprint": { "$ref": "#/$defs/fingerprint" },
+        "reviewedAt": { "type": "string", "minLength": 10 },
+        "reviewEvidence": { "$ref": "#/$defs/reviewEvidence" },
+        "reviewInvalidated": { "type": "boolean" },
+        "invalidationReason": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": true
+    },
+    {
+      "type": "object",
+      "required": ["sections"],
+      "properties": {
+        "slides": { "type": "array", "items": { "$ref": "#/$defs/reviewEntry" } },
+        "sections": { "type": "array", "items": { "$ref": "#/$defs/reviewEntry" } },
+        "deckReview": { "$ref": "#/$defs/deckReview" },
+        "renderFingerprint": { "$ref": "#/$defs/fingerprint" },
+        "currentRenderFingerprint": { "$ref": "#/$defs/fingerprint" },
+        "reviewedAt": { "type": "string", "minLength": 10 },
+        "reviewEvidence": { "$ref": "#/$defs/reviewEvidence" },
+        "reviewInvalidated": { "type": "boolean" },
+        "invalidationReason": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": true
+    },
+    { "type": "array", "items": { "$ref": "#/$defs/reviewEntry" } }
+  ],
+  "$defs": {
+    "fingerprint": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "reviewEvidence": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+    "deckReview": {
+      "type": "object",
+      "required": ["contactSheet", "speakingArc", "crossPageAssessment", "sourceVisuals"],
+      "properties": {
+        "contactSheet": { "type": "string", "minLength": 1 },
+        "speakingArc": { "type": "string", "minLength": 40 },
+        "crossPageAssessment": { "type": "string", "minLength": 30 },
+        "sourceVisuals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["sourceId", "decision", "reason"],
+            "properties": {
+              "sourceId": { "type": "string", "minLength": 1 },
+              "decision": { "enum": ["use-original", "faithful-reconstruction", "reformat-from-verified-data", "backup", "omit"] },
+              "reason": { "type": "string", "minLength": 12 },
+              "slideIds": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+            },
+            "additionalProperties": true
+          }
+        },
+        "noNumberedVisualsReason": { "type": "string", "minLength": 12 }
+      },
+      "additionalProperties": true
+    },
+    "reviewEntry": {
+      "type": "object",
+      "required": [
+        "compositionReviewed",
+        "detailReviewed",
+        "densityStatus",
+        "titleStatus",
+        "plotOccupancyStatus",
+        "evidenceWeightStatus",
+        "overflowStatus",
+        "reviewerNotes"
+      ],
+      "properties": {
+        "slideId": { "type": "string", "minLength": 1 },
+        "sectionId": { "type": "string", "minLength": 1 },
+        "compositionReviewed": { "type": "boolean" },
+        "detailReviewed": { "type": "boolean" },
+        "densityStatus": { "$ref": "#/$defs/reviewStatus" },
+        "titleStatus": { "$ref": "#/$defs/reviewStatus" },
+        "plotOccupancyStatus": { "$ref": "#/$defs/reviewStatus" },
+        "evidenceWeightStatus": { "$ref": "#/$defs/reviewStatus" },
+        "overflowStatus": { "$ref": "#/$defs/reviewStatus" },
+        "silhouetteStatus": { "$ref": "#/$defs/reviewStatus" },
+        "chartSemanticFitStatus": { "$ref": "#/$defs/reviewStatus" },
+        "flowGeometryStatus": { "$ref": "#/$defs/reviewStatus" },
+        "brandPlacementStatus": { "$ref": "#/$defs/reviewStatus" },
+        "scaledPreviewStatus": { "$ref": "#/$defs/reviewStatus" },
+        "bodySilhouette": { "$ref": "deck-manifest.schema.json#/$defs/bodySilhouette" },
+        "reviewerNotes": { "type": "string" },
+        "notApplicableReason": { "type": "string", "minLength": 1 },
+        "referenceCalibration": { "$ref": "#/$defs/referenceCalibration" },
+        "metrics": {
+          "type": "object",
+          "properties": {
+            "contentOccupancy": { "type": "number" },
+            "paintDensity": { "type": "number" },
+            "paintToLayoutRatio": { "type": "number" },
+            "internalOccupancy": { "oneOf": [{ "type": "number" }, { "const": "not-applicable" }] },
+            "moduleInternalOccupancy": { "oneOf": [{ "type": "number" }, { "const": "not-applicable" }] },
+            "measurableModuleCount": { "type": "integer", "minimum": 0 },
+            "lowerHalfCoverage": { "type": "number" },
+            "dominantVisualRatio": { "oneOf": [{ "type": "number" }, { "const": "not-applicable" }] },
+            "plotOccupancy": { "oneOf": [{ "type": "number" }, { "const": "not-applicable" }] },
+            "largestEmptyRegionRatio": { "type": "number" },
+            "evidenceWeightBalance": { "type": "number" },
+            "repeatedEqualRegionCount": { "type": "integer", "minimum": 0 },
+            "layoutSignature": { "type": "string", "minLength": 1 },
+            "layoutClusterSize": { "type": "integer", "minimum": 1 },
+            "layoutFamilySignature": { "type": "string", "minLength": 1 },
+            "layoutFamilyClusterSize": { "type": "integer", "minimum": 1 },
+            "browserFindingCount": { "type": "integer", "minimum": 0 },
+            "browserErrorCount": { "type": "integer", "minimum": 0 },
+            "browserWarningCount": { "type": "integer", "minimum": 0 },
+            "auditSource": { "const": "browser" }
+          },
+          "additionalProperties": true
+        }
+      },
+      "anyOf": [
+        { "required": ["slideId"] },
+        { "required": ["sectionId"] }
+      ],
+      "allOf": [
+        {
+          "if": {
+            "anyOf": [
+              { "required": ["densityStatus"], "properties": { "densityStatus": { "const": "not-applicable" } } },
+              { "required": ["titleStatus"], "properties": { "titleStatus": { "const": "not-applicable" } } },
+              { "required": ["plotOccupancyStatus"], "properties": { "plotOccupancyStatus": { "const": "not-applicable" } } },
+              { "required": ["evidenceWeightStatus"], "properties": { "evidenceWeightStatus": { "const": "not-applicable" } } },
+              { "required": ["overflowStatus"], "properties": { "overflowStatus": { "const": "not-applicable" } } },
+              { "required": ["flowGeometryStatus"], "properties": { "flowGeometryStatus": { "const": "not-applicable" } } },
+              { "required": ["brandPlacementStatus"], "properties": { "brandPlacementStatus": { "const": "not-applicable" } } },
+              { "required": ["scaledPreviewStatus"], "properties": { "scaledPreviewStatus": { "const": "not-applicable" } } }
+            ]
+          },
+          "then": { "required": ["notApplicableReason"] }
+        }
+      ],
+      "additionalProperties": true
+    }
+    ,"reviewStatus": { "enum": ["pending", "pass", "warning", "fail", "not-applicable"] }
+    ,"referenceCalibration": {
+      "type": "object",
+      "required": ["status", "sourceRefs", "notes"],
+      "properties": {
+        "status": { "enum": ["pending", "reviewed", "failed", "not-applicable"] },
+        "sourceRefs": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "notes": { "type": "string", "minLength": 1 },
+        "checked": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "evidence": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+      },
+      "additionalProperties": true
+    }
+  }
+}

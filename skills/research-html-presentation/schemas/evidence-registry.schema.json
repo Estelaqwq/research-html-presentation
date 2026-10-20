@@ -1,0 +1,1764 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "research-html-presentation/evidence-registry.schema.json",
+  "title": "Research Evidence Registry",
+  "description": "Renderer-neutral structural evidence contract. Version-specific and cross-record rules are enforced with the manifest-aware semantic validator.",
+  "type": "object",
+  "required": [
+    "claims",
+    "visuals"
+  ],
+  "properties": {
+    "claims": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/claim"
+      }
+    },
+    "datasets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/datasetRecord"
+      }
+    },
+    "transforms": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/dataTransformRecord"
+      }
+    },
+    "analyses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/analysisRecord"
+      }
+    },
+    "narrativeUnits": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/narrativeUnit"
+      }
+    },
+    "flowSpecs": {
+      "type": "array",
+      "items": {
+        "$ref": "flow-spec.schema.json"
+      }
+    },
+    "analysisCompanion": {
+      "$ref": "#/$defs/analysisCompanion"
+    },
+    "visuals": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/visualEvidenceRecord"
+      }
+    },
+    "citations": {
+      "description": "Legacy embedded authority. It is allowed only when no external Citation Registry exists.",
+      "type": "array",
+      "items": {
+        "$ref": "citation-registry.schema.json#/$defs/citationRecord"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+    },
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "analysisMode": {
+      "enum": [
+        "dataset-portrait",
+        "exploratory",
+        "diagnostic",
+        "predictive",
+        "comparative"
+      ]
+    },
+    "findingPriority": {
+      "enum": [
+        "MUST_SHOW",
+        "SHOULD_SHOW",
+        "BACKUP",
+        "OMIT"
+      ]
+    },
+    "analysisCompanion": {
+      "type": "object",
+      "required": [
+        "measures",
+        "questions"
+      ],
+      "properties": {
+        "measures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/companionMeasure"
+          }
+        },
+        "questions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/companionQuestion"
+          }
+        },
+        "toolPolicy": {
+          "type": "object",
+          "required": [
+            "allowedOperations",
+            "measureIds",
+            "analysisIds",
+            "maxGroups",
+            "maxPeriods"
+          ],
+          "properties": {
+            "allowedOperations": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "period-total",
+                  "annual-average",
+                  "single-year",
+                  "endpoint-change",
+                  "registered-finding",
+                  "method"
+                ]
+              }
+            },
+            "measureIds": {
+              "$ref": "#/$defs/stringArray"
+            },
+            "analysisIds": {
+              "$ref": "#/$defs/stringArray"
+            },
+            "maxGroups": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 20
+            },
+            "maxPeriods": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "companionMeasure": {
+      "type": "object",
+      "required": [
+        "id",
+        "label",
+        "unit",
+        "datasetId",
+        "analysisId",
+        "transformIds",
+        "sourceIds",
+        "claimIds",
+        "method",
+        "limitations",
+        "aggregation",
+        "groups",
+        "cells"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "label": {
+          "$ref": "#/$defs/id"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "datasetId": {
+          "$ref": "#/$defs/id"
+        },
+        "analysisId": {
+          "$ref": "#/$defs/id"
+        },
+        "transformIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "sourceIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "claimIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "visualId": {
+          "$ref": "#/$defs/id"
+        },
+        "method": {
+          "$ref": "#/$defs/id"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "aggregation": {
+          "enum": [
+            "sum",
+            "weighted-rate",
+            "snapshot"
+          ]
+        },
+        "displayMultiplier": {
+          "enum": [
+            1,
+            100
+          ]
+        },
+        "groups": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "groupAliases": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/stringArray"
+          }
+        },
+        "queryTerms": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "fieldId": {
+          "$ref": "#/$defs/id"
+        },
+        "periods": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "cells": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "group",
+              "value"
+            ],
+            "properties": {
+              "group": {
+                "$ref": "#/$defs/id"
+              },
+              "period": {
+                "$ref": "#/$defs/id"
+              },
+              "value": {
+                "type": "number"
+              },
+              "numerator": {
+                "type": "number"
+              },
+              "denominator": {
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "companionQuestion": {
+      "type": "object",
+      "required": [
+        "id",
+        "findingId",
+        "prompt",
+        "action",
+        "measureId",
+        "claimIds",
+        "sourceIds"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "findingId": {
+          "$ref": "#/$defs/id"
+        },
+        "prompt": {
+          "$ref": "#/$defs/id"
+        },
+        "action": {
+          "enum": [
+            "lookup",
+            "group-compare",
+            "time-range",
+            "sensitivity",
+            "method",
+            "registered-finding"
+          ]
+        },
+        "measureId": {
+          "$ref": "#/$defs/id"
+        },
+        "claimIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "sourceIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "sectionIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "defaultSelection": {
+          "type": "object",
+          "required": [
+            "group"
+          ],
+          "properties": {
+            "group": {
+              "$ref": "#/$defs/id"
+            },
+            "from": {
+              "$ref": "#/$defs/id"
+            },
+            "to": {
+              "$ref": "#/$defs/id"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "claim": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "statement": {
+          "type": "string"
+        },
+        "external": {
+          "type": "boolean"
+        },
+        "evidenceStatus": {
+          "enum": [
+            "DIRECT",
+            "DERIVED",
+            "CONTEXTUAL",
+            "EXPECTED",
+            "HYPOTHESIZED",
+            "UNSUPPORTED"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "fieldRecord": {
+      "type": "object",
+      "required": [
+        "name",
+        "type"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/id"
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unit": {
+          "type": "string"
+        },
+        "sensitive": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "fieldUsage": {
+      "type": "object",
+      "required": [
+        "field",
+        "role",
+        "usedFor"
+      ],
+      "properties": {
+        "field": {
+          "$ref": "#/$defs/id"
+        },
+        "role": {
+          "enum": [
+            "target",
+            "feature",
+            "identifier",
+            "grouping-variable",
+            "derived-source",
+            "metadata",
+            "validation-only",
+            "excluded"
+          ]
+        },
+        "usedFor": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "derivedFeatures": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "missingStrategy": {
+          "type": "string"
+        },
+        "exposurePolicy": {
+          "enum": [
+            "aggregate-only",
+            "derived-only",
+            "not-rendered",
+            "rendered"
+          ]
+        },
+        "exclusionRationale": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "datasetRecord": {
+      "type": "object",
+      "required": [
+        "datasetId",
+        "sourceRef",
+        "sourceHash"
+      ],
+      "properties": {
+        "datasetId": {
+          "$ref": "#/$defs/id"
+        },
+        "sourceRef": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceHash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "format": {
+          "type": "string"
+        },
+        "sheets": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "rowCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "columnCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "observationGrain": {
+          "type": "string"
+        },
+        "keyFields": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/fieldRecord"
+          }
+        },
+        "sourceRole": {
+          "enum": [
+            "labeled-training",
+            "validation",
+            "inference",
+            "sample-submission",
+            "lookup",
+            "metadata",
+            "auxiliary",
+            "excluded"
+          ]
+        },
+        "taskRole": {
+          "type": "string"
+        },
+        "targetVariable": {
+          "type": "string"
+        },
+        "labeled": {
+          "type": "boolean"
+        },
+        "inferenceOnly": {
+          "type": "boolean"
+        },
+        "submissionTemplate": {
+          "type": "boolean"
+        },
+        "fieldUsage": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/fieldUsage"
+          }
+        },
+        "timeGrain": {
+          "type": "string"
+        },
+        "spatialGrain": {
+          "type": "string"
+        },
+        "publicAssetIncluded": {
+          "type": "boolean"
+        },
+        "privacyReview": {
+          "enum": [
+            "pending",
+            "cleared",
+            "blocked"
+          ]
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "dataTransformRecord": {
+      "type": "object",
+      "required": [
+        "transformId",
+        "datasetId",
+        "operation",
+        "rationale"
+      ],
+      "properties": {
+        "transformId": {
+          "$ref": "#/$defs/id"
+        },
+        "datasetId": {
+          "$ref": "#/$defs/id"
+        },
+        "operation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "inputFields": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "parameters": {
+          "type": "object"
+        },
+        "outputFields": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "affectedRows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "fitScope": {
+          "type": "string"
+        },
+        "applyScope": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "foldSafe": {
+          "type": "boolean"
+        },
+        "leakageRisk": {
+          "enum": [
+            "none",
+            "controlled",
+            "review-required",
+            "prohibited"
+          ]
+        },
+        "missingStrategy": {
+          "type": "string"
+        },
+        "derivedFromFields": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "datasetTaskContract": {
+      "type": "object",
+      "required": [
+        "taskType",
+        "labeledDatasetIds",
+        "taskEvidence",
+        "ambiguityStatus"
+      ],
+      "properties": {
+        "taskType": {
+          "type": "string",
+          "minLength": 1
+        },
+        "targetVariable": {
+          "type": "string"
+        },
+        "labeledDatasetIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "validationDatasetIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "inferenceDatasetIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "submissionTemplateId": {
+          "type": "string"
+        },
+        "evaluationMetric": {
+          "type": "string"
+        },
+        "taskEvidence": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "ambiguityStatus": {
+          "enum": [
+            "resolved",
+            "user-confirmation-required"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "validationStrategy": {
+      "type": "object",
+      "properties": {
+        "method": {
+          "type": "string"
+        },
+        "folds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "split": {
+          "type": "string"
+        },
+        "sampleCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "groupedBy": {
+          "type": "string"
+        },
+        "foldResults": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "modelSearch": {
+      "type": "object",
+      "required": [
+        "adequacyStatus",
+        "audienceClaimLevel",
+        "baselineIds",
+        "candidateModelIds",
+        "candidateFamilies",
+        "omittedApplicableFamilies",
+        "omittedFamilyRationales",
+        "validationStrategy",
+        "primaryMetric",
+        "secondaryMetrics",
+        "selectionRule",
+        "tieBreakRule",
+        "performanceTolerance",
+        "stabilityRequirement",
+        "parameterSearch",
+        "foldResults",
+        "externalTruthStatus"
+      ],
+      "properties": {
+        "adequacyStatus": {
+          "enum": [
+            "sufficient",
+            "limited",
+            "preliminary",
+            "not-applicable"
+          ]
+        },
+        "taskFamily": {
+          "enum": [
+            "tabular",
+            "text",
+            "time-series",
+            "survival",
+            "image",
+            "other"
+          ]
+        },
+        "limitationRationale": {
+          "type": "string"
+        },
+        "audienceClaimLevel": {
+          "enum": [
+            "preliminary",
+            "current-best",
+            "selected",
+            "final",
+            "not-applicable"
+          ]
+        },
+        "baselineIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "candidateModelIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "candidateFamilies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "family",
+              "modelIds"
+            ],
+            "properties": {
+              "family": {
+                "type": "string",
+                "minLength": 1
+              },
+              "modelIds": {
+                "$ref": "#/$defs/stringArray"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "omittedApplicableFamilies": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "omittedFamilyRationales": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "family",
+              "rationale"
+            ],
+            "properties": {
+              "family": {
+                "type": "string",
+                "minLength": 1
+              },
+              "rationale": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "validationStrategy": {
+          "type": "object",
+          "required": [
+            "method",
+            "sharedSplitId",
+            "sampleCount",
+            "foldSafePreprocessing"
+          ],
+          "properties": {
+            "method": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sharedSplitId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "folds": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "sampleCount": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "randomSeed": {
+              "type": "integer"
+            },
+            "foldSafePreprocessing": {
+              "const": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "primaryMetric": {
+          "type": "string",
+          "minLength": 1
+        },
+        "secondaryMetrics": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "selectionRule": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tieBreakRule": {
+          "type": "string",
+          "minLength": 1
+        },
+        "performanceTolerance": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "stabilityRequirement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "parameterSearch": {
+          "type": "object",
+          "required": [
+            "status",
+            "tuningLeakageControl",
+            "dataScopeDatasetIds"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "performed",
+                "not-performed"
+              ]
+            },
+            "method": {
+              "type": "string"
+            },
+            "candidateModelIds": {
+              "$ref": "#/$defs/stringArray"
+            },
+            "searchSpace": {
+              "type": "object"
+            },
+            "bestParameters": {
+              "type": "object"
+            },
+            "stoppingRule": {
+              "type": "string"
+            },
+            "tuningLeakageControl": {
+              "type": "string",
+              "minLength": 1
+            },
+            "dataScopeDatasetIds": {
+              "$ref": "#/$defs/stringArray"
+            },
+            "rationale": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        },
+        "foldResults": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "selectedModelId": {
+          "type": "string"
+        },
+        "selectedModelRationale": {
+          "type": "string"
+        },
+        "externalTruthStatus": {
+          "enum": [
+            "known",
+            "unknown",
+            "partial"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "metric": {
+      "type": "object",
+      "required": [
+        "label",
+        "value"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "unit": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "analysisRecord": {
+      "type": "object",
+      "required": [
+        "analysisId",
+        "datasetId",
+        "question",
+        "method",
+        "evidenceStatus"
+      ],
+      "properties": {
+        "analysisId": {
+          "$ref": "#/$defs/id"
+        },
+        "datasetId": {
+          "$ref": "#/$defs/id"
+        },
+        "transformIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "analysisMode": {
+          "$ref": "#/$defs/analysisMode"
+        },
+        "questionId": {
+          "type": "string"
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1
+        },
+        "analysisIntentSource": {
+          "enum": [
+            "user-explicit",
+            "dataset-contract",
+            "inferred",
+            "user-confirmed"
+          ]
+        },
+        "datasetTaskContract": {
+          "$ref": "#/$defs/datasetTaskContract"
+        },
+        "analysisModeRationale": {
+          "type": "string"
+        },
+        "primaryQuestion": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string",
+          "minLength": 1
+        },
+        "parameters": {
+          "type": "object"
+        },
+        "outputFields": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "evidenceStatus": {
+          "enum": [
+            "DERIVED",
+            "EXPECTED",
+            "HYPOTHESIZED"
+          ]
+        },
+        "findingStatement": {
+          "type": "string"
+        },
+        "supportingMetrics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/metric"
+          }
+        },
+        "findingPriority": {
+          "$ref": "#/$defs/findingPriority"
+        },
+        "decisionValue": {
+          "type": "string"
+        },
+        "sourceAnalysisId": {
+          "type": "string"
+        },
+        "applicationImplication": {
+          "type": "string"
+        },
+        "contradictoryEvidence": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "preprocessingSummary": {
+          "type": "string"
+        },
+        "validationStrategy": {
+          "$ref": "#/$defs/validationStrategy"
+        },
+        "baselineIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "baselineType": {
+          "type": "string"
+        },
+        "candidateModelIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "selectedModelId": {
+          "type": "string"
+        },
+        "modelFamily": {
+          "type": "string"
+        },
+        "modelSearch": {
+          "$ref": "#/$defs/modelSearch"
+        },
+        "evaluationMetrics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "value",
+              "scope"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "value": {
+                "type": "number"
+              },
+              "variation": {
+                "type": "number"
+              },
+              "scope": {
+                "enum": [
+                  "cross-validation",
+                  "validation",
+                  "external-benchmark"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "errorAnalysis": {
+          "type": "object",
+          "properties": {
+            "summary": {
+              "type": "string"
+            },
+            "resultIds": {
+              "$ref": "#/$defs/stringArray"
+            }
+          },
+          "additionalProperties": false
+        },
+        "inferenceOutput": {
+          "type": "object",
+          "required": [
+            "datasetId",
+            "outputRef",
+            "truthStatus"
+          ],
+          "properties": {
+            "datasetId": {
+              "$ref": "#/$defs/id"
+            },
+            "outputRef": {
+              "type": "string",
+              "minLength": 1
+            },
+            "rowCount": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "truthStatus": {
+              "enum": [
+                "unknown",
+                "available"
+              ]
+            },
+            "submissionSchemaId": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "analysisKind": {
+          "enum": [
+            "descriptive",
+            "diagnostic",
+            "predictive-model",
+            "explanatory-model",
+            "published-scoring-formula",
+            "formula-decomposition",
+            "descriptive-association"
+          ]
+        },
+        "modelGate": {
+          "type": "object",
+          "required": [
+            "decision",
+            "rationale"
+          ],
+          "properties": {
+            "decision": {
+              "enum": [
+                "admit",
+                "defer",
+                "reject",
+                "not-applicable"
+              ]
+            },
+            "rationale": {
+              "type": "string",
+              "minLength": 1
+            },
+            "targetVariable": {
+              "type": "string"
+            },
+            "validationStrategy": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "narrativeUnit": {
+      "type": "object",
+      "required": [
+        "id",
+        "chapterId",
+        "role",
+        "title",
+        "findingIds",
+        "claimIds",
+        "chartSpecIds",
+        "priority"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "chapterId": {
+          "$ref": "#/$defs/id"
+        },
+        "role": {
+          "enum": [
+            "introduction",
+            "analysis-design",
+            "finding",
+            "deep-insight",
+            "application",
+            "boundary",
+            "synthesis",
+            "closing",
+            "work",
+            "materials",
+            "method",
+            "comparison",
+            "progress",
+            "plan"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "findingIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "claimIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "chartSpecIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "citationIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "priority": {
+          "enum": [
+            "MUST_SHOW",
+            "SHOULD_SHOW",
+            "BACKUP"
+          ]
+        },
+        "substantiveContribution": {
+          "type": "string"
+        },
+        "substantiveKinds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "dataFactIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "methodIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "resultIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "titleBasisIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "audienceTakeaway": {
+          "type": "string"
+        },
+        "takeawayBasisIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "interpretationChangingBoundary": {
+          "type": "boolean"
+        },
+        "contentUtilityStatus": {
+          "enum": [
+            "keep",
+            "merge",
+            "remove"
+          ]
+        },
+        "visualPlan": {
+          "$ref": "#/$defs/visualPlan"
+        }
+      },
+      "additionalProperties": true
+    },
+    "visualPlan": {
+      "type": "object",
+      "required": [
+        "coreClaim",
+        "evidenceKinds",
+        "availableVisualIds",
+        "visualCenter",
+        "primaryVisualIds",
+        "evidenceWeight",
+        "preserveWholeFigure",
+        "extractableSubfigures",
+        "needsZoom",
+        "mergeOrBackupIds",
+        "omissionReasons"
+      ],
+      "properties": {
+        "coreClaim": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidenceKinds": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "scientific-evidence",
+              "data-evidence",
+              "authentic-project-proof",
+              "explanatory-structure",
+              "ordinary-narrative",
+              "decorative"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "availableVisualIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "visualCenter": {
+          "enum": [
+            "dominant-scientific-figure",
+            "structured-chart",
+            "comparison-table",
+            "equation-validation",
+            "evidence-matrix",
+            "mechanism-diagram",
+            "technical-route",
+            "hierarchy-map",
+            "before-after-proof",
+            "claim-evidence-conclusion",
+            "text-led-structured-board"
+          ]
+        },
+        "primaryVisualIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "evidenceWeight": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "preserveWholeFigure": {
+          "type": "boolean"
+        },
+        "extractableSubfigures": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "needsZoom": {
+          "type": "boolean"
+        },
+        "textOnlyRelationship": {
+          "enum": [
+            "causal",
+            "comparative",
+            "sequential",
+            "hierarchical",
+            "tabular",
+            "spatial",
+            "argument"
+          ]
+        },
+        "mergeOrBackupIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "omissionReasons": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "reason"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/id"
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "chartAction": {
+      "enum": [
+        "tooltip",
+        "fold-tooltip",
+        "metric-switch",
+        "model-switch",
+        "group-switch",
+        "series-highlight",
+        "point-detail",
+        "legend-focus",
+        "time-range",
+        "cell-detail",
+        "confusion-detail",
+        "linked-evidence",
+        "reset"
+      ]
+    },
+    "chartEvidenceSpec": {
+      "type": "object",
+      "properties": {
+        "chartType": {
+          "type": "string"
+        },
+        "chartForm": {
+          "enum": [
+            "sorted-bar",
+            "lollipop",
+            "dot-plot",
+            "slopegraph",
+            "bump-chart",
+            "line",
+            "area",
+            "scatter",
+            "heatmap",
+            "correlation-dot-plot",
+            "dumbbell",
+            "box-plot",
+            "small-multiples",
+            "100%-stacked-bar",
+            "proportional-area",
+            "choropleth",
+            "evidence-table",
+            "parallel-coordinates"
+          ]
+        },
+        "dataRef": {
+          "type": "object",
+          "required": [
+            "datasetId"
+          ],
+          "properties": {
+            "datasetId": {
+              "$ref": "#/$defs/id"
+            },
+            "transformIds": {
+              "$ref": "#/$defs/stringArray"
+            },
+            "analysisId": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "analyticalQuestion": {
+          "type": "string"
+        },
+        "visualThesis": {
+          "type": "string"
+        },
+        "encodedFields": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "comparisonBaseline": {
+          "type": "string"
+        },
+        "claimVisualFit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alternativeFormsConsidered": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "sorted-bar",
+              "lollipop",
+              "dot-plot",
+              "slopegraph",
+              "bump-chart",
+              "line",
+              "area",
+              "scatter",
+              "heatmap",
+              "correlation-dot-plot",
+              "dumbbell",
+              "box-plot",
+              "small-multiples",
+              "100%-stacked-bar",
+              "proportional-area",
+              "choropleth",
+              "evidence-table",
+              "parallel-coordinates"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "selectionRationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "annotationTargets": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "highlightPolicy": {
+          "type": "string"
+        },
+        "readingOrder": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "encodings": {
+          "type": "object"
+        },
+        "units": {
+          "oneOf": [
+            {
+              "const": "unitless"
+            },
+            {
+              "type": "object"
+            }
+          ]
+        },
+        "domainPolicy": {
+          "enum": [
+            "fixed",
+            "data",
+            "source"
+          ]
+        },
+        "precision": {
+          "type": "object"
+        },
+        "interactionSpec": {
+          "type": "object",
+          "required": [
+            "enabled",
+            "actions",
+            "runtimeHooks"
+          ],
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "actions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/chartAction"
+              }
+            },
+            "runtimeHooks": {
+              "$ref": "#/$defs/stringArray"
+            }
+          },
+          "additionalProperties": false
+        },
+        "motionSpec": {
+          "type": "object"
+        },
+        "defaultState": {
+          "type": "object"
+        },
+        "resetState": {
+          "type": "object"
+        },
+        "reducedMotionState": {
+          "type": "object"
+        },
+        "printState": {
+          "type": "object"
+        },
+        "titleBasisMetrics": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "mustShowMetricIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "staticRationale": {
+          "type": "string"
+        },
+        "accessibleSummary": {
+          "type": "string"
+        },
+        "authoritativeValues": {},
+        "displayValues": {}
+      },
+      "additionalProperties": true
+    },
+    "visualEvidenceRecord": {
+      "type": "object",
+      "required": [
+        "visualId",
+        "sourceRef",
+        "sourceHash",
+        "evidenceType",
+        "subtype",
+        "classificationConfidence",
+        "claimLinks",
+        "evidenceStatus",
+        "representationStatus",
+        "evidenceContribution",
+        "treatmentLevel",
+        "treatmentRationale",
+        "mustPreserve",
+        "interactionPlan",
+        "limitations"
+      ],
+      "properties": {
+        "visualId": {
+          "$ref": "#/$defs/id"
+        },
+        "visualKind": {
+          "enum": [
+            "scientific-evidence",
+            "data-evidence",
+            "authentic-project-proof",
+            "explanatory-structure",
+            "ordinary-narrative",
+            "decorative"
+          ]
+        },
+        "sourceRef": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceHash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "evidenceType": {
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "MIXED",
+            "UNCERTAIN"
+          ]
+        },
+        "subtype": {
+          "type": "string",
+          "minLength": 1
+        },
+        "classificationConfidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "claimLinks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "claimId",
+              "relation"
+            ],
+            "properties": {
+              "claimId": {
+                "$ref": "#/$defs/id"
+              },
+              "relation": {
+                "enum": [
+                  "supports",
+                  "qualifies",
+                  "contradicts",
+                  "contextualizes"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "citationIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "evidenceStatus": {
+          "enum": [
+            "DIRECT",
+            "DERIVED",
+            "CONTEXTUAL",
+            "EXPECTED",
+            "HYPOTHESIZED",
+            "UNSUPPORTED"
+          ]
+        },
+        "representationStatus": {
+          "enum": [
+            "ORIGINAL",
+            "ANNOTATED",
+            "REFORMATTED",
+            "RECONSTRUCTED"
+          ]
+        },
+        "evidenceContribution": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decisive": {
+          "type": "boolean"
+        },
+        "treatmentLevel": {
+          "enum": [
+            "L0",
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        "treatmentRationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mustPreserve": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "interactionPlan": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "defaultState": {
+          "type": "object"
+        },
+        "resetState": {
+          "type": "object"
+        },
+        "reducedMotionState": {
+          "type": "object"
+        },
+        "printState": {
+          "type": "object"
+        },
+        "titleBasisMetrics": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "mustShowMetricIds": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "datasetId": {
+          "type": "string"
+        },
+        "analysisId": {
+          "type": "string"
+        },
+        "chartSpec": {
+          "$ref": "#/$defs/chartEvidenceSpec"
+        },
+        "structure": {
+          "type": "object"
+        },
+        "annotations": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "pixelImmutable": {
+          "type": "boolean"
+        },
+        "pixelTransforms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "parentVisualId": {
+          "type": "string"
+        },
+        "childVisualIds": {
+          "$ref": "#/$defs/stringArray"
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

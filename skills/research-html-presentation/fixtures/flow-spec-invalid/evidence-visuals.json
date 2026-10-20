@@ -1,0 +1,12 @@
+{
+  "claims": [],
+  "visuals": [],
+  "flowSpecs": [{
+    "id": "flow-invalid",
+    "nodes": [
+      { "id": "input", "role": "input", "label": "材料" },
+      { "id": "orphan", "role": "evidence", "label": "孤立证据" }
+    ],
+    "edges": [{ "from": "input", "to": "missing", "kind": "primary", "directed": true }]
+  }]
+}

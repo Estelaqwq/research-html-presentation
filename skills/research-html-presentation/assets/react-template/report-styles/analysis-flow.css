@@ -1,0 +1,64 @@
+.analysis-flow-entry { position:fixed; right:22px; bottom:136px; z-index:79; }
+.analysis-flow-toggle { border:1px solid #164c97; border-radius:999px; padding:10px 18px; background:#fff; color:#123d79; font-size:14px; font-weight:700; cursor:pointer; box-shadow:0 4px 18px #10294a2b; }
+.analysis-flow-backdrop { position:fixed; inset:0; z-index:110; display:grid; place-items:center; padding:20px; background:#10274299; }
+.analysis-flow-dialog { display:flex; flex-direction:column; width:min(1520px,100%); max-height:calc(100dvh - 40px); background:#fff; color:#18304d; border:1px solid #bed0e2; border-top:5px solid #164c97; box-shadow:0 18px 58px #10274255; overflow:hidden; }
+.analysis-flow-header { display:flex; justify-content:space-between; align-items:center; gap:18px; padding:16px 22px; border-bottom:1px solid #dce5ef; }
+.analysis-flow-header p { margin:0; font-size:11px; font-weight:700; letter-spacing:.14em; color:#a12c39; }
+.analysis-flow-header h2 { margin:2px 0 0; color:#0d3471; font-size:24px; }
+.analysis-flow-header-actions,.analysis-flow-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+.analysis-flow-intro { margin:0; padding:10px 22px; color:#4d6279; font-size:14px; }
+.analysis-flow-jump { display:flex; align-items:center; gap:9px; padding:0 22px 9px; color:#4d6279; font-size:13px; }
+.analysis-flow-jump select { max-width:min(460px,70vw); border:1px solid #a5bad1; background:#fff; color:#163b6c; padding:5px 8px; }
+.analysis-flow-toolbar { padding:9px 22px; border-block:1px solid #dce5ef; background:#f5f8fc; }
+.analysis-flow-toolbar span { margin-left:auto; font-size:13px; color:#596e83; }
+.analysis-flow-dialog button:not(.analysis-flow-node),.analysis-flow-dialog select,.analysis-flow-dialog input,.analysis-flow-dialog textarea { font:inherit; }
+.analysis-flow-dialog button:not(.analysis-flow-node) { border:1px solid #a5bad1; border-radius:4px; padding:6px 10px; background:#fff; color:#133b74; cursor:pointer; }
+.analysis-flow-dialog button:disabled { opacity:.45; cursor:not-allowed; }
+.analysis-flow-toggle:focus-visible,.analysis-flow-dialog button:focus-visible,.analysis-flow-dialog input:focus-visible,.analysis-flow-dialog textarea:focus-visible,.analysis-flow-dialog select:focus-visible,.analysis-flow-dialog a:focus-visible { outline:3px solid #b02734; outline-offset:2px; }
+.analysis-flow-confirm { display:flex; align-items:center; flex-wrap:wrap; gap:9px; padding:9px 22px; background:#fff1e7; border-bottom:1px solid #e8b39a; }
+.analysis-flow-confirm p { margin:0 10px 0 0; }
+.analysis-flow-status { margin:0; padding:8px 22px; color:#174582; background:#edf3fa; }
+.analysis-flow-body { display:grid; grid-template-columns:minmax(0,1fr) minmax(250px,310px); min-height:0; flex:1; border-top:1px solid #dce5ef; }
+.analysis-flow-scroll { min-width:0; min-height:340px; overflow:auto; background:radial-gradient(#dbe5f0 1px,transparent 1px) 0 0/20px 20px,#fbfcfe; }
+.analysis-flow-stage { position:relative; min-height:100%; }
+.analysis-flow-lines { position:absolute; inset:0; pointer-events:none; }
+.analysis-flow-node { position:absolute; display:flex; flex-direction:column; justify-content:center; gap:5px; width:210px; min-height:88px; padding:12px 15px; border:1px solid #8ba9c8; border-left:5px solid #164c97; background:#fff; text-align:left; color:#163b6c; box-shadow:0 3px 9px #10305719; cursor:pointer; touch-action:none; user-select:none; }
+.analysis-flow-node.is-cyan { border-left-color:#288d9a; }
+.analysis-flow-node.is-red { border-left-color:#aa2e3a; }
+.analysis-flow-node.is-gold { border-left-color:#b18432; }
+.analysis-flow-node.is-selected { outline:3px solid #b32e3c; outline-offset:2px; }
+.analysis-flow-node small { color:#61768b; font-size:11px; font-weight:700; }
+.analysis-flow-node strong { font-size:14px; line-height:1.3; overflow-wrap:anywhere; }
+.analysis-flow-details { min-width:0; overflow:auto; padding:18px; border-left:1px solid #dce5ef; background:#fff; }
+.analysis-flow-details h3 { margin:0 0 10px; color:#0d3471; font-size:17px; }
+.analysis-flow-details p { font-size:14px; line-height:1.6; overflow-wrap:anywhere; }
+.analysis-flow-details a { color:#124a8f; }
+.analysis-flow-refs { color:#6a7788; font-size:12px!important; }
+.analysis-flow-fields { margin-top:20px; padding-top:15px; border-top:1px solid #dce5ef; }
+.analysis-flow-fields label,.analysis-flow-edge-form label { display:block; margin:10px 0; font-size:13px; font-weight:700; }
+.analysis-flow-fields input,.analysis-flow-fields textarea,.analysis-flow-fields select,.analysis-flow-edge-form select { display:block; width:100%; min-height:36px; margin-top:5px; border:1px solid #9db4cf; border-radius:4px; padding:6px; background:#fff; color:#18304d; }
+.analysis-flow-fields textarea { resize:vertical; }
+.analysis-flow-move { display:flex; flex-wrap:wrap; gap:5px; margin:12px 0; }
+.analysis-flow-move span { width:100%; font-size:13px; font-weight:700; }
+.analysis-flow-dialog .analysis-flow-delete { color:#9a2532!important; border-color:#be8e95!important; }
+.analysis-flow-edges { margin-top:24px; padding-top:15px; border-top:1px solid #dce5ef; }
+.analysis-flow-edges ul { list-style:none; padding:0; }
+.analysis-flow-edges li { display:flex; justify-content:space-between; align-items:center; gap:8px; padding:5px 0; border-bottom:1px solid #edf1f5; font-size:12px; }
+.analysis-flow-edges li span { min-width:0; overflow-wrap:anywhere; }
+.analysis-flow-edge-form { display:grid; gap:4px; }
+@media(max-width:760px) {
+  .analysis-flow-entry { right:12px; bottom:132px; }
+  .analysis-flow-backdrop { padding:8px; }
+  .analysis-flow-dialog { max-height:calc(100dvh - 16px); }
+  .analysis-flow-header { padding:10px 14px; }
+  .analysis-flow-header h2 { font-size:19px; }
+  .analysis-flow-intro { padding:8px 14px; }
+  .analysis-flow-jump { padding:0 14px 8px; }
+  .analysis-flow-toolbar { padding:8px 14px; }
+  .analysis-flow-body { display:flex; flex-direction:column; overflow:auto; }
+  .analysis-flow-scroll { flex:0 0 44vh; min-height:250px; border-bottom:1px solid #dce5ef; }
+  .analysis-flow-details { flex:1 0 auto; border-left:0; overflow:visible; }
+}
+@media print {
+  .analysis-flow-entry { display:none!important; }
+}

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0",
+  "projectId": "zuel-research-deck-scaffold",
+  "outputMode": "slide-deck",
+  "baseFingerprint": "sha256:c9ca2544b83eab687b33746d90d27ab2e5a6df51176588bed649ade5756fd7e6",
+  "fields": [
+    {
+      "editId": "cover.title",
+      "targetId": "cover",
+      "field": "title",
+      "scope": "slide-deck",
+      "strategy": "plain-copy",
+      "baseValue": "TODO: 科研汇报标题",
+      "expectedValueHash": "sha256:86eecfd275675c48759d413f26d25b73c81431bc3cd1b96f71c10cd8c95d3f2f",
+      "resize": {
+        "mode": "slide",
+        "minWidth": 480,
+        "maxWidth": 1320,
+        "minHeight": 64,
+        "maxMinHeight": 300,
+        "snap": 8
+      }
+    }
+  ]
+}

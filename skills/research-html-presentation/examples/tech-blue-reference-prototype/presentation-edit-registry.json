@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "2.0",
+  "projectId": "tech-blue-reference-prototype-20261018",
+  "outputMode": "slide-deck",
+  "baseFingerprint": "sha256:b9e5db4e6e2e56dfb4b36ab4759f164d0163e0d5482148491c4772c0804bc97d",
+  "fields": [
+    {
+      "editId": "cover.title",
+      "targetId": "cover",
+      "field": "title",
+      "scope": "slide-deck",
+      "strategy": "plain-copy",
+      "baseValue": "数智研析让证据更清晰",
+      "expectedValueHash": "sha256:d1336166bec92aa04a8ef2545da191b6eec9dac9a0f53c1bbb1a6b9c7ce73fc1",
+      "resize": {
+        "mode": "slide",
+        "minWidth": 480,
+        "maxWidth": 1320,
+        "minHeight": 64,
+        "maxMinHeight": 300,
+        "snap": 8
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "paper-figure-led",
+  "synthetic": true,
+  "materialType": "paper-figure-led",
+  "visualPlan": {
+    "coreClaim": "真实论文图组必须承担本页的主要论证",
+    "evidenceKinds": ["scientific-evidence"],
+    "availableVisualIds": ["fig-main", "caption", "interpretation"],
+    "visualCenter": "dominant-scientific-figure",
+    "primaryVisualIds": ["fig-main"],
+    "evidenceWeight": {"fig-main": 0.72, "caption": 0.12, "interpretation": 0.16},
+    "preserveWholeFigure": true,
+    "extractableSubfigures": [],
+    "needsZoom": true,
+    "figureTreatment": "whole-figure-with-readable-subfigures",
+    "textOnlyRelation": "not-applicable",
+    "mergeOrBackupIds": [],
+    "omissionReasons": [{"id": "decorative-duplicate-caption", "reason": "重复图注不承担新的证据"}],
+    "omissions": ["decorative-duplicate-caption"]
+  },
+  "layout": "L16",
+  "requiredChecks": ["dominantVisualRatio", "plotOccupancy", "figure-text-legibility", "source-traceability"],
+  "expectedFailures": ["tiny-figure", "invented-subfigure", "wrapper-occupancy-only"]
+}

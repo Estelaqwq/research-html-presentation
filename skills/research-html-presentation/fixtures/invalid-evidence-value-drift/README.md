@@ -1,0 +1,1 @@
+This fixture is reserved for the existing evidence-copy editor validator. Its regression assertion is the stable evidence-token failure emitted by `invalid-editor-conflict` until a valid base patch fixture is supplied.

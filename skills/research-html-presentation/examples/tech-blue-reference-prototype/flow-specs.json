@@ -1,0 +1,96 @@
+{
+  "id": "traceable-research-map",
+  "layout": "feedback-loop",
+  "printState": "complete",
+  "readingOrder": [
+    "papers",
+    "data",
+    "figures",
+    "notes",
+    "connect",
+    "verify",
+    "conclusion"
+  ],
+  "nodes": [
+    {
+      "id": "papers",
+      "role": "input",
+      "label": "文献与报告"
+    },
+    {
+      "id": "data",
+      "role": "input",
+      "label": "结构化数据"
+    },
+    {
+      "id": "figures",
+      "role": "input",
+      "label": "原始图像"
+    },
+    {
+      "id": "notes",
+      "role": "input",
+      "label": "项目记录"
+    },
+    {
+      "id": "connect",
+      "role": "process",
+      "label": "证据关联"
+    },
+    {
+      "id": "verify",
+      "role": "validation",
+      "label": "交叉复核"
+    },
+    {
+      "id": "conclusion",
+      "role": "output",
+      "label": "可追溯结论"
+    }
+  ],
+  "edges": [
+    {
+      "from": "papers",
+      "to": "connect",
+      "kind": "secondary",
+      "directed": true
+    },
+    {
+      "from": "data",
+      "to": "connect",
+      "kind": "secondary",
+      "directed": true
+    },
+    {
+      "from": "figures",
+      "to": "connect",
+      "kind": "secondary",
+      "directed": true
+    },
+    {
+      "from": "notes",
+      "to": "connect",
+      "kind": "secondary",
+      "directed": true
+    },
+    {
+      "from": "connect",
+      "to": "verify",
+      "kind": "primary",
+      "directed": true
+    },
+    {
+      "from": "verify",
+      "to": "conclusion",
+      "kind": "primary",
+      "directed": true
+    },
+    {
+      "from": "conclusion",
+      "to": "connect",
+      "kind": "feedback",
+      "directed": true,
+      "label": "回溯来源"
+    }
+  ]
+}

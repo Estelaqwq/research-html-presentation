@@ -1,0 +1,397 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "research-html-presentation/report-content.schema.json",
+  "title": "General report presentation content",
+  "description": "Compact report content. Copy fields accept limited **bold** emphasis; raw HTML is never executed. Local image paths must be packaged for offline delivery.",
+  "type": "object",
+  "required": [
+    "sections"
+  ],
+  "properties": {
+    "summary": {
+      "type": "string"
+    },
+    "overview": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/step"
+      }
+    },
+    "sections": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "lead": {
+            "type": "string"
+          },
+          "notes": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "status": {
+            "$ref": "#/$defs/status"
+          },
+          "blocks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/block"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "status": {
+      "enum": [
+        "completed",
+        "in-progress",
+        "method-ready",
+        "pending",
+        "verification-needed",
+        "not-adopted"
+      ]
+    },
+    "step": {
+      "type": "object",
+      "required": [
+        "id",
+        "title"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "detail": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "case": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "summary"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string"
+        },
+        "evidence": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        }
+      },
+      "additionalProperties": false
+    },
+    "block": {
+      "type": "object",
+      "required": [
+        "id",
+        "type"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "enum": [
+            "text",
+            "overview",
+            "process",
+            "comparison",
+            "progress",
+            "cases",
+            "tabs",
+            "details",
+            "image"
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/step"
+          }
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/step"
+          }
+        },
+        "columns": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "cells"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "cells": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "completed": {
+          "type": "number",
+          "minimum": 0
+        },
+        "total": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "unit": {
+          "type": "string"
+        },
+        "scope": {
+          "type": "string"
+        },
+        "asOf": {
+          "type": "string"
+        },
+        "approximate": {
+          "type": "boolean"
+        },
+        "cases": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/case"
+          }
+        },
+        "options": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "label",
+              "blocks"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "blocks": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/block"
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "blocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/block"
+          }
+        },
+        "src": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "caption": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "text"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "text"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "progress"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "completed",
+              "total",
+              "scope"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "comparison"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "columns",
+              "rows"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "process"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "steps"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "overview"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "items"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "cases"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "cases"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "tabs"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "options"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "details"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "blocks"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "image"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "src",
+              "alt"
+            ]
+          }
+        }
+      ],
+      "additionalProperties": false
+    }
+  }
+}

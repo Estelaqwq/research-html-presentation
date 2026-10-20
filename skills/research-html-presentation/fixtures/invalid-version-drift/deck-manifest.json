@@ -1,0 +1,16 @@
+{
+  "title": "Invalid fixture: new dataset version drift",
+  "profile": "dataset-report",
+  "newProject": true,
+  "datasetSemanticVersion": 2,
+  "outputMode": "slide-deck",
+  "stage": "prototype",
+  "prototypeApproval": { "status": "pending", "reviewedPrototypeIds": [], "reviewEvidence": [] },
+  "analysisMode": "dataset-portrait",
+  "primaryQuestion": "Synthetic test only",
+  "slides": [
+    { "id": "cover", "section": "cover", "title": "Synthetic dataset", "type": "cover", "layout": "L01" },
+    { "id": "analysis", "section": "analysis", "title": "Synthetic analysis", "type": "content", "layout": "L08" },
+    { "id": "result", "section": "result", "title": "Synthetic result", "type": "content", "layout": "L16" }
+  ]
+}

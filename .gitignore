@@ -1,0 +1,29 @@
+node_modules/
+.pnpm-store/
+.vite/
+dist/
+build/
+.deck-render/
+.report-render/
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+
+# Personal optional resources must use an explicit, documented local directory.
+# Add only after the corresponding loader and safe fallback are implemented.
+local-assets/
+
+# Do not ignore all images, fonts, JSON files or examples indiscriminately:
+# the public package still needs audited runtime assets and regression fixtures.
+
+# Local checks and optional proprietary font assets
+.release-check/
+*.woff
+*.woff2
+*.ttf
+*.otf
+*.ttc

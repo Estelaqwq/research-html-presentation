@@ -1,0 +1,449 @@
+{
+  "title": "数智研析 · 科技风十页版式样稿",
+  "scaffoldPlaceholder": false,
+  "profile": "project-review",
+  "outputMode": "slide-deck",
+  "outputFormVersion": 1,
+  "visualStyle": "tech-engineering-dark",
+  "compositionProfile": "standard",
+  "stage": "complete",
+  "prototypeApproval": {
+    "status": "waived",
+    "reviewedPrototypeIds": [
+      "cover",
+      "method",
+      "chart"
+    ],
+    "reviewEvidence": [
+      "public/confirmed-cover.png",
+      ".deck-render/contact-sheet.html"
+    ],
+    "waiverReason": "可以的 把这个具体要求统一进skill 然后给我生成一下剩下页面的版式我整体看一下",
+    "scope": "用户确认封面风格并明确要求展开全部内页；内页仍为本次整体审阅稿，不虚构用户已认可未见页面。",
+    "decisionNote": "可以的 把这个具体要求统一进skill 然后给我生成一下剩下页面的版式我整体看一下"
+  },
+  "qualityContractVersion": 1,
+  "newProject": true,
+  "requestedCapabilities": {
+    "authoring": "required"
+  },
+  "evidenceRegistry": "evidence-visuals.json",
+  "citationRegistry": "citations.json",
+  "slides": [
+    {
+      "id": "cover",
+      "section": "视觉方向",
+      "type": "cover",
+      "layout": "L01",
+      "title": "数智研析",
+      "claimIds": [
+        "c-cover"
+      ],
+      "visualIds": [],
+      "narrativeUnitId": "narrative-cover",
+      "notes": "版式测试内容。解释性示意不代表具体项目的实证结果。",
+      "citationIds": [
+        "design-source"
+      ]
+    },
+    {
+      "id": "overview",
+      "section": "表达主线",
+      "type": "content",
+      "layout": "L02",
+      "title": "从问题、关系与证据展开讲述",
+      "claimIds": [
+        "c-overview"
+      ],
+      "visualIds": [],
+      "narrativeUnitId": "narrative-overview",
+      "notes": "版式测试内容。解释性示意不代表具体项目的实证结果。",
+      "bodySilhouette": "text-structure-board",
+      "visualPlan": {
+        "coreClaim": "从问题、关系与证据展开讲述",
+        "evidenceKinds": [
+          "explanatory-structure"
+        ],
+        "availableVisualIds": [],
+        "visualCenter": "text-structure",
+        "primaryVisualIds": [],
+        "evidenceWeight": {},
+        "preserveWholeFigure": true,
+        "extractableSubfigures": [],
+        "needsZoom": false,
+        "textOnlyRelationship": "sequential",
+        "mergeOrBackupIds": [],
+        "omissionReasons": []
+      },
+      "densityException": {
+        "reason": "目录的四个语义段落需要分隔并保留导航线索；不以虚构研究结果填充间距。",
+        "basisIds": [
+          "c-overview"
+        ],
+        "reviewedBy": "Codex visual review"
+      },
+      "citationIds": [
+        "design-source"
+      ]
+    },
+    {
+      "id": "background",
+      "section": "背景对照",
+      "type": "content",
+      "layout": "L16",
+      "title": "标题与内容重心决定第一眼",
+      "claimIds": [
+        "c-background"
+      ],
+      "visualIds": [
+        "old-cover",
+        "confirmed-cover"
+      ],
+      "narrativeUnitId": "narrative-background",
+      "notes": "版式测试内容。解释性示意不代表具体项目的实证结果。",
+      "bodySilhouette": "comparison-bridge",
+      "visualPlan": {
+        "coreClaim": "标题与内容重心决定第一眼",
+        "evidenceKinds": [
+          "authentic-project-evidence"
+        ],
+        "availableVisualIds": [
+          "old-cover",
+          "confirmed-cover"
+        ],
+        "visualCenter": "actual-revision-comparison",
+        "primaryVisualIds": [
+          "confirmed-cover"
+        ],
+        "evidenceWeight": {
+          "old-cover": 0.5,
+          "confirmed-cover": 0.5
+        },
+        "preserveWholeFigure": true,
+        "extractableSubfigures": [],
+        "needsZoom": true,
+        "textOnlyRelationship": "sequential",
+        "mergeOrBackupIds": [],
+        "omissionReasons": []
+      },
+      "citationIds": [
+        "design-source"
+      ]
+    },
+    {
+      "id": "method",
+      "section": "研究组织",
+      "type": "content",
+      "layout": "L10",
+      "title": "多源材料形成可追溯结论",
+      "claimIds": [
+        "c-method"
+      ],
+      "visualIds": [
+        "research-map"
+      ],
+      "narrativeUnitId": "narrative-method",
+      "notes": "版式测试内容。解释性示意不代表具体项目的实证结果。",
+      "bodySilhouette": "figure-support-matrix",
+      "visualPlan": {
+        "coreClaim": "多源材料形成可追溯结论",
+        "evidenceKinds": [
+          "explanatory-structure"
+        ],
+        "availableVisualIds": [
+          "research-map"
+        ],
+        "visualCenter": "research-material-map",
+        "primaryVisualIds": [
+          "research-map"
+        ],
+        "evidenceWeight": {
+          "research-map": 1.0
+        },
+        "preserveWholeFigure": true,
+        "extractableSubfigures": [],
+        "needsZoom": false,
+        "textOnlyRelationship": "sequential",
+        "mergeOrBackupIds": [],
+        "omissionReasons": []
+      },
+      "densityException": {
+        "reason": "有向连线和回溯曲线需要留出空隙，保证七个节点的输入、复核与反馈关系可辨。",
+        "basisIds": [
+          "c-method"
+        ],
+        "reviewedBy": "Codex visual review"
+      },
+      "citationIds": [
+        "design-source"
+      ]
+    },
+    {
+      "id": "architecture",
+      "section": "层级结构",
+      "type": "content",
+      "layout": "L11",
+      "title": "材料、分析与表达各负其责",
+      "claimIds": [
+        "c-architecture"
+      ],
+      "visualIds": [],
+      "narrativeUnitId": "narrative-architecture",
+      "notes": "版式测试内容。解释性示意不代表具体项目的实证结果。",
+      "bodySilhouette": "hierarchy-map",
+      "visualPlan": {
+        "coreClaim": "材料、分析与表达各负其责",
+        "evidenceKinds": [
+          "explanatory-structure"
+        ],
+        "availableVisualIds": [],
+        "visualCenter": "text-structure",
+        "primaryVisualIds": [],
+        "evidenceWeight": {},
+        "preserveWholeFigure": true,
+        "extractableSubfigures": [],
+        "needsZoom": false,
+        "textOnlyRelationship": "hierarchical",
+        "mergeOrBackupIds": [],
+        "omissionReasons": []
+      },
+      "densityException": {
+        "reason": "分层的相对位置与层间空间是层级关系的必要编码。",
+        "basisIds": [
+          "c-architecture"
+        ],
+        "reviewedBy": "Codex visual review"
+      },
+      "citationIds": [
+        "design-source"
+      ]
+    },
+    {
+      "id": "chart",
+      "section": "证据呈现",
+      "type": "content",
+      "layout": "L13",
+      "title": "完整字库转换后体积均有降低",
+      "claimIds": [
+        "c-chart"
+      ],
+      "visualIds": [
+        "font-size-chart"
+      ],
+      "narrativeUnitId": "narrative-chart",
+      "notes": "版式测试内容。解释性示意不代表具体项目的实证结果。",
+      "bodySilhouette": "chart-interpretation-strip",
+      "visualPlan": {
+        "coreClaim": "完整字库转换后体积均有降低",
+        "evidenceKinds": [
+          "data-evidence"
+        ],
+        "availableVisualIds": [
+          "font-size-chart"
+        ],
+        "visualCenter": "grouped-comparison",
+        "primaryVisualIds": [
+          "font-size-chart"
+        ],
+        "evidenceWeight": {
+          "font-size-chart": 1.0
+        },
+        "preserveWholeFigure": true,
+        "extractableSubfigures": [],
+        "needsZoom": false,
+        "textOnlyRelationship": "sequential",
+        "mergeOrBackupIds": [],
+        "omissionReasons": []
+      },
+      "citationIds": [
+        "font-files-source"
+      ]
+    },
+    {
+      "id": "evidence",
+      "section": "要求核对",
+      "type": "content",
+      "layout": "L17",
+      "title": "已确认的设计细节逐项落实",
+      "claimIds": [
+        "c-evidence"
+      ],
+      "visualIds": [],
+      "narrativeUnitId": "narrative-evidence",
+      "notes": "版式测试内容。解释性示意不代表具体项目的实证结果。",
+      "bodySilhouette": "evidence-table-board",
+      "visualPlan": {
+        "coreClaim": "已确认的设计细节逐项落实",
+        "evidenceKinds": [
+          "explanatory-structure"
+        ],
+        "availableVisualIds": [],
+        "visualCenter": "text-structure",
+        "primaryVisualIds": [],
+        "evidenceWeight": {},
+        "preserveWholeFigure": true,
+        "extractableSubfigures": [],
+        "needsZoom": false,
+        "textOnlyRelationship": "tabular",
+        "mergeOrBackupIds": [],
+        "omissionReasons": []
+      },
+      "citationIds": [
+        "design-source"
+      ]
+    },
+    {
+      "id": "progress",
+      "section": "工作推进",
+      "type": "content",
+      "layout": "L08",
+      "title": "每一步都有具体材料产出",
+      "claimIds": [
+        "c-progress"
+      ],
+      "visualIds": [],
+      "narrativeUnitId": "narrative-progress",
+      "notes": "版式测试内容。解释性示意不代表具体项目的实证结果。",
+      "bodySilhouette": "process-board",
+      "visualPlan": {
+        "coreClaim": "每一步都有具体材料产出",
+        "evidenceKinds": [
+          "explanatory-structure"
+        ],
+        "availableVisualIds": [],
+        "visualCenter": "text-structure",
+        "primaryVisualIds": [],
+        "evidenceWeight": {},
+        "preserveWholeFigure": true,
+        "extractableSubfigures": [],
+        "needsZoom": false,
+        "textOnlyRelationship": "sequential",
+        "mergeOrBackupIds": [],
+        "omissionReasons": []
+      },
+      "densityException": {
+        "reason": "步骤间保留方向箭头和间隔，用于表达顺序及材料归属。",
+        "basisIds": [
+          "c-progress"
+        ],
+        "reviewedBy": "Codex visual review"
+      },
+      "citationIds": [
+        "design-source"
+      ]
+    },
+    {
+      "id": "synthesis",
+      "section": "总结讨论",
+      "type": "synthesis",
+      "layout": "L23",
+      "title": "统一视觉语言，让构图随内容变化",
+      "claimIds": [
+        "c-synthesis"
+      ],
+      "visualIds": [],
+      "narrativeUnitId": "narrative-synthesis",
+      "notes": "版式测试内容。解释性示意不代表具体项目的实证结果。",
+      "bodySilhouette": "synthesis-matrix",
+      "visualPlan": {
+        "coreClaim": "统一视觉语言，让构图随内容变化",
+        "evidenceKinds": [
+          "explanatory-structure"
+        ],
+        "availableVisualIds": [],
+        "visualCenter": "text-structure",
+        "primaryVisualIds": [],
+        "evidenceWeight": {},
+        "preserveWholeFigure": true,
+        "extractableSubfigures": [],
+        "needsZoom": false,
+        "textOnlyRelationship": "tabular",
+        "mergeOrBackupIds": [],
+        "omissionReasons": []
+      },
+      "densityException": {
+        "reason": "连续比较矩阵下方保留独立的三条归纳，避免把总结挤成密集表格。",
+        "basisIds": [
+          "c-synthesis"
+        ],
+        "reviewedBy": "Codex visual review"
+      },
+      "citationIds": [
+        "design-source"
+      ]
+    },
+    {
+      "id": "closing",
+      "section": "交流讨论",
+      "type": "closing",
+      "layout": "L24",
+      "title": "让证据更清晰",
+      "claimIds": [
+        "c-closing"
+      ],
+      "visualIds": [],
+      "narrativeUnitId": "narrative-closing",
+      "notes": "版式测试内容。解释性示意不代表具体项目的实证结果。",
+      "citationIds": [
+        "design-source"
+      ]
+    }
+  ],
+  "authoring": {
+    "enabled": true,
+    "mode": "browser-with-local-fallback",
+    "registry": "presentation-edit-registry.json"
+  },
+  "referenceVisualContract": {
+    "sourceRefs": [
+      "public/reference-new-01.png",
+      "public/reference-new-02.png"
+    ],
+    "primaryColors": [
+      "#031044",
+      "#083c9a",
+      "#087aec",
+      "#51dfff",
+      "#f5fbff"
+    ],
+    "supportingColors": [
+      "#ffe393",
+      "#91b4e4"
+    ],
+    "saturationProfile": "Saturated sapphire/royal blue; electric-blue depth, cool white and scarce pale-yellow accent.",
+    "titleGeometry": "用户确认汉仪尚巍手书W，主字有大小和基线错落、全部不旋转；短句水平并与下方说明共用左对齐。",
+    "headerHeight": "Content 108px from y28; thin baseline at y135; brand clear of title and chapter rail.",
+    "leadTreatment": "46px high at y146, 22px copy with selective bold; fine cyan left rule.",
+    "bodySilhouette": "八种内页构图，目录、对照、关系图、层级、图表、核对表、流程、总结矩阵。",
+    "primaryRegionCount": 2,
+    "secondaryRegionCount": 1,
+    "dominantVisualPosition": "Cover apparatus reduced to lower-right; source/association/validation diagram across body; comparison dominant current image right.",
+    "imageTextRatio": "Cover title width about750px versus projected apparatus about500px; contents use model-driven nodes and a dominant faithful screenshot.",
+    "figureDensity": "来源图保持全图，实际字体体积数据按固定0–18MB刻度呈现。",
+    "sharedEdgeRatio": "Open brackets, input capsules, cut-corner association and one shared translucent shelf; no equal outer card grid.",
+    "independentCardCount": 0,
+    "bottomConclusionBand": "present",
+    "accentPolicy": "White/ice-blue title; selected pale-yellow phrases; blue transparent fills with fully opaque copy.",
+    "logoRole": "Unmodified official PNG, white transparent presentation; painted artwork audited, no duplicate institution text.",
+    "largestEmptyRegion": "Measured from current browser audit; explanatory map has intentional connector space and is not a dense empirical result.",
+    "prohibitedTraits": [
+      "oversized cover subject with subordinate title",
+      "all content inside rectangular cards",
+      "uniform corner-cutting applied to every box",
+      "whole-panel opacity reducing text contrast",
+      "evidence crop or invented research outcome"
+    ],
+    "calibrationStatus": "reviewed",
+    "containerForms": [
+      "capsule",
+      "ribbon",
+      "notched",
+      "open-bracket",
+      "chevron",
+      "shelf"
+    ],
+    "lineHierarchy": "细青蓝结构线，原图和数据不裁切",
+    "shadowIntensity": "局部轻量阴影，无大范围发光",
+    "gradientPolicy": "宝蓝深度与白蓝标题，少量金色点题"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "claims": [{ "id": "claim-source", "statement": "Synthetic source-backed fixture claim", "external": true }],
+  "visuals": [{
+    "visualId": "visual-synthetic",
+    "sourceRef": "figure:synthetic-fixture",
+    "sourceHash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "evidenceType": "C",
+    "subtype": "synthetic-fixture-image",
+    "classificationConfidence": 1,
+    "claimLinks": [{ "claimId": "claim-source", "relation": "supports" }],
+    "evidenceStatus": "CONTEXTUAL",
+    "representationStatus": "ORIGINAL",
+    "evidenceContribution": "Fixture-only visual contract coverage",
+    "treatmentLevel": "L0",
+    "treatmentRationale": "No scientific transformation in fixture",
+    "mustPreserve": [],
+    "interactionPlan": [],
+    "limitations": ["Synthetic fixture only"],
+    "pixelImmutable": true
+  }]
+}

@@ -1,0 +1,33 @@
+import assert from 'node:assert/strict';
+import {mkdtemp,writeFile,readFile,rm} from 'node:fs/promises';
+import path from 'node:path';
+import os from 'node:os';
+import {profileRows,buildDataHealth,hash} from './build_data_health.mjs';
+import {validateAgainstContractSchema} from './validate_schema_contracts.mjs';
+const rows=Array.from({length:12},(_,i)=>({id:i,period:2000+i,score:i===11?1000:i===0?0:i,tag:'category'}));
+rows[1].score=null;rows[2].score='bad';rows[3].score=-3;rows.push({...rows[4]});
+const config={datasetId:'demo',sourceIds:['cite-demo'],rawPath:'raw.json',rowsPath:'raw.json',privacy:{publicAggregates:true},keyFields:['id'],fields:[{id:'id',path:'id',label:'记录键',type:'number'},{id:'period',path:'period',label:'年份',type:'number'},{id:'score',path:'score',label:'评分',type:'number',anomaly:'iqr'}],time:{fieldId:'period',periods:[2000,2001,2002,2003,2020]},usage:[{analysisId:'analysis-demo',label:'示例比较',scope:'本地输入的前四条',reason:'测试已登记范围',rowIndices:[0,1,2,3],sectionId:'analysis-design'},{analysisId:'analysis-demo',label:'未登记步骤',scope:'未知',reason:'未记录输入范围'}]};
+const before=JSON.stringify(rows),report=profileRows(rows,config);
+assert.equal(JSON.stringify(rows),before);assert.equal(report.summary.duplicateExtraRecords,1);
+const score=report.fields[2];assert.equal(score.missing,1);assert.equal(score.invalid,1);assert.equal(score.valid,11);assert.equal(report.anomalies[0].flagged,2);
+assert.equal(report.coverage[0].missingPeriods,1);assert.equal(report.usage[0].used,4);assert.equal(report.usage[1].status,'unregistered');
+const constrained=profileRows(rows,{...config,fields:config.fields.map(f=>f.id==='score'?{...f,minimum:0}:f)});assert.equal(constrained.fields[2].invalid,2);
+assert.throws(()=>profileRows(rows,{...config,privacy:{}}),/privacy/);
+const masked=profileRows(rows,{...config,privacy:{publicAggregates:true,minCellSize:3}});assert.equal(masked.fields[2].missing,null);assert.equal(masked.summary.duplicateExtraRecords,null);assert.equal(masked.coverage[0].periods[0].records,null);
+const simple=profileRows([{amount:0},{amount:-2},{amount:5}],{privacy:{publicAggregates:true},fields:[{id:'amount',path:'amount',label:'金额',type:'number'}]});assert.equal(simple.coverage.length,0);assert.equal(simple.summary.duplicateExtraRecords,null);assert.equal(simple.fields[0].valid,3);
+assert.throws(()=>profileRows(rows,{...config,usage:[{...config.usage[0],rowIndices:[999]}]}),/rowIndices/);
+const root=await mkdtemp(path.join(os.tmpdir(),'zuel-health-'));
+try{
+  const raw=JSON.stringify(rows);config.rowsHash=hash(raw);
+  await writeFile(path.join(root,'raw.json'),raw);
+  await writeFile(path.join(root,'data-health.config.json'),JSON.stringify(config));
+  await writeFile(path.join(root,'deck-manifest.json'),JSON.stringify({profile:'dataset-report',outputMode:'scroll-report',dataHealth:{enabled:true,report:'data-health.json'}}));
+  await writeFile(path.join(root,'evidence-visuals.json'),JSON.stringify({datasets:[{datasetId:'demo',sourceRef:'raw.json',sourceHash:hash(raw),privacyReview:'cleared'}],analyses:[{analysisId:'analysis-demo',datasetId:'demo'}]}));
+  await writeFile(path.join(root,'citations.json'),JSON.stringify({citations:[{citationId:'cite-demo'}]}));
+  const built=await buildDataHealth(root);const schema=await validateAgainstContractSchema('data-health.schema.json',built);assert.ok(schema.passed,schema.failures.join('\n'));
+  assert.ok(!JSON.stringify(built).includes('rowIndices'));assert.ok(!JSON.stringify(built).includes('raw.json'));
+  await writeFile(path.join(root,'raw.json'),raw+' ');await assert.rejects(()=>buildDataHealth(root),/hash/);
+  await writeFile(path.join(root,'raw.json'),raw);
+  config.rawPath='../escape.json';await writeFile(path.join(root,'data-health.config.json'),JSON.stringify(config));await assert.rejects(()=>buildDataHealth(root),/escapes/);
+}finally{assert.ok(path.resolve(root).startsWith(path.resolve(os.tmpdir())+path.sep) && path.basename(root).startsWith('zuel-health-'));await rm(root,{recursive:true,force:true});}
+console.log(JSON.stringify({passed:true,checks:['missing','duplicates','zero/negative','declared ranges','IQR','time gaps','no time','unknown usage','privacy suppression','source hashes','confinement','nonmutation','schema']}));

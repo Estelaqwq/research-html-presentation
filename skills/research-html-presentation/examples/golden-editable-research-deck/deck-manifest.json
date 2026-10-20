@@ -1,0 +1,44 @@
+{
+  "title": "TODO: ZUEL 科研汇报（结构占位，不含研究事实）",
+  "scaffoldPlaceholder": true,
+  "profile": "thesis-defense",
+  "outputMode": "slide-deck",
+  "visualStyle": "academic-light",
+  "stage": "prototype",
+  "evidenceRegistry": "evidence-visuals.json",
+  "citationRegistry": "citations.json",
+  "slides": [
+    {
+      "id": "cover",
+      "section": "封面",
+      "type": "cover",
+      "layout": "L01",
+      "title": "TODO: 科研汇报标题",
+      "claimIds": [],
+      "visualIds": []
+    },
+    {
+      "id": "method",
+      "section": "研究设计",
+      "type": "content",
+      "layout": "L08",
+      "title": "TODO: 方法或技术路线",
+      "claimIds": [],
+      "visualIds": []
+    },
+    {
+      "id": "result",
+      "section": "核心发现",
+      "type": "content",
+      "layout": "L16",
+      "title": "TODO: 决定性证据（待真实材料）",
+      "claimIds": [],
+      "visualIds": []
+    }
+  ],
+  "authoring": {
+    "enabled": true,
+    "mode": "local-development-only",
+    "registry": "presentation-edit-registry.json"
+  }
+}

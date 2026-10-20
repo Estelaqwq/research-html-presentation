@@ -1,0 +1,69 @@
+{
+  "purpose": "Cover style fixture, never scientific evidence",
+  "asset": "public/tech-concept-hero.png",
+  "generator": "image_gen",
+  "generatedAt": "2026-10-18",
+  "sourceDimensions": [
+    1672,
+    941
+  ],
+  "prompt": "Text-free wide hero. Unbranded white and silver optical scanning instrument on the right, cobalt and royal-blue lab depth, clean copy space left, localized cyan platform and light arcs. No text, logos or invented scientific findings.",
+  "displayTreatment": "Source pixels remain unchanged; uniformly scale whole concept canvas from1600×900 to1120×630 and position at lower right; CSS fade applies to background integration. Not scientific evidence.",
+  "referenceScope": "User screenshots calibrate composition/palette only; device design, labels and institution were not copied.",
+  "coverCalibration": {
+    "previousTitleFontPx": 180,
+    "currentTitleFontPx": 150,
+    "previousHeroCanvas": [
+      1600,
+      900
+    ],
+    "currentHeroCanvas": [
+      1120,
+      630
+    ],
+    "currentHeroOffset": [
+      430,
+      246
+    ],
+    "scope": "Measured fixture settings, not universal skill sizing rules."
+  },
+  "documentaryExcerpts": [
+    {
+      "source": "public/reference-new-01.png",
+      "bounds": [
+        52,
+        305,
+        1391,
+        1057
+      ],
+      "output": ".deck-render/shape-review/reference-cover-excerpt.png"
+    },
+    {
+      "source": "public/reference-new-02.png",
+      "bounds": [
+        42,
+        253,
+        1238,
+        934
+      ],
+      "output": ".deck-render/shape-review/reference-structure-excerpt.png"
+    }
+  ],
+  "coverTypography": {
+    "family": "演示流云楷",
+    "cssFamily": "BrushLiuyun",
+    "renderedFamily": "Slidefontliuyun",
+    "source": "Font file explicitly supplied by the user",
+    "sourceSha256": "30dd3b161e86065eb8870c27b059a9236cb6cb27518fd8b9d031e13f24a4ef23",
+    "file": "public/fonts/liuyun-full.woff",
+    "sha256": "e9d779c1e2fae24845e98def8359fc630a73f8006821f170db9b9d2927dd6741",
+    "format": "WOFF",
+    "glyphPolicy": "Full original cmap retained, no subsetting; respects original no-subsetting flag.",
+    "glyphMappings": 6890,
+    "fsType": 256,
+    "mainSizePx": 150,
+    "accentSizePx": 76,
+    "scope": "Current preview choice, pending visual feedback; not a mandatory face for future reports.",
+    "note": "Font embedding metadata is recorded for technical audit; not a claim of general redistribution rights."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "failures": [
+    { "id": "pearson-ranked-bars", "title": "服务业占比与人均GDP呈正相关", "chartForm": "sorted-bar", "expect": "correlation-form-mismatch" },
+    { "id": "rank-mismatch-table", "title": "总量排名与人均排名明显错位", "chartForm": "evidence-table", "expect": "ranking-mismatch-form" },
+    { "id": "rank-change-bars", "title": "2011—2024年省级位次重排", "chartForm": "sorted-bar", "expect": "rank-change-form" }
+  ],
+  "passes": [
+    { "id": "pearson-scatter", "title": "服务业占比与人均GDP呈正相关", "chartForm": "scatter" },
+    { "id": "rank-mismatch-slope", "title": "总量排名与人均排名明显错位", "chartForm": "slopegraph" },
+    { "id": "rank-change-bump", "title": "2011—2024年省级位次重排", "chartForm": "bump-chart" }
+  ]
+}

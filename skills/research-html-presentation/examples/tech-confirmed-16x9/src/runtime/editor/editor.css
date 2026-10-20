@@ -1,0 +1,125 @@
+[data-editor-authoring="true"] .editable-text[data-editable-size="true"] { display: block; box-sizing: border-box; }
+
+[data-editor-authoring="true"] .editable-text { white-space: pre-wrap; }
+
+[data-editor-authoring="true"] .editable-text[contenteditable="true"] {
+  cursor: text;
+  outline: 1px dashed rgba(47, 113, 159, .72);
+  outline-offset: 4px;
+}
+
+[data-editor-authoring="true"] .editable-text[contenteditable="true"]:hover,
+[data-editor-authoring="true"] .editable-text.is-selected {
+  outline: 3px solid var(--academic-blue-700);
+  outline-offset: 4px;
+  background: rgba(230, 240, 246, .24);
+}
+
+[data-editor-authoring="true"] .editable-text[data-edit-strategy="locked"] { cursor: not-allowed; }
+[data-editor-authoring="true"][data-editor-active="true"] .editable-element:not([data-editor-lock="true"]) { cursor: text; outline: 1px dashed rgba(47, 113, 159, .72); outline-offset: 3px; }
+[data-editor-authoring="true"][data-editor-active="true"] img.editable-element:not([data-editor-lock="true"]) { cursor: pointer; }
+
+.presentation-editor-toolbar,
+.presentation-editor-shell {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  z-index: 1000;
+  width: min(1180px, calc(100vw - 32px));
+  min-height: 52px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transform: translateX(-50%);
+  border: 1px solid #9bbdd3;
+  border-top: 4px solid #184a70;
+  background: rgba(255, 255, 255, .97);
+  color: #171b1f;
+  box-shadow: 0 10px 34px rgba(18, 54, 83, .2);
+  font: 14px/1.35 "Source Han Sans SC", "Microsoft YaHei", sans-serif;
+}
+
+.presentation-editor-toggle-fallback {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  z-index: 1000;
+  transform: translateX(-50%);
+}
+
+.presentation-editor-toggle-fallback .presentation-editor-toggle {
+  min-height: 34px;
+  padding: 5px 11px;
+  border: 1px solid #9bbdd3;
+  background: rgba(255, 255, 255, .97);
+  color: #184a70;
+  box-shadow: 0 6px 20px rgba(18, 54, 83, .16);
+  cursor: pointer;
+  font: 14px/1.35 "Source Han Sans SC", "Microsoft YaHei", sans-serif;
+}
+
+.presentation-editor-toggle-fallback kbd { margin-left: 5px; color: #5a646d; font: inherit; font-size: 11px; }
+[data-editor-authoring="true"][data-editor-active="true"] .presentation-editor-toggle-fallback { z-index: 1001; }
+[data-editor-authoring="true"][data-editor-active="true"] > .presentation-editor-shell { bottom: 72px; }
+
+.presentation-editor-toolbar button,
+.presentation-editor-toolbar input,
+.presentation-editor-shell button,
+.presentation-editor-shell input,
+.presentation-editor-shell select,
+.presentation-editor-shell textarea {
+  min-height: 34px;
+  border: 1px solid #9bbdd3;
+  background: #fff;
+  color: #184a70;
+}
+
+.presentation-editor-toolbar button,
+.presentation-editor-shell button { padding: 5px 11px; cursor: pointer; }
+.presentation-editor-toolbar button:disabled,
+.presentation-editor-shell button:disabled { cursor: default; opacity: .4; }
+.presentation-editor-toolbar button:focus-visible,
+.presentation-editor-toolbar input:focus-visible,
+.presentation-editor-shell button:focus-visible,
+.presentation-editor-shell input:focus-visible,
+.presentation-editor-shell select:focus-visible,
+.presentation-editor-shell textarea:focus-visible,
+.presentation-editor-toggle-fallback .presentation-editor-toggle:focus-visible { outline: 3px solid #a62a30; outline-offset: 2px; }
+.presentation-editor-status { min-width: 116px; display: flex; flex-direction: column; }
+.presentation-editor-status b { color: #123653; }
+.presentation-editor-status span { color: #5a646d; font-size: 12px; }
+.presentation-editor-status .is-dirty { color: #a62a30; font-weight: 700; }
+.presentation-editor-toolbar fieldset { min-width: 410px; margin: 0; padding: 3px 8px 5px; display: flex; align-items: center; gap: 8px; border: 1px solid #dfe5e9; }
+.presentation-editor-toolbar legend { padding: 0 5px; color: #5a646d; font-size: 11px; }
+.presentation-editor-toolbar label { display: flex; align-items: center; gap: 5px; white-space: nowrap; }
+.presentation-editor-toolbar input { width: 82px; padding: 3px 6px; }
+.presentation-editor-selection { flex: 1; min-width: 140px; color: #5a646d; }
+.presentation-editor-toolbar > p { position: absolute; left: 10px; right: 10px; bottom: calc(100% + 8px); margin: 0; padding: 8px 11px; border: 1px solid #a62a30; background: rgba(255,255,255,.98); color: #8f2026; box-shadow: 0 6px 20px rgba(18,54,83,.14); }
+.presentation-editor-shell { display: flex; flex-wrap: wrap; max-width: 1180px; }
+.presentation-editor-shell { max-height: min(48vh, 420px); overflow: auto; }
+.presentation-editor-shell > strong { color: #123653; }
+.presentation-editor-shell > span { color: #5a646d; }
+.presentation-editor-shell small { width: 100%; color: #8f2026; }
+.presentation-editor-text-inspector { width: 100%; display: grid; gap: 5px; padding-top: 4px; }
+.presentation-editor-text-inspector label { color: #5a646d; font-size: 12px; }
+.presentation-editor-text-inspector textarea { width: 100%; min-height: 72px; resize: vertical; padding: 7px 8px; line-height: 1.4; }
+.presentation-editor-image-inspector { width: 100%; display: flex; flex-wrap: wrap; gap: 8px; border: 1px solid #dfe5e9; }
+.presentation-editor-image-inspector label { display: flex; align-items: center; gap: 4px; }
+
+html.presenter-mode .presentation-editor-toolbar,
+html.presenter-mode .presentation-editor-shell,
+html.presenter-mode .presentation-editor-toggle-fallback,
+html.print-mode .presentation-editor-toolbar,
+html.print-mode .presentation-editor-shell,
+html.print-mode .presentation-editor-toggle-fallback,
+html.report-print-mode .presentation-editor-toolbar,
+html.report-print-mode .presentation-editor-shell,
+html.report-print-mode .presentation-editor-toggle-fallback { display: none !important; }
+
+@media print { .presentation-editor-toolbar, .presentation-editor-shell, .presentation-editor-toggle-fallback { display: none !important; } }
+
+@media (max-width: 880px) {
+  .presentation-editor-toolbar { flex-wrap: wrap; }
+  .presentation-editor-toolbar fieldset { min-width: min(100%, 410px); }
+}

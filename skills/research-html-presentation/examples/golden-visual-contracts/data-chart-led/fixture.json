@@ -1,0 +1,24 @@
+{
+  "id": "data-chart-led",
+  "synthetic": true,
+  "materialType": "data-chart-led",
+  "visualPlan": {
+    "coreClaim": "结构化数据的比较结果必须由可追溯图表直接呈现",
+    "evidenceKinds": ["data-evidence"],
+    "availableVisualIds": ["chart-main", "baseline", "interpretation"],
+    "visualCenter": "structured-chart",
+    "primaryVisualIds": ["chart-main"],
+    "evidenceWeight": {"chart-main": 0.64, "baseline": 0.16, "interpretation": 0.2},
+    "preserveWholeFigure": false,
+    "extractableSubfigures": [],
+    "needsZoom": false,
+    "figureTreatment": "reconstruct-from-trusted-data",
+    "textOnlyRelation": "supporting-caption",
+    "mergeOrBackupIds": [],
+    "omissionReasons": [{"id": "decorative-chart-frame", "reason": "边框不增加数据解释"}],
+    "omissions": ["decorative-chart-frame"]
+  },
+  "layout": "L18",
+  "requiredChecks": ["plotOccupancy", "unit-visibility", "baseline-visibility", "evidenceWeightBalance"],
+  "expectedFailures": ["chart-wrapper-only", "hidden-units", "equal-card-wall"]
+}

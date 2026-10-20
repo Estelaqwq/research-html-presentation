@@ -1,0 +1,37 @@
+html.report-print-mode,
+html.report-print-mode body {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  overflow: visible !important;
+  background: #fff;
+}
+
+.report-runtime.is-print { background: #fff; }
+.report-runtime.is-print .report-document { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0; border: 0; box-shadow: none; }
+.report-runtime.is-print .report-section { min-height: 0; margin: 0; padding: 34px 42px 40px; border-right: 0; border-left: 0; box-shadow: none; break-inside: avoid-page; page-break-inside: avoid; }
+.report-runtime.is-print .report-section.report-role-hero,
+.report-runtime.is-print .report-section.report-role-closing { break-after: page; page-break-after: always; }
+.report-runtime.is-print .report-navigation-shell,
+.report-runtime.is-print .report-navigation-toggle,
+.report-runtime.is-print .report-reading-progress,
+.report-runtime.is-print .report-back-to-top,
+.report-runtime.is-print [data-chart-control],
+.report-runtime.is-print [data-chart-tooltip],
+.report-runtime.is-print .chart-tooltip-summary { display: none !important; }
+.report-runtime.is-print * { animation: none !important; transition: none !important; }
+
+@page { size: A4 portrait; margin: 16mm; }
+
+@media print {
+  html, body { width: 100% !important; height: auto !important; overflow: visible !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .report-runtime .report-navigation-shell,
+  .report-runtime .report-navigation-toggle,
+  .report-runtime .report-reading-progress,
+  .report-runtime .report-back-to-top,
+  .report-runtime [data-chart-control],
+  .report-runtime [data-chart-tooltip],
+  .report-runtime .chart-tooltip-summary { display: none !important; }
+  .report-document { width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; }
+  .report-section { box-shadow: none !important; }
+}

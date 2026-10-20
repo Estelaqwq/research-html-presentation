@@ -1,0 +1,36 @@
+{
+  "description": "Quality-contract regression fixtures. Browser-backed projects use audit_layout.mjs; these numeric fixtures exercise the deterministic complete-stage classifiers.",
+  "failures": [
+    { "id": "sparse-lower-half", "density": { "contentOccupancy": 0.42, "internalOccupancy": 0.72, "lowerHalfCoverage": 0.12 }, "expect": ["content-occupancy", "lower-half-coverage"] },
+    { "id": "hollow-semantic-cards", "density": { "contentOccupancy": 0.88, "paintDensity": 0.32, "paintToLayoutRatio": 0.36, "moduleInternalOccupancy": 0.48, "lowerHalfCoverage": 0.88 }, "expect": ["paint-density", "paint-to-layout-ratio"] },
+    { "id": "prototype-tiny-centered-process", "stage": "prototype", "density": { "contentOccupancy": 0.38, "internalOccupancy": 0.19, "moduleInternalOccupancy": 0.12, "lowerHalfCoverage": 0.08 }, "processBoard": { "widthRatio": 0.58, "heightRatio": 0.16, "nodeOccupancy": 0.14, "minimumLabelPx": 15, "supportGapPx": 82 }, "expect": ["content-occupancy", "evidence-wrapper-occupancy", "module-internal-occupancy", "lower-half-coverage", "process-flow-too-narrow", "process-flow-too-short", "process-node-occupancy", "process-label-too-small", "process-support-gap"], "expectSeverity": "error" },
+    { "id": "prototype-empty-lower-half-result", "stage": "prototype", "density": { "contentOccupancy": 0.41, "internalOccupancy": 0.68, "moduleInternalOccupancy": 0.52, "lowerHalfCoverage": 0.09 }, "expect": ["content-occupancy", "lower-half-coverage"], "expectSeverity": "error" },
+    { "id": "plot-top-only", "density": { "contentOccupancy": 0.78, "internalOccupancy": 0.31, "lowerHalfCoverage": 0.18 }, "expect": ["evidence-wrapper-occupancy", "lower-half-coverage"] },
+    { "id": "equal-card-wall", "density": { "contentOccupancy": 0.82, "internalOccupancy": 0.74, "lowerHalfCoverage": 0.62, "repeatedEqualRegionCount": 4 }, "expect": ["repeated-equal-regions"] },
+    { "id": "justified-underfilled-card-wall", "density": { "contentOccupancy": 0.97, "paintDensity": 0.79, "paintToLayoutRatio": 0.81, "moduleInternalOccupancy": 0.43, "lowerHalfCoverage": 0.95, "repeatedEqualRegionCount": 4, "repeatedRegionsJustified": true }, "expect": ["justified-equal-regions-underfilled"] },
+    { "id": "same-geometry-on-four-pages", "density": { "contentOccupancy": 0.90, "paintDensity": 0.61, "paintToLayoutRatio": 0.68, "moduleInternalOccupancy": 0.62, "lowerHalfCoverage": 0.78, "layoutClusterSize": 4 }, "expect": ["cross-page-layout-repetition"] },
+    { "id": "same-right-aside-family-on-four-pages", "density": { "contentOccupancy": 0.90, "paintDensity": 0.61, "paintToLayoutRatio": 0.68, "moduleInternalOccupancy": 0.62, "lowerHalfCoverage": 0.78, "layoutClusterSize": 2, "layoutFamilyClusterSize": 4 }, "expect": ["cross-page-layout-family-repetition"] },
+    { "id": "undersized-decisive-chart", "density": { "contentOccupancy": 0.94, "paintDensity": 0.58, "paintToLayoutRatio": 0.62, "moduleInternalOccupancy": 0.62, "lowerHalfCoverage": 0.81, "dominantVisualRatio": 0.34, "plotOccupancy": 0.70, "hasTypeA": true }, "expect": ["decisive-visual-too-small"] },
+    { "id": "underfilled-text-module", "density": { "contentOccupancy": 0.82, "moduleInternalOccupancy": 0.22, "lowerHalfCoverage": 0.62 }, "expect": ["module-internal-occupancy"] },
+    { "id": "non-finite-audit-metric", "density": { "contentOccupancy": 0.82, "internalOccupancy": 0.74, "lowerHalfCoverage": 0.62, "metricsFinite": false }, "expect": ["metric-integrity"] },
+    { "id": "two-line-title-collision", "title": { "lineCount": 2, "mode": "two-line", "collision": true }, "expect": ["title-geometry-overlap"] },
+    { "id": "orphan-title-line", "title": { "lineCount": 2, "mode": "two-line", "orphan": true }, "expect": ["orphan-title-line"] },
+    { "id": "hardcoded-page-number", "static": { "manualPageNumber": true }, "expect": ["hard-coded-page-number"] },
+    { "id": "authoring-required-but-disabled", "authoring": { "required": true, "enabled": false }, "expect": ["authoring-required-but-disabled"] },
+    { "id": "authoring-enabled-but-runtime-missing", "authoring": { "required": true, "enabled": true, "runtime": false }, "expect": ["authoring-runtime-missing"] },
+    { "id": "interaction-hides-must-show", "interaction": { "titleBasisMetrics": ["bill_length", "bill_depth", "flipper_length", "body_mass"], "mustShowMetrics": ["bill_length", "bill_depth", "flipper_length", "body_mass"], "defaultVisibleMetrics": ["bill_length"], "resetVisibleMetrics": ["bill_length"], "printVisibleMetrics": ["bill_length"] }, "expect": ["interactive-evidence-hidden", "interactive-evidence-reset-hidden", "interactive-evidence-print-hidden"] },
+    { "id": "narrative-unit-reuse", "narrative": { "pages": [{ "id": "species", "narrativeUnitId": "unit-generic" }, { "id": "sex", "narrativeUnitId": "unit-generic" }], "narrativeUnits": [{ "id": "unit-generic" }] }, "expect": ["narrative-unit-reuse"] }
+  ],
+  "passes": [
+    { "id": "dense-metric-small-multiples", "density": { "contentOccupancy": 0.82, "internalOccupancy": 0.76, "lowerHalfCoverage": 0.58 } },
+    { "id": "readable-text-module", "density": { "contentOccupancy": 0.82, "moduleInternalOccupancy": 0.59, "lowerHalfCoverage": 0.58 } },
+    { "id": "prototype-full-width-process-with-support", "stage": "prototype", "density": { "contentOccupancy": 0.76, "internalOccupancy": 0.67, "moduleInternalOccupancy": 0.64, "lowerHalfCoverage": 0.51 }, "processBoard": { "widthRatio": 0.92, "heightRatio": 0.36, "nodeOccupancy": 0.48, "minimumLabelPx": 20, "supportGapPx": 24 } },
+    { "id": "legitimate-large-figure", "density": { "contentOccupancy": 0.83, "internalOccupancy": 0.9, "lowerHalfCoverage": 0.68, "plotOccupancy": 0.83 } },
+    { "id": "audited-density-exception", "density": { "contentOccupancy": 0.74, "internalOccupancy": 0.71, "lowerHalfCoverage": 0.22, "densityException": true } },
+    { "id": "valid-two-line-title", "title": { "lineCount": 2, "mode": "two-line" } },
+    { "id": "default-authoring-local-viewer", "authoring": { "required": true, "enabled": true, "runtime": true } },
+    { "id": "production-build-without-editor-ui", "static": { "editorUi": false } },
+    { "id": "derived-page-numbering", "static": { "manualPageNumber": false, "runtimePageMatches": true } },
+    { "id": "complete-narrative-unit-mapping", "narrative": { "pages": [{ "id": "species", "narrativeUnitId": "unit-species" }, { "id": "mass", "narrativeUnitId": "unit-mass" }], "narrativeUnits": [{ "id": "unit-species" }, { "id": "unit-mass" }] } }
+  ]
+}

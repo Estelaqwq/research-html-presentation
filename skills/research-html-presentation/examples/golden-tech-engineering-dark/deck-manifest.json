@@ -1,0 +1,43 @@
+{
+  "title": "FIXTURE: tech-engineering-dark 三页视觉原型",
+  "scaffoldPlaceholder": true,
+  "profile": "project-review",
+  "outputMode": "slide-deck",
+  "visualStyle": "tech-engineering-dark",
+  "stage": "prototype",
+  "newProject": false,
+  "evidenceRegistry": "evidence-visuals.json",
+  "citationRegistry": "citations.json",
+  "slides": [
+    {
+      "id": "cover",
+      "section": "封面",
+      "type": "cover",
+      "layout": "L01",
+      "title": "工程科研汇报视觉系统原型",
+      "claimIds": [],
+      "visualIds": []
+    },
+    {
+      "id": "method",
+      "section": "研究设计",
+      "type": "content",
+      "layout": "L10",
+      "title": "多源信息融合与闭环验证框架",
+      "claimIds": [],
+      "visualIds": []
+    },
+    {
+      "id": "result",
+      "section": "核心发现",
+      "type": "content",
+      "layout": "L15",
+      "title": "决定性结果与证据链表达",
+      "claimIds": [],
+      "visualIds": []
+    }
+  ],
+  "authoring": {
+    "enabled": false
+  }
+}

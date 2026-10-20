@@ -1,0 +1,12 @@
+.scaffold-cover { position: absolute; inset: 0; padding: 70px 104px; background: linear-gradient(145deg, #fff 0%, #f2f5fb 100%); color: #0e2f73; }
+.scaffold-cover img { display: block; width: 500px; height: 138px; margin-left: auto; object-fit: contain; object-position: right center; }
+.scaffold-cover > p:first-of-type { margin: 98px 0 16px; color: #2455b5; font-size: 18px; font-weight: 800; letter-spacing: .12em; }
+.scaffold-cover h1 { width: 1180px; margin: 0; color: #0e2f73; font-size: 60px; line-height: 1.18; }
+.scaffold-cover-rule { width: 240px; height: 7px; margin: 28px 0; background: linear-gradient(90deg, #173f9e 0 78%, #b3262e 78%); }
+.scaffold-deck-body { position: absolute; left: 64px; right: 64px; top: 164px; bottom: 96px; padding: 0; border: 0; background: transparent; }
+.scaffold-deck-body h3 { margin: 0 0 12px; color: #0e2f73; font-size: 24px; }
+.scaffold-deck-body .ribbon-header { color: #fff; }
+.scaffold-dominant, .scaffold-support { min-width: 0; }
+.scaffold-dominant.open-frame { grid-row: 1 / 3; padding: 18px; background: linear-gradient(180deg, #fff 0%, #f2f5fb 100%); box-shadow: 0 4px 12px rgba(24,63,135,.10); }
+.scaffold-support.inset-evidence-panel, .scaffold-support.dashed-question-box { padding: 18px; }
+.scaffold-accent { border-left: 5px solid #b3262e; }

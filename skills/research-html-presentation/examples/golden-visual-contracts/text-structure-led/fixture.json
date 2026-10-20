@@ -1,0 +1,24 @@
+{
+  "id": "text-structure-led",
+  "synthetic": true,
+  "materialType": "text-structure-led",
+  "visualPlan": {
+    "coreClaim": "无图材料也必须显式表达问题—方法—证据—结论关系",
+    "evidenceKinds": ["explanatory-structure", "ordinary-narrative"],
+    "availableVisualIds": ["relation-map", "definitions", "boundary"],
+    "visualCenter": "hierarchy-map",
+    "primaryVisualIds": ["relation-map"],
+    "evidenceWeight": {"relation-map": 0.58, "definitions": 0.22, "boundary": 0.2},
+    "preserveWholeFigure": false,
+    "extractableSubfigures": [],
+    "needsZoom": false,
+    "figureTreatment": "text-led-structured-board",
+    "textOnlyRelation": "hierarchy-and-matrix",
+    "mergeOrBackupIds": [],
+    "omissionReasons": [{"id": "invented-photo", "reason": "材料没有照片证据"}, {"id": "decorative-stock-illustration", "reason": "装饰图不能替代关系表达"}],
+    "omissions": ["invented-photo", "decorative-stock-illustration"]
+  },
+  "layout": "L08",
+  "requiredChecks": ["visual-center", "lowerHalfCoverage", "specific-title", "lead-takeaway-distinction"],
+  "expectedFailures": ["numbered-list-only", "empty-card-wall", "generic-title"]
+}

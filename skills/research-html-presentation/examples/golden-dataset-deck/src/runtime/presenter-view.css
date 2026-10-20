@@ -1,0 +1,110 @@
+html.presenter-mode,
+html.presenter-mode body {
+  overflow: hidden;
+  background: #101b24;
+}
+
+.presenter-view {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  grid-template-rows: 78px minmax(0, 1.45fr) minmax(250px, .9fr);
+  gap: 18px;
+  padding: 18px 22px 22px;
+  overflow: hidden;
+  background: #101b24;
+  color: #eaf1f5;
+  font-family: var(--font-sans);
+}
+
+.presenter-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 100px;
+  gap: 24px;
+  align-items: center;
+  padding: 0 20px;
+  border: 1px solid #2d4455;
+  border-top: 4px solid var(--academic-blue-700);
+  background: #182732;
+}
+
+.presenter-header span,
+.presenter-header h1 { margin: 0; }
+.presenter-header span { color: #9bbdd3; font-size: 13px; font-weight: 700; letter-spacing: .06em; }
+.presenter-header h1 { margin-top: 4px; overflow: hidden; color: #fff; font-size: 21px; line-height: 1.2; text-overflow: ellipsis; white-space: nowrap; }
+.presenter-header > strong { color: #fff; font-size: 19px; text-align: right; }
+
+.presenter-connection { display: flex; align-items: center; gap: 8px; color: #cbd9e1; font-size: 14px; }
+.presenter-connection i { width: 10px; height: 10px; border-radius: 50%; background: #d69e2e; }
+.presenter-connection.is-connected i { background: #59b985; }
+.presenter-connection.is-disconnected i { background: #c85b62; }
+
+.presenter-previews {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(320px, 1fr);
+  gap: 18px;
+}
+
+.presenter-previews > article,
+.presenter-notes,
+.presenter-controls {
+  min-width: 0;
+  min-height: 0;
+  padding: 14px;
+  border: 1px solid #2d4455;
+  background: #182732;
+}
+
+.presenter-previews h2,
+.presenter-notes h2 { margin: 0 0 10px; color: #9bbdd3; font-size: 15px; line-height: 1.2; }
+
+.presenter-preview-frame {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 26px);
+  overflow: hidden;
+  background: #0b1218;
+  box-shadow: inset 0 0 0 1px #3a5060;
+}
+
+.presenter-preview-canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1600px;
+  height: 900px;
+  transform-origin: left top;
+}
+
+.presenter-preview-slide { transition: none; }
+.presenter-preview-slide button,
+.presenter-preview-slide [role="button"] { pointer-events: none; }
+
+.presenter-preview-empty { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: #8195a3; }
+.presenter-preview-empty span { font-size: 13px; }
+.presenter-preview-empty b { color: #d8e2e8; font-size: 20px; }
+
+.presenter-lower { min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) 410px; gap: 18px; }
+.presenter-notes { overflow: auto; }
+.presenter-notes ul { margin: 0; padding: 0 0 0 22px; }
+.presenter-notes li,
+.presenter-notes p { margin: 0 0 9px; color: #edf3f6; font-size: 17px; line-height: 1.52; }
+.presenter-notes p { color: #8195a3; }
+
+.presenter-controls { display: grid; grid-template-rows: auto auto auto 1fr; gap: 12px; }
+.presenter-timer { color: #fff; font: 700 42px/1 var(--font-math); letter-spacing: .04em; text-align: center; }
+.presenter-control-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
+.presenter-navigation { grid-template-columns: repeat(2, 1fr); }
+.presenter-controls button { min-height: 40px; border: 1px solid #496174; background: #213746; color: #fff; font-size: 15px; cursor: pointer; }
+.presenter-controls button:hover:not(:disabled) { border-color: #75a4c4; background: #29485c; }
+.presenter-controls button:disabled { cursor: default; opacity: .35; }
+.presenter-controls button:focus-visible { outline: 3px solid var(--academic-red-700); outline-offset: 2px; }
+.presenter-controls > p { align-self: end; margin: 0; color: #8195a3; font-size: 12px; text-align: center; }
+
+@media (max-width: 1100px) {
+  .presenter-view { grid-template-rows: 72px minmax(0, 1.2fr) minmax(230px, 1fr); gap: 12px; padding: 12px; }
+  .presenter-previews { grid-template-columns: minmax(0, 1.35fr) minmax(280px, 1fr); gap: 12px; }
+  .presenter-lower { grid-template-columns: minmax(0, 1fr) 330px; gap: 12px; }
+  .presenter-notes li, .presenter-notes p { font-size: 15px; }
+}

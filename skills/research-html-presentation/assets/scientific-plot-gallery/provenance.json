@@ -1,0 +1,8 @@
+{
+  "demo": true,
+  "seed": 20261020,
+  "dataSha256": "c59a22b3e377af95a57ee42ba63f029f3768ec5b5e1e0e4c0c01ee8a60973fee",
+  "data": "demo-data.json",
+  "generator": "scripts/generate_scientific_demo.py",
+  "source": "original synthetic fixture; no empirical claims"
+}
