@@ -12,56 +12,126 @@ Research HTML Presentation 是面向科研汇报的编码智能体 skill，主�
 
 ## 先看效果
 
-以下均来自此前已经制作的成品，保留原有校标和字体效果。新项目仍默认无校标；图库中的学校标识只反映原作品的配置。
+**默认采用蓝白学术风格**，也支持深色科技风，以及适合连续阅读的竖版报告。下面使用此前已经完成的作品，保留原有校标和字体效果；新项目仍默认无校标。
 
-### 科技风 · 封面与方法
+### 01 · 默认蓝白风格：省级经济数据分析
 
-![科技风科研汇报封面：宝蓝背景、手书标题和科研装置概念图](docs/images/technology-01.png)
+`china-provincial-economy-analysis-v3` · 12 页完整成品。从数据口径、分析路径到图表结果与综合判断，展示高信息量内容如何组织成一套汇报。
 
-| 多源材料与证据关联 | 材料、分析与表达的层次 |
-| --- | --- |
-| ![科技风方法关系图](docs/images/technology-04.png) | ![科技风分层结构图](docs/images/technology-05.png) |
+**全页总览**
 
-[查看全部 10 页科技风样稿 →](docs/index.html#technology) · [逐页图片与说明](docs/SHOWCASE.md#technology)
+![中国省级经济分析全部 12 页缩略总览](docs/images/academic-overview.png)
 
-### 学术浅色 · 高信息量的数据汇报
+**P1 · 封面**
 
-![中国省级经济分析：排名图、区域份额、集中度证据和解释边界](docs/images/academic-03.png)
+![P1 中国省级经济格局：规模集中、长期重排与发展差异](docs/images/academic-01.png)
 
-| 正式封面 | 长期变化 |
-| --- | --- |
-| ![中国省级经济格局封面](docs/images/academic-01.png) | ![省级经济长期变化页面](docs/images/academic-05.png) |
+**P2 · 数据与分析路径**
 
-[查看全部 12 页经济分析 →](docs/index.html#academic) · [逐页图片与说明](docs/SHOWCASE.md#academic)
+![P2 三份数据形成口径、横截面与长期变化的分析路径](docs/images/academic-02.png)
 
-### 文献汇报 · 从论文到证据叙事
+**P3 · 规模集中与排名**
 
-![回归结果报告与解释的文献汇报：定量结果、解释链与边界](docs/images/literature-04.png)
+![P3 省级 GDP 排名与集中度证据](docs/images/academic-03.png)
 
-[查看全部 11 页文献汇报 →](docs/index.html#literature) · [逐页图片与说明](docs/SHOWCASE.md#literature)
+**P10 · 多指标对照**
 
-### 竖版报告 · 按章节连续阅读
+![P10 六省五指标对照，区分人均水平与经济总量](docs/images/academic-10.png)
 
-| 报告开篇与直接答案 | 章节导航 |
-| --- | --- |
-| ![Titanic 竖版报告开篇](docs/images/report-hero.png) | ![Titanic 报告章节导航](docs/images/report-navigation.png) |
+**[查看完整 12 页 PDF →](docs/previews/provincial-economy.pdf)** · [逐页图片](docs/SHOWCASE.md#academic)
+
+### 02 · 蓝白文献汇报：随机生存森林与淋巴瘤预后
+
+`nhl-rsf-literature-review` · 11 页完整成品。将论文原图、重绘比较图和解释边界放进同一条汇报叙事。
+
+**P1 · 文献封面**
+
+![P1 随机生存森林用于非霍奇金淋巴瘤预后预测的文献汇报](docs/images/nhl-01.png)
+
+**P6 · 保留原始 ROC 图，展开不同预测时间窗**
+
+![P6 论文四个 ROC 面板与 AUC 结果的读图说明](docs/images/nhl-06.png)
+
+**P5 · 区分训练表现与验证表现**
+
+![P5 RSF 与 Cox 的 C-index 对照，保留验证集几乎持平的边界](docs/images/nhl-05.png)
+
+**[查看完整 11 页 PDF →](docs/previews/nhl-rsf-literature-review.pdf)** · [逐页图片](docs/SHOWCASE.md#literature)
+
+### 03 · 深色科技风：技术路线与研究表达
+
+深色底、蓝色层次与手书标题，适合技术路线、工程方法和计算研究。以下为既有的 10 页版式样稿。
+
+**全页总览**
+
+![深色科技风全部 10 页缩略总览](docs/images/technology-overview.png)
+
+**P1 · 科技风封面**
+
+![P1 数智研析：手书标题与科研装置概念图](docs/images/technology-01.png)
+
+**P4 · 多源材料与证据关联**
+
+![P4 从多源材料、证据关联到可追溯结论的关系图](docs/images/technology-04.png)
+
+**P6 · 定量结果与图表表达**
+
+![P6 字体转换体积的分组柱状比较与定量解释](docs/images/technology-06.png)
+
+**[查看完整 10 页 PDF →](docs/previews/technology-deck.pdf)** · [逐页图片](docs/SHOWCASE.md#technology)
+
+### 04 · 竖版报告：从开篇到交互探索
+
+`titanic-survival-analysis/scroll-report` · 泰坦尼克号乘客生存预测。连续滚动的正文配合章节目录、图表交互和解释说明，适合自己阅读、核对和探索。
+
+**报告开篇 · 研究问题、直接答案与关键指标**
+
+![泰坦尼克号生存预测竖版报告开篇，展示正文与固定章节目录](docs/images/titanic-opening.png)
+
+**预测误差 · 查看一个单元格的具体含义**
+
+将指针停在“实际生存、预测未生存”的单元格，可查看漏判生存者 83 人的提示，同时对照召回率、精确率与错误结构。
+
+![预测误差交互截图：悬停漏判生存者 83 人，显示实际类别与预测类别](docs/images/titanic-errors-selected.png)
+
+**报告目录 · 在较窄窗口展开全部 11 个章节**
+
+<img src="docs/images/titanic-navigation.png" width="760" alt="展开的报告目录，可跳转数据处理、模型比较、预测误差与测试集推断等 11 个章节">
+
+[查看竖版报告截图 →](docs/SHOWCASE.md#report)
+
+### 05 · 数据分析报告：研究助手与分析流程
+
+`world-bank-asia-research-report-prototype` · 六国碳排放变化与发展指标（2000—2024）。完整报告除正文与交互图表外，还提供两个探索入口。
+
+**研究助手 · 追问数据，核对来源**
+
+围绕本节选择追问，查看由已登记汇总数据计算的答案、来源与筛选口径；还可通过比较向导选择指标、国家和年份，把有用发现保存为个人笔记。下图展示“中国 2010—2020 年累计排放是多少？”的实际回答。
+
+![研究助手展开状态：建议追问、已核验回答、数据来源与比较向导](docs/images/research-assistant.png)
+
+已登记追问可在模型服务未连接时使用；开放式自然语言提问需要另行配置模型服务。
+
+**分析流程 · 看懂数据如何成为结论**
+
+将原始数据、筛选处理、计算、分析发现与报告串成可点击的流程图。点击节点查看说明，也可编辑节点、位置与连接，保存修改或恢复初始版。
+
+![分析流程展开状态：数据、处理、分析发现与正式报告，选中节点可查看说明](docs/images/analysis-flow.png)
+
+[查看数据报告功能截图 →](docs/SHOWCASE.md#analysis-tools)
 
 <details>
-<summary>展开查看竖版报告的分组图表与解释</summary>
+<summary>演示辅助：查看演示者视图</summary>
 
-![Titanic 分组图表、共同尺度、直接答案与解释边界](docs/images/report-result.png)
+当前页、下一页、讲稿与计时放在同一工作区，方便现场讲解。
+
+![演示者视图：当前页、下一页、讲稿和计时](docs/images/presenter.png)
 
 </details>
 
-[查看竖版报告截图 →](docs/index.html#report)
+**[在 GitHub 内继续浏览图文示例 →](docs/SHOWCASE.md)**
 
-### 演示者视图
-
-![演示者视图：当前页、下一页、讲稿、连接状态与计时](docs/images/presenter.png)
-
-**[浏览完整作品图库 →](docs/index.html)** · **[GitHub 内直接查看图文示例 →](docs/SHOWCASE.md)**
-
-图库是成品截图展示，可点击放大；它不替代可操作的 HTML 演示。GitHub 仓库页面会把 HTML 当源码展示，下载本目录后打开 `docs/index.html` 可浏览图库；启用静态托管后可提供在线入口。截图中第三方字体、标识、论文图表与数据的权利归原权利人，详见[第三方素材说明](THIRD_PARTY_NOTICES.md)。
+完整演示稿通过上方 PDF 链接预览，也可下载查看。PDF 和截图展示静态效果，图表交互需打开实际 HTML 成果。截图中的字体、标识、论文图表与数据权利归原权利人，详见[第三方素材说明](THIRD_PARTY_NOTICES.md)。
 
 ## 快速开始
 

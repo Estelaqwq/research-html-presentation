@@ -10,45 +10,126 @@ Research HTML Presentation is a coding-agent skill for group meetings, literatur
 
 ## See the results
 
-These are screenshots of existing work, with the original typography and optional institutional branding retained. New projects still start without a logo.
+**Blue and white is the default academic style.** Dark technology decks and continuous vertical reports are also supported. These examples preserve the typography and branding of completed work; new projects still start without a logo.
 
-### Technology deck
+### 01 · Default blue and white: provincial economy
 
-![Technology cover with brush lettering and a research-device concept illustration](docs/images/technology-01.png)
+`china-provincial-economy-analysis-v3` · A complete 12-slide analysis, from data definitions and analysis design to results and synthesis.
 
-| Evidence relationships | Layered research structure |
-| --- | --- |
-| ![Technology method page](docs/images/technology-04.png) | ![Technology architecture page](docs/images/technology-05.png) |
+**All 12 pages**
 
-[All 10 technology pages](docs/index.html#technology) · [GitHub image gallery](docs/SHOWCASE.md#technology)
+![Contact sheet of all 12 provincial-economy pages](docs/images/academic-overview.png)
 
-### Academic deck
+**P1 · Cover**
 
-![Provincial-economy ranking, concentration evidence and interpretation boundaries](docs/images/academic-03.png)
+![P1 Provincial-economy analysis cover](docs/images/academic-01.png)
 
-[All 12 academic pages](docs/index.html#academic)
+**P2 · Data and analysis path**
 
-### Literature review
+![P2 Data sources and analysis path](docs/images/academic-02.png)
 
-![Regression-reporting literature review with quantitative evidence and interpretation](docs/images/literature-04.png)
+**P3 · Rankings and concentration**
 
-[All 11 literature-review pages](docs/index.html#literature)
+![P3 Provincial GDP rankings and concentration evidence](docs/images/academic-03.png)
 
-### Vertical report
+**P10 · Multiple indicators**
 
-| Opening and direct answer | Chapter navigation |
-| --- | --- |
-| ![Titanic report opening](docs/images/report-hero.png) | ![Report chapter navigation](docs/images/report-navigation.png) |
+![P10 Six provinces compared across five indicators](docs/images/academic-10.png)
 
-[Report screenshots](docs/index.html#report)
+**[Preview the complete 12-page PDF →](docs/previews/provincial-economy.pdf)** · [Page images](docs/SHOWCASE.md#academic)
 
-### Presenter View
+### 02 · Blue and white literature review: survival forests
+
+`nhl-rsf-literature-review` · An 11-slide review of random survival forests for non-Hodgkin lymphoma prognosis. Original scientific panels, quantitative comparisons and interpretation boundaries stay together.
+
+**P1 · Literature cover**
+
+![P1 Literature review cover for non-Hodgkin lymphoma prognosis](docs/images/nhl-01.png)
+
+**P6 · Original ROC panels across prediction horizons**
+
+![P6 Four original ROC panels with AUC reading guidance](docs/images/nhl-06.png)
+
+**P5 · Training versus validation performance**
+
+![P5 RSF and Cox C-index comparison with the validation boundary retained](docs/images/nhl-05.png)
+
+**[Preview the complete 11-page PDF →](docs/previews/nhl-rsf-literature-review.pdf)** · [Page images](docs/SHOWCASE.md#literature)
+
+### 03 · Dark technology deck
+
+Dark backgrounds, blue layers and brush-lettered headings for technical and engineering presentations. This existing ten-slide deck demonstrates layouts.
+
+**All 10 pages**
+
+![Contact sheet of all ten technology pages](docs/images/technology-overview.png)
+
+**P1 · Cover**
+
+![P1 Technology cover with a research-device concept illustration](docs/images/technology-01.png)
+
+**P4 · Sources and evidence relationships**
+
+![P4 Evidence relationships from source materials to traceable conclusions](docs/images/technology-04.png)
+
+**P6 · Quantitative comparison**
+
+![P6 Grouped bars and quantitative interpretation](docs/images/technology-06.png)
+
+**[Preview the complete 10-page PDF →](docs/previews/technology-deck.pdf)** · [Page images](docs/SHOWCASE.md#technology)
+
+### 04 · Vertical report: reading and exploration
+
+`titanic-survival-analysis/scroll-report` · A passenger-survival prediction report with continuous reading, chapter navigation and interactive charts.
+
+**Opening · Question, direct answer and key figures**
+
+![Titanic prediction report opening and chapter navigation](docs/images/titanic-opening.png)
+
+**Prediction errors · Inspect one matrix cell**
+
+Hovering the actual-survival / predicted-non-survival cell shows 83 false negatives alongside recall, precision and error interpretation.
+
+![Prediction errors with the false-negative cell tooltip visible](docs/images/titanic-errors-selected.png)
+
+**Navigation · All 11 chapters in a narrower window**
+
+<img src="docs/images/titanic-navigation.png" width="760" alt="Expanded report navigation showing all 11 chapters">
+
+[Report screenshots →](docs/SHOWCASE.md#report)
+
+### 05 · Data reports: research assistant and analysis flow
+
+`world-bank-asia-research-report-prototype` · Six-country emissions and development indicators, 2000–2024. Two additional tools help readers explore the evidence.
+
+**Research assistant · Ask follow-ups and inspect sources**
+
+Choose a registered question to get an answer computed from approved aggregate data, with sources and filtering scope. A comparison builder lets readers choose indicators, groups and years; useful findings can be saved as personal notes. The screenshot shows an actual answer for China's cumulative emissions in 2010–2020.
+
+![Research assistant with a verified answer, source and comparison builder](docs/images/research-assistant.png)
+
+Registered questions remain available when the model service is disconnected. Open-ended natural-language questions require a separately configured model service.
+
+**Analysis flow · Follow data through to conclusions**
+
+An interactive graph connects data, filtering, calculations, findings and the report. Inspect node details, edit nodes and connections, save changes, or restore the initial graph.
+
+![Analysis flow graph with a selected node and its explanation](docs/images/analysis-flow.png)
+
+[Data-report feature screenshots →](docs/SHOWCASE.md#analysis-tools)
+
+<details>
+<summary>Presentation tools: Presenter View</summary>
+
+Current slide, next slide, notes and timer in one workspace.
 
 ![Presenter View with slides, notes and timer](docs/images/presenter.png)
 
-**[Full visual gallery](docs/index.html)** · **[Images viewable directly on GitHub](docs/SHOWCASE.md)**
+</details>
 
-The gallery shows actual screenshots; it is not an interactive presentation runtime. GitHub shows HTML as source: download and open `docs/index.html`, or use a static host after publication. Fonts, marks, source figures and data retain their respective rights. See [third-party notices](THIRD_PARTY_NOTICES.md).
+**[Browse images directly on GitHub →](docs/SHOWCASE.md)**
+
+The PDF links above provide complete static deck previews, with downloads available. Interactive charts require the actual HTML output. Third-party fonts, marks, scientific figures and data retain their respective rights; see [third-party notices](THIRD_PARTY_NOTICES.md).
 
 ## Get started
 

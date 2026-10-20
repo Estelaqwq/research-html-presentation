@@ -19,8 +19,9 @@ ZUEL marks visible in screenshots belong to their respective rights holders. The
 
 - Technology deck: an existing ten-page layout demonstration, with an AI-generated research-device concept illustration. It is a design example, not a real experiment.
 - Academic deck: an existing provincial-economy analysis. Screenshots retain the original period, units, source labels and scope; they are not current statistical advice.
-- Literature review: an existing review about reporting and interpreting regression results. Retain the research attribution shown on each page; original paper content is not relicensed under MIT.
-- Vertical report: an existing analysis of the historical Kaggle Titanic training data. Screenshots show aggregate results; this bundle does not distribute passenger-level data.
+- Literature review: an existing review of random survival forests for non-Hodgkin lymphoma prognosis. Retain the research attribution shown on each page; original paper content is not relicensed under MIT.
+- Vertical report: an existing passenger-survival prediction analysis of the historical Kaggle Titanic data. Screenshots show aggregate results; this bundle does not distribute passenger-level data.
+- Data-report tools: screenshots from the six-country carbon-emissions and development-indicator report (2000–2024), based on World Bank WDI aggregate records. Preserve its indicator definitions, source and limitations.
 - Presenter View: a screenshot of this project's existing presentation runtime.
 
-The original screenshot PNGs are copied without altering their artwork. `docs/gallery.json` records their SHA-256 hashes. Their inclusion here is for explaining the skill's output; reuse of third-party content requires its applicable permission.
+Deck screenshots are copied without altering their artwork. Report interaction screenshots are captured from the existing projects, and contact sheets arrange whole slide screenshots without cropping. `docs/gallery.json` records image and PDF SHA-256 hashes. The economy and NHL PDFs are existing exports; the technology PDF is a static image preview with no embedded font program. Their inclusion here is for explaining the skill's output; reuse of third-party content requires its applicable permission.
