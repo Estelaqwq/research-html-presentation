@@ -151,8 +151,15 @@ $skill-installer
 
 支持 DSH `0.2.2-rc.3` 起的 0.2.x 版本。
 
-1. 在 DSH 打开「插件 → 添加插件」，粘贴仓库地址 `https://github.com/Estelaqwq/research-html-presentation`，点击「安装」。如出现「启用」按钮，启用插件。
+1. 在 DSH 打开「插件 → 添加插件」，粘贴下面的 `.tgz` 下载地址，点击「安装」。如出现「启用」按钮，启用插件。
+
+   ```text
+   https://github.com/Estelaqwq/research-html-presentation/releases/download/dsh-v0.1.0/research-html-presentation-dsh-0.1.0.tgz
+   ```
+
 2. 在会话输入 `/research-html-presentation`，然后提供汇报材料和目标。
+
+也可以从 [GitHub Release](https://github.com/Estelaqwq/research-html-presentation/releases/tag/dsh-v0.1.0) 下载 `.tgz`，然后在「添加插件」中填写本地文件路径。这两种方式均无需安装 Git。若使用仓库首页地址安装，DSH 运行环境需要能调用 `git`。
 
 这个入口安装同一份 `skills/research-html-presentation/`。首次制作可按任务检查 Node.js、项目依赖和浏览器工具。使用目录安装时，也可以将该技能文件夹放到 `~/.dsh/skills/`，或放到自定义 `DSH_HOME` 下的 `skills/`。
 

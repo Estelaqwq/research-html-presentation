@@ -149,8 +149,15 @@ Then select or mention `$research-html-presentation`. If the client does not dis
 
 Requires DSH `0.2.2-rc.3` or a later 0.2.x release.
 
-1. Open **Plugins → Add plugin**, paste `https://github.com/Estelaqwq/research-html-presentation`, and select **Install**. Enable the plugin if prompted.
+1. Open **Plugins → Add plugin**, paste the `.tgz` download URL below, and select **Install**. Enable the plugin if prompted.
+
+   ```text
+   https://github.com/Estelaqwq/research-html-presentation/releases/download/dsh-v0.1.0/research-html-presentation-dsh-0.1.0.tgz
+   ```
+
 2. Enter `/research-html-presentation` in a conversation, followed by your presentation materials and goals.
+
+You can also download the `.tgz` from the [GitHub Release](https://github.com/Estelaqwq/research-html-presentation/releases/tag/dsh-v0.1.0) and enter its local file path in **Add plugin**. Both methods work without Git. Installing from the repository's homepage URL requires `git` on the DSH process's PATH.
 
 This installs the same `skills/research-html-presentation/` bundle. Before building, check Node.js, project dependencies, and browser tools as needed. To install from a directory, copy the skill folder into `~/.dsh/skills/` or the `skills/` directory under your configured `DSH_HOME`.
 
