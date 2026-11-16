@@ -6,7 +6,7 @@
 
 > MIT 许可 · 默认无校标 · 支持可选品牌与字体配置
 
-Research HTML Presentation 是面向科研汇报的编码智能体 skill，主要在 Codex 本地环境中使用。提供论文、文档、研究笔记或结构化数据，说明听众和目标，即可沿着材料分析、证据整理、原型确认和页面检查的流程，制作适合现场讲解或自主阅读的 HTML 成果。
+Research HTML Presentation 是面向科研汇报的编码智能体 skill，可安装到 Codex 和 DeepSeek Harness。提供论文、文档、研究笔记或结构化数据，说明听众和目标，即可沿着材料分析、证据整理、原型确认和页面检查的流程，制作适合现场讲解或自主阅读的 HTML 成果。
 
 适用于组会、文献汇报、课题汇报、工作进展、课程报告和数据分析。
 
@@ -147,6 +147,15 @@ $skill-installer
 
 安装后选择或提及 `$research-html-presentation`。如客户端未识别新安装内容，重新打开会话或按客户端提示刷新。
 
+### 安装到 DeepSeek Harness
+
+支持 DSH `0.2.2-rc.3` 起的 0.2.x 版本。
+
+1. 在 DSH 打开「插件 → 添加插件」，粘贴仓库地址 `https://github.com/Estelaqwq/research-html-presentation`，点击「安装」。如出现「启用」按钮，启用插件。
+2. 在会话输入 `/research-html-presentation`，然后提供汇报材料和目标。
+
+这个入口安装同一份 `skills/research-html-presentation/`。首次制作可按任务检查 Node.js、项目依赖和浏览器工具。使用目录安装时，也可以将该技能文件夹放到 `~/.dsh/skills/`，或放到自定义 `DSH_HOME` 下的 `skills/`。
+
 ### 从本地仓库直接使用
 
 ```bash
@@ -156,7 +165,7 @@ cd research-html-presentation
 
 让具有文件和终端访问能力的智能体读取仓库中 `skills/research-html-presentation/SKILL.md`，再提供待汇报材料。仅复制 SKILL.md 不能得到完整脚本、组件和规则文件。
 
-本项目以 Codex 环境为主要验证目标。其他智能体可以读取相同工作流，但工具、安装入口与浏览器能力需要分别确认。插件包装与公开目录收录是不同环节；当前通过 GitHub 分发 skill，尚未上架插件目录。
+Codex 和 DeepSeek Harness 使用同一份技能目录。其他智能体读取此工作流时，需要具备相应的文件、终端与浏览器能力。
 
 ## 这样提出需求
 
@@ -272,7 +281,7 @@ cd research-html-presentation
 - 来源、引用与统计检查能发现具体问题，正式学术结论仍需结合原始材料与方法审阅。
 - 模型分析只在任务和数据适合时使用；图形组件不替代模型拟合或推断。
 - 本地优先描述的是分析与编辑设计；所用智能体、模型服务和公开托管的资料传输范围需分别确认。
-- 当前主要验证环境为 Windows / Codex；其他系统与客户端尚未完成同等范围的端到端验证。
+- 完整制作流程主要在 Windows / Codex 中验证；在其他客户端中使用时，按任务核对依赖、浏览器与交付能力。
 
 ## 仓库与贡献
 

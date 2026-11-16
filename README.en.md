@@ -133,6 +133,8 @@ The PDF links above provide complete static deck previews, with downloads availa
 
 ## Get started
 
+### Install in Codex
+
 In Codex with skill-installer available:
 
 ```text
@@ -143,14 +145,25 @@ https://github.com/Estelaqwq/research-html-presentation
 
 Then select or mention `$research-html-presentation`. If the client does not discover the installation, refresh as directed by the client.
 
-Alternatively, clone the repository:
+### Install in DeepSeek Harness
+
+Requires DSH `0.2.2-rc.3` or a later 0.2.x release.
+
+1. Open **Plugins → Add plugin**, paste `https://github.com/Estelaqwq/research-html-presentation`, and select **Install**. Enable the plugin if prompted.
+2. Enter `/research-html-presentation` in a conversation, followed by your presentation materials and goals.
+
+This installs the same `skills/research-html-presentation/` bundle. Before building, check Node.js, project dependencies, and browser tools as needed. To install from a directory, copy the skill folder into `~/.dsh/skills/` or the `skills/` directory under your configured `DSH_HOME`.
+
+### Use a local checkout
+
+Clone the repository:
 
 ```bash
 git clone https://github.com/Estelaqwq/research-html-presentation.git
 cd research-html-presentation
 ```
 
-Ask an agent with file and shell access to read `skills/research-html-presentation/SKILL.md`. Keep its supporting files available; SKILL.md alone is not the complete package. Other agents require their own tool and compatibility checks. A source repository, plugin packaging, and public directory approval are separate milestones.
+Ask an agent with file and shell access to read `skills/research-html-presentation/SKILL.md`. Keep its supporting files available; SKILL.md alone is not the complete package. Codex and DeepSeek Harness share this skill directory. Other agents need their own file, shell, and browser capabilities.
 
 ## Example requests
 

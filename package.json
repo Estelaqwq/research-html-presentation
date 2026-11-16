@@ -1,0 +1,23 @@
+{
+  "name": "research-html-presentation-dsh",
+  "version": "0.1.0",
+  "description": "Research HTML Presentation skill for DeepSeek Harness",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Estelaqwq/research-html-presentation.git"
+  },
+  "files": [
+    "cordis.patch.yml",
+    "skills/research-html-presentation",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "engines": {
+    "dsh": ">=0.2.2-rc.3 <0.3.0-0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+- insert:
+    - id: research-html-presentation-skill-filesystem
+      name: '@deepseek-ai/dsh-skill-filesystem'
+      config:
+        providerName: research-html-presentation
+        includeDefaultRoots: false
+        bundledSkillDir: !!js >-
+          process.getBuiltinModule('node:path').join(
+            process.getBuiltinModule('node:path').dirname(
+              process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('research-html-presentation-dsh/package.json')
+            ),
+            'skills'
+          )
